@@ -1,0 +1,100 @@
+{
+    "config": {
+        "datapath": "data",
+        "logs_dir": "logs/gpt4_0414_fewCon_byEpoch/ep_1699",
+        "logs_prefix": "Training_",
+        "vague_concepts": false,
+        "epochs_representation": 2000,
+        "lr_pretrain": 0.0001,
+        "weight_decay": 0.0001,
+        "persona": "personaE",
+        "epochs_representation_finetune": 1000,
+        "gen_concept_weight": 0.01,
+        "user_concept_weight": 1.0,
+        "given_action_concept_weight": 0.5,
+        "loss_type": "cross_entropy",
+        "batch_size_assist": 1,
+        "batch_size_concept": 256,
+        "val_fraction_assistance": 0.1,
+        "val_fraction_concepts": 0.05,
+        "test_fraction": 0.2,
+        "lr": 0.0001,
+        "epochs_assistance": 1700,
+        "embedder": "sentence",
+        "concept_models_freeze": true,
+        "concept_models_LR_factor": 0.05,
+        "hidden_concept_dim": 256,
+        "latent_map_dim": 64,
+        "latent_map_dim_assistance": 96,
+        "latent_map_dim_assistance_magnitude": 32,
+        "latent_map_dim_assistance_concept": 32,
+        "latent_map_dim_assistance_role": 32,
+        "concept_emb_for_assistance": "bert",
+        "loss_attention_sparsity_weight": 0.0,
+        "loss_explanation_weight": 0.0,
+        "expl_train_attn": false,
+        "expl_train_cfs": false,
+        "num_explanation_cfs": 4,
+        "perturbation_type": "to_limit_triangle",
+        "explain_only_correct_answers": false,
+        "continue_training": false,
+        "num_train_actions": 40,
+        "label_min": 1,
+        "label_max": 10,
+        "num_concepts_overall": 23,
+        "concept_src": "user",
+        "num_assistive_actions": 4,
+        "concept_emb_input_dim": 1024
+    },
+    "concept_hierarchy": {
+        "input": {
+            "action": [
+                "can be easily fixed if done improperly",
+                "can cause major damage or harm if done imprecisely",
+                "involves contact with a pet",
+                "involves discretionary judgement",
+                "involves handling open containers filled with something which could spill",
+                "involves knowing or accessing private information that one might not want to disclose",
+                "involves moving around in space",
+                "is fun to do",
+                "is much easier if someone helps one with it",
+                "is one which a user might be particular about if they are picky about their food",
+                "is something one does only if they enjoy doing it",
+                "is very tiring",
+                "makes a lot of noise",
+                "requires strength",
+                "that a user might prefer doing themselves if they enjoy taking care of their house plants"
+            ],
+            "activity": [
+                "is a fun activity",
+                "is a mundane chore"
+            ],
+            "object": [
+                "can damage or break or burn something if used inaccurately",
+                "involves an open flame",
+                "is a fragile object",
+                "is expensive"
+            ],
+            "location": [
+                "is a location outside the house",
+                "might be a tight space where presence a robot might get in the way of a person"
+            ]
+        },
+        "context": [
+            "adverse weather conditions",
+            "early in the morning",
+            "guests are present",
+            "user is asleep",
+            "user is in a rush",
+            "user is injured or disabled",
+            "user is nearby",
+            "weekend"
+        ],
+        "output": [
+            "do_now",
+            "do_later",
+            "no_action",
+            "remind"
+        ]
+    }
+}

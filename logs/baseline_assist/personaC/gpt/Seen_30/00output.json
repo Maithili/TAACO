@@ -1,0 +1,639 @@
+{
+    "accuracy": 0.4722222222222222,
+    "accuracy_wo_do_now": 0.3870967741935484,
+    "num_episodes": 36,
+    "num_episodes_wo_do_now": 31,
+    "confusion_matrix_obj": {
+        "accuracy": 0.4722222222222222,
+        "precision": {
+            "do_now": 0.2631578947368421,
+            "do_later": 0.6,
+            "remind": 0.5,
+            "no_action": 1.0
+        },
+        "recall": {
+            "do_now": 1.0,
+            "do_later": 0.375,
+            "remind": 1.0,
+            "no_action": 0.3
+        },
+        "confusion_matrix": {
+            "do_now": {
+                "do_now": 5,
+                "do_later": 0,
+                "remind": 0,
+                "no_action": 0
+            },
+            "do_later": {
+                "do_now": 5,
+                "do_later": 3,
+                "remind": 0,
+                "no_action": 0
+            },
+            "remind": {
+                "do_now": 0,
+                "do_later": 0,
+                "remind": 3,
+                "no_action": 0
+            },
+            "no_action": {
+                "do_now": 9,
+                "do_later": 2,
+                "remind": 3,
+                "no_action": 6
+            }
+        }
+    },
+    "episodes": {
+        "vacuum_cleaning_the_living_room_carpets_early_in_the_morning_user_is_injured_or_disabled_weekend_": {
+            "ground_truth": "do_later",
+            "prediction": "do_now",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "action",
+                    "vacuum cleaning the living room carpets",
+                    "makes a lot of noise",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Vacuum cleaning the living room carpets is a/an action which is is physically demanding, especially if the user is injured or disabled.\n2. Floor cleaning is a/an activity which is is a mundane chore and generally not something people look forward to doing. \n3. Weekends are a/an time which is often used for house cleaning, so it would help the user to have this task done by the robot then.\n4. Early in the morning is a/an time which is convenient for cleaning without disturbing the user's activities. \n5. Vacuum cleaner is a/an object which is can be heavy to move around, especially for someone who is injured or disabled.",
+            "mrr": 0
+        },
+        "vacuum_cleaning_the_living_room_carpets_user_is_asleep_user_is_nearby_weekend_": {
+            "ground_truth": "do_later",
+            "prediction": "do_later",
+            "result": "correct",
+            "explanation": [
+                [
+                    "action",
+                    "vacuum cleaning the living room carpets",
+                    "makes a lot of noise",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Vacuum cleaning the living room carpets is an action which is makes a lot of noise.\n2. Vacuum cleaner is an object which is can be loud when operated, potentially disturbing someone if they are asleep or nearby.\n3. Living room is an area which is usually a common space where people spend time, and might not want to be disturbed during their relaxation time, especially on the weekends.\n4. Floor cleaning is an activity which is is very tiring and generally considered a mundane chore, and having the robot complete it later would ensure it gets done without disrupting the user's peace.",
+            "mrr": 1
+        },
+        "vacuum_cleaning_the_living_room_carpets_adverse_weather_conditions_guests_are_present_user_is_in_a_rush_weekend_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "result": "correct",
+            "explanation": [],
+            "explanation_gpt": "1. Vacuum cleaning the living room carpets is a/an action which is is very tiring.\n2. Floor cleaning is a/an activity which is is a mundane chore.\n3. During adverse weather conditions, user is in a rush or when guests are present, it's beneficial to keep the carpets clean to maintain a well-presented living room.\n4. On weekends, users may prefer to relax or engage in leisure activities rather than perform tiring chores, hence the robot's assistance would be appreciated.",
+            "mrr": 0
+        },
+        "refilling_the_pillbox_early_in_the_morning_user_is_asleep_user_is_injured_or_disabled_user_is_nearby_": {
+            "ground_truth": "no_action",
+            "prediction": "remind",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "action",
+                    "refilling the pillbox",
+                    "can cause major damage or harm if done imprecisely",
+                    true
+                ],
+                [
+                    "action",
+                    "refilling the pillbox",
+                    "requires precision",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Refilling the pillbox is a/an action which is involves medicines that a user or their loved ones might need to take for their health.\n2. Pillbox is a/an object which is can contain various kinds of medication, each with their own specific intake schedule.\n3. Taking medication is a/an activity which is involves knowing or accessing private information that one might not want to disclose.\n4. Early in the morning is a/an time which is when a reminder would be useful as the user might forget to refill the pillbox.\n5. When the user is injured or disabled is a/an situation which is when help from a robot would be very useful.\n6. When the user is asleep is a/an situation which is when the robot can act without disturbing the user.\n7. When the user is nearby is a/an situation which is allows the user to supervise the robot's actions if needed. \n8. Based on the hints provided, refilling the pillbox is an action that could be easily overlooked, hence a reminder from the robot would be helpful.",
+            "mrr": 0
+        },
+        "putting_vegetables_in_the_pot_to_boil_early_in_the_morning_": {
+            "ground_truth": "no_action",
+            "prediction": "do_now",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "action",
+                    "putting vegetables in the pot to boil",
+                    "that a user might prefer doing themselves if they enjoy making food",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Putting vegetables in the pot to boil is an action which is part of cooking, a task often considered a mundane chore.\n2. Cooking pot is an object which is typically safe for a robot to handle, as it does not contain sensitive information or requires delicate handling.\n3. Preparing a meal is an activity which is often considered a routine task, and thus may not be something the user prefers to do themselves especially early in the morning when they might be busy with other things or prefer not to be disturbed.\n4. Kitchen is a location which is typically where these types of chores are done, and does not involve a private or personal space where the user might prefer no assistance from the robot.\n5. Early in the morning is a time which is often busy for many people, and they may appreciate help with cooking tasks during this time.",
+            "mrr": 0
+        },
+        "cleaning_kitchen_sink_and_running_the_garbage_disposal_adverse_weather_conditions_early_in_the_morning_user_is_asleep_user_is_injured_or_disabled_": {
+            "ground_truth": "do_later",
+            "prediction": "do_now",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "action",
+                    "cleaning kitchen sink and running the garbage disposal",
+                    "makes a lot of noise",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Cleaning the kitchen sink and running the garbage disposal is an action which is is a mundane chore.\n2. Adverse weather conditions is a situation which is does not impact indoor activities such as cleaning the kitchen.\n3. Early in the morning is a situation where running the garbage disposal would not disturb the user if they are asleep, as it is a short duration task.\n4. User is injured or disabled is a situation where they might need assistance with physical tasks such as cleaning the kitchen.\n5. Kitchen sink is an object which is typically considered a common area for cleaning tasks.",
+            "mrr": 0
+        },
+        "cleaning_kitchen_sink_and_running_the_garbage_disposal_user_is_asleep_": {
+            "ground_truth": "do_later",
+            "prediction": "do_later",
+            "result": "correct",
+            "explanation": [
+                [
+                    "action",
+                    "cleaning kitchen sink and running the garbage disposal",
+                    "makes a lot of noise",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Cleaning the kitchen sink and running the garbage disposal is an action which is is a mundane chore.\n2. Running the garbage disposal is an action which makes a lot of noise, and therefore might disrupt the user's sleep if done immediately.\n3. The kitchen sink and faucet are objects that are frequently used and would benefit from regular cleaning, making this a task suitable for a robot, but during a time when it would not inconvenience or disturb the user.",
+            "mrr": 0
+        },
+        "cleaning_kitchen_sink_and_running_the_garbage_disposal_adverse_weather_conditions_guests_are_present_user_is_in_a_rush_user_is_injured_or_disabled_user_is_nearby_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "result": "correct",
+            "explanation": [],
+            "explanation_gpt": "1. Cleaning the kitchen sink and running the garbage disposal is a/an action which is is very tiring.\n2. Cleaning the kitchen is a/an activity which is a mundane chore.\n3. Sponge and dish soap are objects which are commonly used for cleaning tasks and pose no privacy or safety concerns.\n4. Electric switch is a/an object which is commonly used and poses minimal safety concerns when used correctly.\n5. Kitchen sink and faucet are objects which are part of a cleaning task and do not require special handling or personal preferences.",
+            "mrr": 0
+        },
+        "calling_the_bank_to_straighten_a_fraudulent_transaction_user_is_asleep_user_is_nearby_weekend_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "result": "correct",
+            "explanation": [
+                [
+                    "action",
+                    "calling the bank to straighten a fraudulent transaction",
+                    "involves knowing or accessing private information that one might not want to disclose",
+                    true
+                ],
+                [
+                    "object",
+                    "bank documents",
+                    "contains sensitive private information",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Calling the bank to straighten a fraudulent transaction is a/an action which is involves knowing or accessing private information that one might not want to disclose.\n2. Bank documents is a/an object which is contains sensitive private information.\n3. Finishing financial tasks is a/an activity which is requires careful attention and understanding that a user may prefer to do on their own.",
+            "mrr": 1
+        },
+        "carrying_a_water_jug_to_water_indoor_plants_guests_are_present_user_is_in_a_rush_user_is_injured_or_disabled_": {
+            "ground_truth": "no_action",
+            "prediction": "do_now",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "action",
+                    "carrying a water jug to water indoor plants",
+                    "that a user might prefer doing themselves if they enjoy taking care of their house plants",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Carrying a water jug to water indoor plants is a/an action which is physically demanding, especially for someone who is injured, disabled, or in a rush. \n2. Maintaining house plants is a/an activity which is often considered a chore, and therefore delegating it to a robot can be more convenient.\n3. Water jug is a/an object which is heavy and can be difficult for the user to carry, especially if the user is injured or disabled.\n4. House plants is a/an object which is needs regular maintenance, thus needing the action to be performed frequently.\n5. Presence of guests is a/an situation which is may require the user to focus on other tasks, making the robot's assistance useful in this scenario.",
+            "mrr": 0
+        },
+        "arranging_cushions_on_the_couch_user_is_injured_or_disabled_user_is_nearby_": {
+            "ground_truth": "no_action",
+            "prediction": "do_now",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "action",
+                    "arranging cushions on the couch",
+                    "is one which a user might be particular about if they are picky about how their living room looks",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Arranging cushions on the couch is a/an action which is can be difficult for someone if they are injured or disabled.\n2. Home decoration is a/an activity which is can be transformed from a mundane chore to an essential task when the user is nearby and in need of assistance.\n3. Couch, cushion, and throw blanket are objects which are relatively safe and benign for the robot to handle, reducing the risk of harm or damage.",
+            "mrr": 0
+        },
+        "chopping_vegetables_user_is_asleep_user_is_injured_or_disabled_weekend_": {
+            "ground_truth": "no_action",
+            "prediction": "do_now",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "action",
+                    "chopping vegetables",
+                    "can cause major damage or harm if done imprecisely",
+                    true
+                ],
+                [
+                    "object",
+                    "chef knife",
+                    "can easily hurt someone without intending to",
+                    true
+                ],
+                [
+                    "action",
+                    "chopping vegetables",
+                    "that a user might prefer doing themselves if they enjoy making food",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Chopping vegetables is a/an action which is is very tiring.\n2. Preparing a meal is a/an activity which is is a mundane chore.\n3. Chef knife is a/an object which is can easily hurt someone without intending to, especially if the user is injured or disabled.\n4. Also, if the user is asleep, having the robot perform the task would ensure the task is completed without disturbing the user's rest.",
+            "mrr": 0
+        },
+        "knitting_a_sweater_guests_are_present_user_is_in_a_rush_user_is_injured_or_disabled_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "result": "correct",
+            "explanation": [
+                [
+                    "action",
+                    "knitting a sweater",
+                    "is something one does only if they enjoy doing it",
+                    true
+                ],
+                [
+                    "activity",
+                    "knitting",
+                    "is often done by people as a hobby",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Knitting a sweater is an action which is is something one does only if they enjoy doing it.\n2. Knitting is an activity which is is often done by people as a hobby.\n3. Knitting needle is an object which is requires a certain level of skill and precision to use properly.\n4. Yarn is an object which is can easily become tangled or unraveled if not handled carefully.",
+            "mrr": 1
+        },
+        "taking_out_eggs_from_the_fridge_adverse_weather_conditions_guests_are_present_user_is_in_a_rush_user_is_injured_or_disabled_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "result": "correct",
+            "explanation": [
+                [
+                    "activity",
+                    "preparing breakfast",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Taking out eggs from the fridge is an action which is a simple task that a robot can easily perform.\n2. Egg is an object which is not delicate or personal and can be handled safely by a robot.\n3. Preparing breakfast is an activity which is a mundane chore that many people find time-consuming or tedious.\n4. The kitchen is a location which is typically suitable for a robot to navigate and perform tasks in.\n5. The context such as adverse weather conditions, guests being present, the user being in a rush, or the user being injured or disabled are situations where the user may need extra assistance and it would be appropriate for the robot to help.",
+            "mrr": 0
+        },
+        "carrying_a_tray_with_coffee_cups_to_serve_guests_user_is_in_a_rush_weekend_": {
+            "ground_truth": "no_action",
+            "prediction": "do_now",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "action",
+                    "carrying a tray with coffee cups to serve guests",
+                    "involves handling open containers with something which takes work to replace if spilled",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Carrying a tray with coffee cups to serve guests is a/an action which is could be perceived as a mundane chore when user is in a rush.\n2. Serving food is a/an activity which is is a mundane chore.\n3. Serving tray is a/an object which is could be heavy when loaded with coffee cups and could potentially cause spills if not handled properly, hence a robot might be of great assistance in this scenario. \n4. Weekend is a/an time which is usually busy for the user having guests over, hence the robot's assistance would be appreciated.",
+            "mrr": 0
+        },
+        "putting_on_a_scarf_when_leaving_the_home_user_is_in_a_rush_weekend_": {
+            "ground_truth": "remind",
+            "prediction": "remind",
+            "result": "correct",
+            "explanation": [
+                [
+                    "action",
+                    "putting on a scarf when leaving the home",
+                    "involves close contact with another human",
+                    true
+                ],
+                [
+                    "action",
+                    "putting on a scarf when leaving the home",
+                    "one often forgets to do",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Putting on a scarf when leaving the home is an action which is often forgotten when a person is in a rush.\n2. Getting ready to leave is an activity which is can be hurried especially on weekends.\n3. Scarf is an object which is easily overlooked when one is not used to wearing it regularly. \nHence, a reminder from the robot at the appropriate time would be helpful.",
+            "mrr": 0
+        },
+        "putting_on_a_scarf_when_leaving_the_home_adverse_weather_conditions_user_is_asleep_user_is_injured_or_disabled_": {
+            "ground_truth": "no_action",
+            "prediction": "remind",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "action",
+                    "putting on a scarf when leaving the home",
+                    "involves close contact with another human",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Putting on a scarf when leaving home is a/an action which is involves close contact with the human body.\n2. Scarf is a/an object which is is a personal item that people usually prefer to wear themselves.\n3. Adverse weather conditions is a/an situation which is can often be unpredictable, hence, it's better to remind the user to put on a scarf rather than the robot doing it.\n4. If the user is asleep, the robot should not disturb them, instead it can leave a reminder for when the user wakes up.\n5. If the user is injured or disabled, they might need help in putting on a scarf. In such cases, the robot can assist or even do the action for them. But if they are able to, they might still prefer to do it themselves for a sense of independence. Hence, a remind action could be the best way to handle this, allowing the robot to offer assistance if the user needs it.",
+            "mrr": 1
+        },
+        "trimming_house_plants_with_a_knife_and_shear_early_in_the_morning_guests_are_present_user_is_injured_or_disabled_user_is_nearby_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "result": "correct",
+            "explanation": [
+                [
+                    "action",
+                    "trimming house plants with a knife and shear",
+                    "that a user might prefer doing themselves if they enjoy taking care of their house plants",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Trimming house plants with a knife and shear is a/an action which is that a user might prefer doing themselves if they enjoy taking care of their house plants.\n2. Trimming house plants with a knife and shear is a/an action which can cause major damage or harm if done imprecisely because it involves using sharp tools such as a knife and shears.\n3. Knife is a/an object which can easily hurt someone without intending to. \n4. Also, if guests are present, the user might want to personally ensure that the plants are trimmed to their liking.\n5. Furthermore, if the user is nearby, they might prefer to do the task themselves instead of having the robot do it.",
+            "mrr": 1
+        },
+        "frying_eggs_till_done_early_in_the_morning_": {
+            "ground_truth": "no_action",
+            "prediction": "do_now",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "action",
+                    "frying eggs till done",
+                    "that a user might prefer doing themselves if they enjoy making food",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Frying eggs till done is a/an action which is a mundane and routine task, especially in the morning.\n2. Preparing breakfast is a/an activity which is a daily necessity and often considered a chore.\n3. This action does not involve handling sensitive objects or personal preferences that the user might want to control themselves.",
+            "mrr": 0
+        },
+        "putting_on_sunscreen_early_in_the_morning_guests_are_present_user_is_in_a_rush_weekend_": {
+            "ground_truth": "remind",
+            "prediction": "remind",
+            "result": "correct",
+            "explanation": [
+                [
+                    "action",
+                    "putting on sunscreen",
+                    "involves close contact with another human",
+                    true
+                ],
+                [
+                    "action",
+                    "putting on sunscreen",
+                    "one often forgets to do",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Putting on sunscreen is a/an action which is involves close contact with another human.\n2. Putting on sunscreen is a/an action which is one often forgets to do especially when in a rush.\n3. Sunscreen bottle is a/an object which is easy to misplace or forget to use when in a hurry.",
+            "mrr": 1
+        },
+        "putting_on_sunscreen_adverse_weather_conditions_early_in_the_morning_user_is_asleep_user_is_nearby_": {
+            "ground_truth": "no_action",
+            "prediction": "remind",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "action",
+                    "putting on sunscreen",
+                    "involves close contact with another human",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Putting on sunscreen is a/an action which is involves close contact with another human.\n2. Getting ready to leave is a/an activity which is one often forgets to do, especially when in a rush or under certain weather conditions.\n3. Sunscreen bottle is a/an object which is commonly used and can be easily misplaced, so a reminder can be beneficial.\n4. Early in the morning and when the user is asleep are conditions which are times when the user may not want to be disturbed with the application but would appreciate a reminder.\n5. When the user is nearby is a condition which is when a reminder would be most effective and welcomed.",
+            "mrr": 1
+        },
+        "searching_for_the_chequebook_from_the_documents_drawer_early_in_the_morning_user_is_in_a_rush_user_is_injured_or_disabled_weekend_": {
+            "ground_truth": "no_action",
+            "prediction": "do_now",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "action",
+                    "searching for the chequebook from the documents drawer",
+                    "involves knowing or accessing private information that one might not want to disclose",
+                    true
+                ],
+                [
+                    "object",
+                    "personal documents",
+                    "contains sensitive private information",
+                    true
+                ],
+                [
+                    "object",
+                    "chequebook",
+                    "contains sensitive private information",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Searching for the chequebook from the documents drawer is an action which is can take time especially if the documents are not organized.\n2. Finishing financial tasks is an activity which is is often time-sensitive and thus important to do promptly.\n3. Desk drawer is an object which is easy for a robot to access and search through.\n4. Chequebook is an object which is doesn't contain sensitive information unless it is opened, so it's safe for a robot to handle.\n5. Considering the user's conditions like being in a rush, being injured or disabled, or it being the weekend, the task might be more challenging for them, hence robot assistance would be useful.",
+            "mrr": 0
+        },
+        "pouring_oil_in_a_pan_to_cook_food_adverse_weather_conditions_user_is_asleep_": {
+            "ground_truth": "no_action",
+            "prediction": "do_later",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "action",
+                    "pouring oil in a pan to cook food",
+                    "that a user might prefer doing themselves if they enjoy making food",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Pouring oil in a pan to cook food is an action which is that a user might prefer doing themselves if they enjoy making food.\n2. Preparing a meal is an activity which is often enjoyed by users who prefer cooking.\n3. The condition of the user being asleep is a situation which is not conducive for initiating cooking activities as it may disturb the user's rest.\n4. The condition of adverse weather conditions might imply power instability, which is a situation that can be hazardous with cooking appliances, hence it is preferable to do this action later. \n5. The pan is an object which can pose potential harm if not handled properly, making this action one that might be better performed by the user themselves.",
+            "mrr": 1
+        },
+        "reorganizing_silverware_in_the_kitchen_drawers_early_in_the_morning_user_is_nearby_": {
+            "ground_truth": "do_later",
+            "prediction": "do_now",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "action",
+                    "reorganizing silverware in the kitchen drawers",
+                    "makes a lot of noise",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Reorganizing silverware in the kitchen drawers is a/an action which is is very tiring.\n2. Home organization is a/an activity which is is a mundane chore.\n3. Spoons and forks are objects which are easily and safely handled by a robot.",
+            "mrr": 0
+        },
+        "reorganizing_silverware_in_the_kitchen_drawers_early_in_the_morning_user_is_asleep_user_is_nearby_weekend_": {
+            "ground_truth": "do_later",
+            "prediction": "do_later",
+            "result": "correct",
+            "explanation": [
+                [
+                    "action",
+                    "reorganizing silverware in the kitchen drawers",
+                    "makes a lot of noise",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Early in the morning is a/an time which is when the user is asleep and may be disturbed by the noise of moving silverware.\n2. User is asleep is a/an state which is when they do not want to be disturbed.\n3. Weekend is a/an time which is when the user might prefer to relax or sleep in without being disturbed by noise.\n4. Reorganizing silverware in the kitchen drawers is a/an action which is can be noisy and might disturb the user if they are nearby.",
+            "mrr": 0
+        },
+        "reorganizing_silverware_in_the_kitchen_drawers_user_is_injured_or_disabled_user_is_nearby_weekend_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "result": "correct",
+            "explanation": [],
+            "explanation_gpt": "1. Reorganizing silverware in the kitchen drawers is a/an action which is is very tiring.\n2. Home organization is a/an activity which is is a mundane chore.\n3. User is injured or disabled is a/an circumstance which is may require assistance with physically strenuous tasks. \n4. User is nearby is a/an circumstance which is allows for immediate supervision if needed. \n5. Weekend is a/an time which is is typically used for organizing or cleaning in many households.",
+            "mrr": 0
+        },
+        "organizing_the_coffee_table_adverse_weather_conditions_early_in_the_morning_user_is_asleep_user_is_nearby_weekend_": {
+            "ground_truth": "no_action",
+            "prediction": "do_now",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "action",
+                    "organizing the coffee table",
+                    "is one which a user might be particular about if they are picky about how their living room looks",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Organizing the coffee table is an action which is is a mundane task, often involving tidying up common items like books and coasters.\n2. Organizing the living room is an activity which is a regular upkeep task, often considered a chore.\n3. The coffee table is an object which is typically cluttered and can be tidied easily.\n4. The specified time conditions (adverse weather conditions, early in the morning, when user is asleep, when user is nearby, during the weekend) are conditions which are are not overly intrusive nor they require user's direct participation, interaction or decision.\n5. Therefore, such tasks can be done by a robot without much user intervention.",
+            "mrr": 0
+        },
+        "putting_up_photos_on_the_wall_adverse_weather_conditions_user_is_asleep_user_is_injured_or_disabled_user_is_nearby_weekend_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "result": "correct",
+            "explanation": [
+                [
+                    "action",
+                    "putting up photos on the wall",
+                    "is one which a user might be particular about if they are picky about how their living room looks",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Putting up photos on the wall is an action which is one which a user might be particular about as they might have personal preferences on how and where their photos should be placed especially when it comes to home decoration.\n2. The photographs are objects which are personal and precious, that a user might prefer to handle themselves.\n3. The user being nearby suggests that they are available to complete the task themselves if they wish to do so.\n4. During the weekend, they might have more free time to carry out personal tasks such as these. They might enjoy doing it themselves as it can also turn into a fun, relaxing activity.\n5. However, in situations where the user is injured or disabled, the preference might switch to 'do_now' since they might need assistance. This preference change based on the user's condition highlights the importance of the robot's adaptability to the user's varying needs and contexts.",
+            "mrr": 1
+        },
+        "turning_on_the_stove_adverse_weather_conditions_user_is_asleep_user_is_nearby_weekend_": {
+            "ground_truth": "no_action",
+            "prediction": "do_later",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "action",
+                    "turning on the stove",
+                    "can cause major damage or harm if done imprecisely",
+                    true
+                ],
+                [
+                    "object",
+                    "stove",
+                    "involves an open flame",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Turning on the stove is an action which is can cause major damage or harm if done imprecisely.\n2. The stove is an object which can easily start a fire without intending to, especially when the user is asleep or not in the room.\n3. Preparing a meal is an activity which a user might prefer doing themselves, if they enjoy making food.\n4. Stove knobs are objects which can easily cause an accident if toyed with or used incorrectly.",
+            "mrr": 1
+        },
+        "arranging_pots_and_pans_in_the_kitchen_shelves_early_in_the_morning_guests_are_present_user_is_nearby_": {
+            "ground_truth": "do_later",
+            "prediction": "do_now",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "action",
+                    "arranging pots and pans in the kitchen shelves",
+                    "makes a lot of noise",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Arranging pots and pans in the kitchen shelves is a/an action which is not disruptive or loud.\n2. Organizing the kitchen is a/an activity which is a mundane chore.\n3. Kitchen shelves is a/an object which is used to store items out of sight, helping to maintain a neat and organized kitchen.\n4. Pots and pans are objects which do not contain sensitive personal information.\n5. Pots and pans are objects which are not fragile or easy to break.\n6. Organizing the kitchen shelves is a/an action which does not involve close contact with the user.\nTherefore, the user might want the robot to perform this action immediately.",
+            "mrr": 0
+        },
+        "arranging_pots_and_pans_in_the_kitchen_shelves_early_in_the_morning_user_is_asleep_user_is_injured_or_disabled_user_is_nearby_": {
+            "ground_truth": "do_later",
+            "prediction": "do_now",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "action",
+                    "arranging pots and pans in the kitchen shelves",
+                    "makes a lot of noise",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Arranging pots and pans in the kitchen shelves is an action which is very tiring.\n2. Organizing the kitchen is an activity which is a mundane chore.\n3. Pots and pans are objects which can be heavy and cumbersome, especially for someone who is injured or disabled.\n4. Doing it early in the morning when the user is asleep can be helpful so as not to disturb the user's activities.\n5. Providing assistance while the user is nearby allows for immediate feedback and ensures things are done to the user's satisfaction.",
+            "mrr": 0
+        },
+        "arranging_pots_and_pans_in_the_kitchen_shelves_guests_are_present_user_is_injured_or_disabled_user_is_nearby_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "result": "correct",
+            "explanation": [],
+            "explanation_gpt": "1. Arranging pots and pans in the kitchen shelves is an action which is is very tiring.\n2. Organizing the kitchen is an activity which is is a mundane chore.\n3. When guests are present, the user is injured or disabled, or the user is nearby, the user might require immediate assistance with tasks, hence making it a situation which is urgent.",
+            "mrr": 0
+        },
+        "applying_moisturizer_on_your_arms_user_is_in_a_rush_weekend_": {
+            "ground_truth": "remind",
+            "prediction": "remind",
+            "result": "correct",
+            "explanation": [
+                [
+                    "action",
+                    "applying moisturizer on your arms",
+                    "involves close contact with another human",
+                    true
+                ],
+                [
+                    "action",
+                    "applying moisturizer on your arms",
+                    "one often forgets to do",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Applying moisturizer on your arms is a/an action which is involves close contact with another human.\n2. Applying moisturizer on your arms is a/an action which is one often forgets to do.\n3. Otherwise no_action, because applying moisturizer on your arms is a/an action which is involves close contact with another human.",
+            "mrr": 1
+        },
+        "applying_moisturizer_on_your_arms_guests_are_present_user_is_nearby_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "result": "correct",
+            "explanation": [
+                [
+                    "action",
+                    "applying moisturizer on your arms",
+                    "involves close contact with another human",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Applying moisturizer on your arms is a/an action which involves close contact with another human.\n2. When guests are present, applying moisturizer on your arms is a/an action which might make the user feel uncomfortable if performed by a robot.\n3. Personal care is an activity which often involves personal or sensitive actions that one may prefer to perform themselves.",
+            "mrr": 0
+        },
+        "putting_fruits_in_the_blender_to_make_a_smoothie_user_is_in_a_rush_user_is_injured_or_disabled_": {
+            "ground_truth": "no_action",
+            "prediction": "do_now",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "action",
+                    "putting fruits in the blender to make a smoothie",
+                    "that a user might prefer doing themselves if they enjoy making food",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Making a smoothie is a/an activity which is is a mundane chore.\n2. Putting fruits in the blender to make a smoothie is a/an action which is is very tiring, especially if the user is in a rush or is injured or disabled.\n3. Blender is a/an object which is easy to operate and does not pose any major harm or damage if handled by a robot.",
+            "mrr": 0
+        },
+        "using_a_trimmer_to_groom_facial_hair_early_in_the_morning_user_is_injured_or_disabled_user_is_nearby_weekend_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "result": "correct",
+            "explanation": [
+                [
+                    "action",
+                    "using a trimmer to groom facial hair",
+                    "involves close contact with another human",
+                    true
+                ]
+            ],
+            "explanation_gpt": "1. Using a trimmer to groom facial hair is an action which involves close contact with the user. \n2. Personal care is an activity which implies a high level of personal comfort and privacy.\n3. Trimmer is an object which can cause harm if not used properly.",
+            "mrr": 0
+        }
+    },
+    "MRR": [
+        0.34375,
+        32
+    ],
+    "MRR_correct": [
+        0.5384615384615384,
+        13
+    ],
+    "MRR_wrong": [
+        0.21052631578947367,
+        19
+    ]
+}

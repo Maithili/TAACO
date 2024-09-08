@@ -1,0 +1,1291 @@
+{
+    "accuracy": 0.56,
+    "accuracy_wo_do_now": 0.8,
+    "num_episodes": 25,
+    "num_episodes_wo_do_now": 15,
+    "confusion_matrix_obj": {
+        "accuracy": 0.56,
+        "precision": {
+            "do_now": 0.5,
+            "do_later": 0.0,
+            "remind": 0.0,
+            "no_action": 0.7058823529411765
+        },
+        "recall": {
+            "do_now": 0.2,
+            "do_later": 0.0,
+            "remind": 0.0,
+            "no_action": 0.8571428571428571
+        },
+        "confusion_matrix": {
+            "do_now": {
+                "do_now": 2,
+                "do_later": 3,
+                "remind": 0,
+                "no_action": 5
+            },
+            "do_later": {
+                "do_now": 0,
+                "do_later": 0,
+                "remind": 0,
+                "no_action": 0
+            },
+            "remind": {
+                "do_now": 0,
+                "do_later": 1,
+                "remind": 0,
+                "no_action": 0
+            },
+            "no_action": {
+                "do_now": 2,
+                "do_later": 0,
+                "remind": 0,
+                "no_action": 12
+            }
+        }
+    },
+    "MRR": {
+        "output_based": [
+            0.16,
+            25
+        ],
+        "output_based_correct": [
+            0.2857142857142857,
+            14
+        ],
+        "output_based_wrong": [
+            0.0,
+            11
+        ],
+        "gt_based": [
+            0.2,
+            25
+        ],
+        "gt_based_correct": [
+            0.2857142857142857,
+            14
+        ],
+        "gt_based_wrong": [
+            0.09090909090909091,
+            11
+        ],
+        "attn_based": [
+            0.24,
+            25
+        ],
+        "attn_based_correct": [
+            0.42857142857142855,
+            14
+        ],
+        "attn_based_wrong": [
+            0.0,
+            11
+        ]
+    },
+    "episodes": {
+        "putting_glass_mugs_in_the_kitchen_cabinet_guests_are_present_user_is_in_a_rush_user_is_nearby_": {
+            "ground_truth": "do_now",
+            "prediction": "no_action",
+            "num_precedents": 7,
+            "result": "wrong",
+            "confidence": 0.9999607801437378,
+            "explanation": [
+                [
+                    "activity",
+                    "organizing the kitchen",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] action : putting glass mugs in the kitchen cabinet : requires precision : is TRUE : 0.750 : 0.03127548",
+                "[-] action : putting glass mugs in the kitchen cabinet : makes a lot of noise : is TRUE : 0.650 : 0.00009185",
+                "[-] action : putting glass mugs in the kitchen cabinet : that a user might prefer doing themselves if they enjoy making food : is FALSE : 0.450 : 0.00000045",
+                "[-] object : glass mug : is a fragile object : is TRUE : 0.950 : 0.00000036",
+                "[-] action : putting glass mugs in the kitchen cabinet : can cause major damage or harm if done imprecisely : is FALSE : 0.350 : 0.00000016",
+                "[-] c : c : guests are present : is TRUE : 1.000 : 0.00000005",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00000005",
+                "[-] action : putting glass mugs in the kitchen cabinet : involves discretionary judgement : is TRUE : 0.650 : 0.00000004",
+                "[-] c : c : user is in a rush : is TRUE : 1.000 : 0.00000004",
+                "[-] action : putting glass mugs in the kitchen cabinet : can be easily fixed if done improperly : is TRUE : 0.950 : 0.00000001"
+            ],
+            "expl_attn_based_MRR": 0.05555555555555555,
+            "expl_output_based": [
+                "[-] action : putting glass mugs in the kitchen cabinet : requires precision : is TRUE : 0.750 : -5636.24502089"
+            ],
+            "expl_output_based_MRR": 0.5,
+            "expl_gt_based": [
+                "[-] action : putting glass mugs in the kitchen cabinet : requires precision : is TRUE : 0.750 : -5636.34724415"
+            ],
+            "expl_gt_based_MRR": 0.5
+        },
+        "putting_up_framed_art_on_the_wall_adverse_weather_conditions_user_is_asleep_user_is_injured_or_disabled_weekend_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "num_precedents": 5,
+            "result": "correct",
+            "confidence": 0.9999604225158691,
+            "explanation": [
+                [
+                    "action",
+                    "putting up framed art on the wall",
+                    "is one which a user might be particular about if they are picky about how their living room looks",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[+] action : putting up framed art on the wall : is one which a user might be particular about if they are picky about how their living room looks : is TRUE : 0.950 : 0.03723473",
+                "[-] action : putting up framed art on the wall : requires precision : is TRUE : 0.850 : 0.00130226",
+                "[-] c : c : user is asleep : is TRUE : 1.000 : 0.00001619",
+                "[-] action : putting up framed art on the wall : is something one does only if they enjoy doing it : is TRUE : 0.650 : 0.00000761",
+                "[-] action : putting up framed art on the wall : makes a lot of noise : is FALSE : 0.450 : 0.00000169",
+                "[-] action : putting up framed art on the wall : is much easier if someone helps one with it : is TRUE : 0.750 : 0.00000021",
+                "[-] action : putting up framed art on the wall : is fun to do : is TRUE : 0.650 : 0.00000008",
+                "[-] action : putting up framed art on the wall : can cause major damage or harm if done imprecisely : is FALSE : 0.350 : 0.00000005",
+                "[-] action : putting up framed art on the wall : involves discretionary judgement : is TRUE : 0.750 : 0.00000004",
+                "[-] c : c : weekend : is TRUE : 1.000 : 0.00000001"
+            ],
+            "expl_attn_based_MRR": 1.0,
+            "expl_output_based": [
+                "[-] action : putting up framed art on the wall : is something one does only if they enjoy doing it : is TRUE : 0.650 : 0.00249949",
+                "[+] action : putting up framed art on the wall : is one which a user might be particular about if they are picky about how their living room looks : is TRUE : 0.950 : 0.00223269",
+                "[-] action : putting up framed art on the wall : is fun to do : is TRUE : 0.650 : 0.00158076",
+                "[-] action : putting up framed art on the wall : involves discretionary judgement : is TRUE : 0.750 : 0.00148342",
+                "[-] object : framed wall art : is a fragile object : is TRUE : 0.750 : 0.00141188",
+                "[-] action : putting up framed art on the wall : can cause major damage or harm if done imprecisely : is FALSE : 0.350 : 0.00115754",
+                "[-] action : putting up framed art on the wall : that a user might prefer doing themselves if they enjoy taking care of their house plants : is FALSE : 0.250 : 0.00072307",
+                "[-] activity : home decoration : is a fun activity : is TRUE : 0.750 : 0.00065753",
+                "[-] action : putting up framed art on the wall : is much easier if someone helps one with it : is TRUE : 0.750 : 0.00058444",
+                "[-] c : c : user is asleep : is TRUE : 1.000 : 0.00037328"
+            ],
+            "expl_output_based_MRR": 0.5,
+            "expl_gt_based": [
+                "[-] action : putting up framed art on the wall : is something one does only if they enjoy doing it : is TRUE : 0.650 : 0.00249949",
+                "[+] action : putting up framed art on the wall : is one which a user might be particular about if they are picky about how their living room looks : is TRUE : 0.950 : 0.00223269",
+                "[-] action : putting up framed art on the wall : is fun to do : is TRUE : 0.650 : 0.00158076",
+                "[-] action : putting up framed art on the wall : involves discretionary judgement : is TRUE : 0.750 : 0.00148342",
+                "[-] object : framed wall art : is a fragile object : is TRUE : 0.750 : 0.00141188",
+                "[-] action : putting up framed art on the wall : can cause major damage or harm if done imprecisely : is FALSE : 0.350 : 0.00115754",
+                "[-] action : putting up framed art on the wall : that a user might prefer doing themselves if they enjoy taking care of their house plants : is FALSE : 0.250 : 0.00072307",
+                "[-] activity : home decoration : is a fun activity : is TRUE : 0.750 : 0.00065753",
+                "[-] action : putting up framed art on the wall : is much easier if someone helps one with it : is TRUE : 0.750 : 0.00058444",
+                "[-] c : c : user is asleep : is TRUE : 1.000 : 0.00037328"
+            ],
+            "expl_gt_based_MRR": 0.5
+        },
+        "wiping_spilled_milk_on_the_kitchen_floor_guests_are_present_user_is_nearby_weekend_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "num_precedents": 7,
+            "result": "correct",
+            "confidence": 0.9989031553268433,
+            "explanation": [
+                [
+                    "activity",
+                    "cleaning a spill",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00001378",
+                "[-] c : c : weekend : is TRUE : 1.000 : 0.00001332",
+                "[-] c : c : guests are present : is TRUE : 1.000 : 0.00000839",
+                "[-] action : wiping spilled milk on the kitchen floor : requires precision : is FALSE : 0.250 : 0.00000489",
+                "[-] action : wiping spilled milk on the kitchen floor : that a user might prefer doing themselves if they enjoy making food : is FALSE : 0.250 : 0.00000381",
+                "[-] action : wiping spilled milk on the kitchen floor : is one which a user might be particular about if they are picky about how their living room looks : is FALSE : 0.450 : 0.00000274",
+                "[-] action : wiping spilled milk on the kitchen floor : requires strength : is FALSE : 0.250 : 0.00000225",
+                "[-] action : wiping spilled milk on the kitchen floor : can be easily fixed if done improperly : is TRUE : 0.950 : 0.00000203",
+                "[-] action : wiping spilled milk on the kitchen floor : is much easier if someone helps one with it : is FALSE : 0.350 : 0.00000186",
+                "[-] action : wiping spilled milk on the kitchen floor : one often forgets to do : is TRUE : 0.550 : 0.00000181"
+            ],
+            "expl_attn_based_MRR": 0.08333333333333333,
+            "expl_output_based": [
+                "[-] c : c : user is asleep : is FALSE : 0.000 : -0.03983822",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : -0.03517804",
+                "[-] action : wiping spilled milk on the kitchen floor : is one which a user might be particular about if they are picky about how their living room looks : is FALSE : 0.450 : -0.03322239",
+                "[-] action : wiping spilled milk on the kitchen floor : is much easier if someone helps one with it : is FALSE : 0.350 : -0.03187665",
+                "[-] action : wiping spilled milk on the kitchen floor : requires precision : is FALSE : 0.250 : -0.03112950",
+                "[-] action : wiping spilled milk on the kitchen floor : that a user might prefer doing themselves if they enjoy making food : is FALSE : 0.250 : -0.02897100",
+                "[-] action : wiping spilled milk on the kitchen floor : one often forgets to do : is TRUE : 0.550 : -0.02880753",
+                "[-] object : mop : can easily hurt someone without intending to : is FALSE : 0.250 : -0.02428658",
+                "[-] object : mop : can damage or break or burn something if used inaccurately : is FALSE : 0.250 : -0.02251876",
+                "[-] action : wiping spilled milk on the kitchen floor : is very tiring : is FALSE : 0.250 : -0.02100712"
+            ],
+            "expl_output_based_MRR": 0.027777777777777776,
+            "expl_gt_based": [
+                "[-] c : c : user is asleep : is FALSE : 0.000 : -0.03983822",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : -0.03517804",
+                "[-] action : wiping spilled milk on the kitchen floor : is one which a user might be particular about if they are picky about how their living room looks : is FALSE : 0.450 : -0.03322239",
+                "[-] action : wiping spilled milk on the kitchen floor : is much easier if someone helps one with it : is FALSE : 0.350 : -0.03187665",
+                "[-] action : wiping spilled milk on the kitchen floor : requires precision : is FALSE : 0.250 : -0.03112950",
+                "[-] action : wiping spilled milk on the kitchen floor : that a user might prefer doing themselves if they enjoy making food : is FALSE : 0.250 : -0.02897100",
+                "[-] action : wiping spilled milk on the kitchen floor : one often forgets to do : is TRUE : 0.550 : -0.02880753",
+                "[-] object : mop : can easily hurt someone without intending to : is FALSE : 0.250 : -0.02428658",
+                "[-] object : mop : can damage or break or burn something if used inaccurately : is FALSE : 0.250 : -0.02251876",
+                "[-] action : wiping spilled milk on the kitchen floor : is very tiring : is FALSE : 0.250 : -0.02100712"
+            ],
+            "expl_gt_based_MRR": 0.027777777777777776
+        },
+        "rinsing_ceramic_plates_and_bowls_in_the_sink_adverse_weather_conditions_early_in_the_morning_user_is_nearby_weekend_": {
+            "ground_truth": "do_now",
+            "prediction": "no_action",
+            "num_precedents": 7,
+            "result": "wrong",
+            "confidence": 0.9999186992645264,
+            "explanation": [
+                [
+                    "action",
+                    "rinsing ceramic plates and bowls in the sink",
+                    "is very tiring",
+                    true
+                ],
+                [
+                    "activity",
+                    "doing the dishes",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] action : rinsing ceramic plates and bowls in the sink : that a user might prefer doing themselves if they enjoy making food : is TRUE : 0.650 : 0.03860125",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00351798",
+                "[-] action : rinsing ceramic plates and bowls in the sink : makes a lot of noise : is FALSE : 0.450 : 0.00005608",
+                "[-] c : c : weekend : is TRUE : 1.000 : 0.00000047",
+                "[-] action : rinsing ceramic plates and bowls in the sink : requires precision : is FALSE : 0.350 : 0.00000037",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00000030",
+                "[-] action : rinsing ceramic plates and bowls in the sink : can cause major damage or harm if done imprecisely : is FALSE : 0.250 : 0.00000014",
+                "[-] object : plate : is a fragile object : is TRUE : 0.750 : 0.00000014",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000014",
+                "[-] object : bowl : is a fragile object : is TRUE : 0.650 : 0.00000005"
+            ],
+            "expl_attn_based_MRR": 0.05263157894736842,
+            "expl_output_based": [
+                "[-] action : rinsing ceramic plates and bowls in the sink : that a user might prefer doing themselves if they enjoy making food : is TRUE : 0.650 : -1.96180187"
+            ],
+            "expl_output_based_MRR": 0.05,
+            "expl_gt_based": [
+                "[-] action : rinsing ceramic plates and bowls in the sink : that a user might prefer doing themselves if they enjoy making food : is TRUE : 0.650 : -2.86835375"
+            ],
+            "expl_gt_based_MRR": 0.038461538461538464
+        },
+        "carrying_clothes_left_on_the_bed_to_a_laundry_hamper_guests_are_present_user_is_nearby_weekend_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "num_precedents": 7,
+            "result": "correct",
+            "confidence": 0.9989110231399536,
+            "explanation": [
+                [
+                    "activity",
+                    "laundry and ironing",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] c : c : weekend : is TRUE : 1.000 : 0.00000972",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00000934",
+                "[-] c : c : guests are present : is TRUE : 1.000 : 0.00000608",
+                "[-] action : carrying clothes left on the bed to a laundry hamper : is one which a user might be particular about if they are picky about how their living room looks : is TRUE : 0.750 : 0.00000288",
+                "[-] action : carrying clothes left on the bed to a laundry hamper : is something one does only if they enjoy doing it : is FALSE : 0.250 : 0.00000200",
+                "[-] action : carrying clothes left on the bed to a laundry hamper : requires strength : is FALSE : 0.250 : 0.00000161",
+                "[-] action : carrying clothes left on the bed to a laundry hamper : is fun to do : is FALSE : 0.250 : 0.00000150",
+                "[-] action : carrying clothes left on the bed to a laundry hamper : one often forgets to do : is TRUE : 0.750 : 0.00000148",
+                "[-] action : carrying clothes left on the bed to a laundry hamper : can be easily fixed if done improperly : is TRUE : 0.850 : 0.00000138",
+                "[+] activity : laundry and ironing : is a mundane chore : is TRUE : 0.950 : 0.00000134"
+            ],
+            "expl_attn_based_MRR": 0.1,
+            "expl_output_based": [
+                "[-] c : c : user is asleep : is FALSE : 0.000 : -0.01915086",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : -0.01860127",
+                "[+] activity : laundry and ironing : is a mundane chore : is TRUE : 0.950 : 0.00890273",
+                "[-] action : carrying clothes left on the bed to a laundry hamper : is something one does only if they enjoy doing it : is FALSE : 0.250 : -0.00825561",
+                "[-] object : laundry hamper : is a fragile object : is FALSE : 0.250 : -0.00819153",
+                "[-] action : carrying clothes left on the bed to a laundry hamper : is fun to do : is FALSE : 0.250 : -0.00777304",
+                "[-] action : carrying clothes left on the bed to a laundry hamper : is one which a user might be particular about if they are picky about how their living room looks : is TRUE : 0.750 : -0.00663503",
+                "[-] action : carrying clothes left on the bed to a laundry hamper : one often forgets to do : is TRUE : 0.750 : -0.00546826",
+                "[-] action : carrying clothes left on the bed to a laundry hamper : requires strength : is FALSE : 0.250 : -0.00538980",
+                "[-] action : carrying clothes left on the bed to a laundry hamper : requires precision : is FALSE : 0.150 : -0.00445509"
+            ],
+            "expl_output_based_MRR": 0.3333333333333333,
+            "expl_gt_based": [
+                "[-] c : c : user is asleep : is FALSE : 0.000 : -0.01915086",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : -0.01860127",
+                "[+] activity : laundry and ironing : is a mundane chore : is TRUE : 0.950 : 0.00890273",
+                "[-] action : carrying clothes left on the bed to a laundry hamper : is something one does only if they enjoy doing it : is FALSE : 0.250 : -0.00825561",
+                "[-] object : laundry hamper : is a fragile object : is FALSE : 0.250 : -0.00819153",
+                "[-] action : carrying clothes left on the bed to a laundry hamper : is fun to do : is FALSE : 0.250 : -0.00777304",
+                "[-] action : carrying clothes left on the bed to a laundry hamper : is one which a user might be particular about if they are picky about how their living room looks : is TRUE : 0.750 : -0.00663503",
+                "[-] action : carrying clothes left on the bed to a laundry hamper : one often forgets to do : is TRUE : 0.750 : -0.00546826",
+                "[-] action : carrying clothes left on the bed to a laundry hamper : requires strength : is FALSE : 0.250 : -0.00538980",
+                "[-] action : carrying clothes left on the bed to a laundry hamper : requires precision : is FALSE : 0.150 : -0.00445509"
+            ],
+            "expl_gt_based_MRR": 0.3333333333333333
+        },
+        "setting_up_wine_glasses_on_the_dining_table_adverse_weather_conditions_early_in_the_morning_user_is_injured_or_disabled_": {
+            "ground_truth": "do_now",
+            "prediction": "no_action",
+            "num_precedents": 7,
+            "result": "wrong",
+            "confidence": 0.9999523162841797,
+            "explanation": [
+                [
+                    "activity",
+                    "preparing for dinner",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] action : setting up wine glasses on the dining table : that a user might prefer doing themselves if they enjoy making food : is TRUE : 0.650 : 0.03868322",
+                "[-] action : setting up wine glasses on the dining table : requires precision : is TRUE : 0.650 : 0.01301627",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00047396",
+                "[-] action : setting up wine glasses on the dining table : is one which a user might be particular about if they are picky about how their living room looks : is TRUE : 0.750 : 0.00001342",
+                "[-] action : setting up wine glasses on the dining table : makes a lot of noise : is FALSE : 0.350 : 0.00000479",
+                "[-] object : wine glass : is a fragile object : is TRUE : 0.950 : 0.00000092",
+                "[-] action : setting up wine glasses on the dining table : involves discretionary judgement : is TRUE : 0.650 : 0.00000010",
+                "[-] action : setting up wine glasses on the dining table : can cause major damage or harm if done imprecisely : is FALSE : 0.250 : 0.00000008",
+                "[-] c : c : user is injured or disabled : is TRUE : 1.000 : 0.00000005",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000004"
+            ],
+            "expl_attn_based_MRR": 0.05555555555555555,
+            "expl_output_based": [
+                "[-] action : setting up wine glasses on the dining table : that a user might prefer doing themselves if they enjoy making food : is TRUE : 0.650 : -9795.86221941"
+            ],
+            "expl_output_based_MRR": 0.058823529411764705,
+            "expl_gt_based": [
+                "[-] action : setting up wine glasses on the dining table : that a user might prefer doing themselves if they enjoy making food : is TRUE : 0.650 : -9795.97968395"
+            ],
+            "expl_gt_based_MRR": 0.058823529411764705
+        },
+        "creating_a_needlepoint_stocking_adverse_weather_conditions_early_in_the_morning_user_is_asleep_user_is_nearby_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "num_precedents": 2,
+            "result": "correct",
+            "confidence": 0.9999561309814453,
+            "explanation": [
+                [
+                    "action",
+                    "creating a needlepoint stocking",
+                    "is something one does only if they enjoy doing it",
+                    true
+                ],
+                [
+                    "activity",
+                    "needlepoint",
+                    "is often done by people as a hobby",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] action : creating a needlepoint stocking : is one which a user might be particular about if they are picky about how their living room looks : is TRUE : 0.750 : 0.03684669",
+                "[-] action : creating a needlepoint stocking : requires precision : is TRUE : 0.950 : 0.00414505",
+                "[+] action : creating a needlepoint stocking : is something one does only if they enjoy doing it : is TRUE : 0.750 : 0.00035377",
+                "[-] c : c : user is asleep : is TRUE : 1.000 : 0.00004736",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00004053",
+                "[-] action : creating a needlepoint stocking : is fun to do : is TRUE : 0.750 : 0.00000490",
+                "[-] action : creating a needlepoint stocking : involves discretionary judgement : is TRUE : 0.950 : 0.00000421",
+                "[-] action : creating a needlepoint stocking : is much easier if someone helps one with it : is TRUE : 0.750 : 0.00000066",
+                "[-] action : creating a needlepoint stocking : one often forgets to do : is TRUE : 0.950 : 0.00000005",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00000001"
+            ],
+            "expl_attn_based_MRR": 0.3333333333333333,
+            "expl_output_based": [
+                "[-] action : creating a needlepoint stocking : is one which a user might be particular about if they are picky about how their living room looks : is TRUE : 0.750 : -2383.86158203"
+            ],
+            "expl_output_based_MRR": 0.5,
+            "expl_gt_based": [
+                "[-] action : creating a needlepoint stocking : is one which a user might be particular about if they are picky about how their living room looks : is TRUE : 0.750 : -2383.86158203"
+            ],
+            "expl_gt_based_MRR": 0.5
+        },
+        "unloading_plates_and_glasses_from_the_dishwasher_adverse_weather_conditions_early_in_the_morning_user_is_in_a_rush_user_is_nearby_": {
+            "ground_truth": "do_now",
+            "prediction": "no_action",
+            "num_precedents": 7,
+            "result": "wrong",
+            "confidence": 0.9999549388885498,
+            "explanation": [
+                [
+                    "action",
+                    "unloading plates and glasses from the dishwasher",
+                    "is very tiring",
+                    true
+                ],
+                [
+                    "activity",
+                    "organizing the kitchen",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] action : unloading plates and glasses from the dishwasher : requires precision : is TRUE : 0.650 : 0.02918119",
+                "[-] action : unloading plates and glasses from the dishwasher : is one which a user might be particular about if they are picky about how their living room looks : is TRUE : 0.750 : 0.00916080",
+                "[-] action : unloading plates and glasses from the dishwasher : makes a lot of noise : is TRUE : 0.650 : 0.00205240",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00198724",
+                "[-] action : unloading plates and glasses from the dishwasher : is much easier if someone helps one with it : is TRUE : 0.850 : 0.00035255",
+                "[-] action : unloading plates and glasses from the dishwasher : can cause major damage or harm if done imprecisely : is FALSE : 0.450 : 0.00014242",
+                "[-] action : unloading plates and glasses from the dishwasher : that a user might prefer doing themselves if they enjoy making food : is FALSE : 0.450 : 0.00005492",
+                "[-] object : glasses : is a fragile object : is TRUE : 0.950 : 0.00000603",
+                "[-] object : plates : is a fragile object : is TRUE : 0.850 : 0.00000198",
+                "[-] action : unloading plates and glasses from the dishwasher : involves discretionary judgement : is TRUE : 0.650 : 0.00000051"
+            ],
+            "expl_attn_based_MRR": 0.045454545454545456,
+            "expl_output_based": [
+                "[-] action : unloading plates and glasses from the dishwasher : requires precision : is TRUE : 0.650 : -0.76633658"
+            ],
+            "expl_output_based_MRR": 0.16666666666666666,
+            "expl_gt_based": [
+                "[-] action : unloading plates and glasses from the dishwasher : requires precision : is TRUE : 0.650 : -0.88470556"
+            ],
+            "expl_gt_based_MRR": 0.3333333333333333
+        },
+        "arranging_fridge_magnets_and_notes_on_the_fridge_door_adverse_weather_conditions_guests_are_present_user_is_in_a_rush_weekend_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "num_precedents": 5,
+            "result": "correct",
+            "confidence": 0.9997541308403015,
+            "explanation": [
+                [
+                    "action",
+                    "arranging fridge magnets and notes on the fridge door",
+                    "is one which a user might be particular about if they are picky about how their living room looks",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] action : arranging fridge magnets and notes on the fridge door : requires precision : is TRUE : 0.550 : 0.03189388",
+                "[-] action : arranging fridge magnets and notes on the fridge door : is something one does only if they enjoy doing it : is TRUE : 0.650 : 0.01079619",
+                "[-] action : arranging fridge magnets and notes on the fridge door : is fun to do : is TRUE : 0.650 : 0.00004763",
+                "[-] action : arranging fridge magnets and notes on the fridge door : involves discretionary judgement : is TRUE : 0.750 : 0.00004538",
+                "[-] c : c : weekend : is TRUE : 1.000 : 0.00000522",
+                "[-] c : c : guests are present : is TRUE : 1.000 : 0.00000247",
+                "[-] c : c : user is in a rush : is TRUE : 1.000 : 0.00000198",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000133",
+                "[-] action : arranging fridge magnets and notes on the fridge door : that a user might prefer doing themselves if they enjoy making food : is FALSE : 0.250 : 0.00000063",
+                "[-] activity : home decoration : is a fun activity : is TRUE : 0.750 : 0.00000037"
+            ],
+            "expl_attn_based_MRR": 0.07692307692307693,
+            "expl_output_based": [
+                "[-] action : arranging fridge magnets and notes on the fridge door : requires precision : is TRUE : 0.550 : -0.95723626"
+            ],
+            "expl_output_based_MRR": 0.3333333333333333,
+            "expl_gt_based": [
+                "[-] action : arranging fridge magnets and notes on the fridge door : requires precision : is TRUE : 0.550 : -0.95723626"
+            ],
+            "expl_gt_based_MRR": 0.3333333333333333
+        },
+        "call_the_doctor_to_discuss_test_results_and_schedule_a_follow_up_user_is_in_a_rush_user_is_injured_or_disabled_user_is_nearby_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "num_precedents": 4,
+            "result": "correct",
+            "confidence": 0.999962329864502,
+            "explanation": [
+                [
+                    "action",
+                    "call the doctor to discuss test results and schedule a follow up",
+                    "involves knowing or accessing private information that one might not want to disclose",
+                    true
+                ],
+                [
+                    "object",
+                    "medical files",
+                    "contains sensitive private information",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] action : call the doctor to discuss test results and schedule a follow up : requires precision : is TRUE : 0.850 : 0.04504304",
+                "[-] action : call the doctor to discuss test results and schedule a follow up : involves discretionary judgement : is TRUE : 0.850 : 0.00001054",
+                "[-] action : call the doctor to discuss test results and schedule a follow up : can cause major damage or harm if done imprecisely : is FALSE : 0.450 : 0.00000625",
+                "[+] action : call the doctor to discuss test results and schedule a follow up : involves knowing or accessing private information that one might not want to disclose : is TRUE : 0.950 : 0.00000008",
+                "[-] action : call the doctor to discuss test results and schedule a follow up : is much easier if someone helps one with it : is TRUE : 0.650 : 0.00000005",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00000004",
+                "[-] c : c : user is in a rush : is TRUE : 1.000 : 0.00000003",
+                "[-] c : c : user is injured or disabled : is TRUE : 1.000 : 0.00000002",
+                "[-] object : mobile phone : is a fragile object : is TRUE : 0.650 : 0.00000001",
+                "[-] action : call the doctor to discuss test results and schedule a follow up : can be easily fixed if done improperly : is TRUE : 0.550 : 0.00000000"
+            ],
+            "expl_attn_based_MRR": 0.25,
+            "expl_output_based": [
+                "[+] object : medical files : contains sensitive private information : is TRUE : 0.950 : 8263.51900400"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] object : medical files : contains sensitive private information : is TRUE : 0.950 : 8263.51900400"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "organizing_items_in_the_pantry_guests_are_present_user_is_injured_or_disabled_": {
+            "ground_truth": "do_now",
+            "prediction": "no_action",
+            "num_precedents": 7,
+            "result": "wrong",
+            "confidence": 0.999953031539917,
+            "explanation": [
+                [
+                    "action",
+                    "organizing items in the pantry",
+                    "is very tiring",
+                    true
+                ],
+                [
+                    "activity",
+                    "organizing the kitchen",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] action : organizing items in the pantry : that a user might prefer doing themselves if they enjoy making food : is TRUE : 0.750 : 0.04240215",
+                "[-] action : organizing items in the pantry : requires precision : is TRUE : 0.650 : 0.00514997",
+                "[-] action : organizing items in the pantry : involves discretionary judgement : is TRUE : 0.750 : 0.00000015",
+                "[-] action : organizing items in the pantry : makes a lot of noise : is FALSE : 0.250 : 0.00000013",
+                "[-] c : c : guests are present : is TRUE : 1.000 : 0.00000002",
+                "[-] action : organizing items in the pantry : is much easier if someone helps one with it : is TRUE : 0.650 : 0.00000002",
+                "[-] action : organizing items in the pantry : is fun to do : is TRUE : 0.550 : 0.00000001",
+                "[-] c : c : user is injured or disabled : is TRUE : 1.000 : 0.00000001",
+                "[-] action : organizing items in the pantry : can be easily fixed if done improperly : is TRUE : 0.950 : 0.00000000",
+                "[-] action : organizing items in the pantry : involves handling open containers filled with something which could spill : is FALSE : 0.450 : 0.00000000"
+            ],
+            "expl_attn_based_MRR": 0.07692307692307693,
+            "expl_output_based": [
+                "[-] action : organizing items in the pantry : that a user might prefer doing themselves if they enjoy making food : is TRUE : 0.750 : -11837.57484941"
+            ],
+            "expl_output_based_MRR": 0.2,
+            "expl_gt_based": [
+                "[-] action : organizing items in the pantry : that a user might prefer doing themselves if they enjoy making food : is TRUE : 0.750 : -11838.01499025"
+            ],
+            "expl_gt_based_MRR": 0.2
+        },
+        "serving_food_from_cooking_pots_into_plates_using_serving_scoops_adverse_weather_conditions_user_is_asleep_user_is_injured_or_disabled_weekend_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "num_precedents": 4,
+            "result": "correct",
+            "confidence": 0.9999567270278931,
+            "explanation": [
+                [
+                    "action",
+                    "serving food from cooking pots into plates using serving scoops",
+                    "involves handling open containers with something which takes work to replace if spilled",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] action : serving food from cooking pots into plates using serving scoops : that a user might prefer doing themselves if they enjoy making food : is TRUE : 0.750 : 0.03515148",
+                "[-] c : c : user is asleep : is TRUE : 1.000 : 0.00012201",
+                "[-] action : serving food from cooking pots into plates using serving scoops : makes a lot of noise : is FALSE : 0.350 : 0.00000090",
+                "[-] action : serving food from cooking pots into plates using serving scoops : is fun to do : is TRUE : 0.650 : 0.00000015",
+                "[+] action : serving food from cooking pots into plates using serving scoops : involves handling open containers with something which takes work to replace if spilled : is TRUE : 0.950 : 0.00000008",
+                "[-] action : serving food from cooking pots into plates using serving scoops : requires precision : is FALSE : 0.350 : 0.00000003",
+                "[-] c : c : weekend : is TRUE : 1.000 : 0.00000002",
+                "[-] action : serving food from cooking pots into plates using serving scoops : involves handling open containers filled with something which could spill : is TRUE : 0.950 : 0.00000001",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000001",
+                "[-] c : c : user is injured or disabled : is TRUE : 1.000 : 0.00000001"
+            ],
+            "expl_attn_based_MRR": 0.2,
+            "expl_output_based": [
+                "[+] action : serving food from cooking pots into plates using serving scoops : involves handling open containers with something which takes work to replace if spilled : is TRUE : 0.950 : 0.37870062",
+                "[-] action : serving food from cooking pots into plates using serving scoops : that a user might prefer doing themselves if they enjoy making food : is TRUE : 0.750 : -0.26438464"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] action : serving food from cooking pots into plates using serving scoops : involves handling open containers with something which takes work to replace if spilled : is TRUE : 0.950 : 0.37870062",
+                "[-] action : serving food from cooking pots into plates using serving scoops : that a user might prefer doing themselves if they enjoy making food : is TRUE : 0.750 : -0.26438464"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "mixing_cake_batter_to_bake_a_birthday_cake_user_is_injured_or_disabled_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "num_precedents": 8,
+            "result": "correct",
+            "confidence": 0.9999619722366333,
+            "explanation": [
+                [
+                    "action",
+                    "mixing cake batter to bake a birthday cake",
+                    "that a user might prefer doing themselves if they enjoy making food",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[+] action : mixing cake batter to bake a birthday cake : that a user might prefer doing themselves if they enjoy making food : is TRUE : 0.950 : 0.04413677",
+                "[-] action : mixing cake batter to bake a birthday cake : requires precision : is TRUE : 0.750 : 0.00698119",
+                "[-] action : mixing cake batter to bake a birthday cake : is fun to do : is TRUE : 0.750 : 0.00000753",
+                "[-] action : mixing cake batter to bake a birthday cake : makes a lot of noise : is FALSE : 0.350 : 0.00000015",
+                "[-] action : mixing cake batter to bake a birthday cake : involves handling open containers with something which takes work to replace if spilled : is TRUE : 0.850 : 0.00000001",
+                "[-] action : mixing cake batter to bake a birthday cake : can be easily fixed if done improperly : is FALSE : 0.250 : 0.00000000",
+                "[-] action : mixing cake batter to bake a birthday cake : involves discretionary judgement : is TRUE : 0.550 : 0.00000000",
+                "[-] action : mixing cake batter to bake a birthday cake : involves handling open containers filled with something which could spill : is TRUE : 0.950 : 0.00000000",
+                "[-] action : mixing cake batter to bake a birthday cake : is much easier if someone helps one with it : is FALSE : 0.350 : 0.00000000",
+                "[-] action : mixing cake batter to bake a birthday cake : is one which a user might be particular about if they are picky about how their living room looks : is FALSE : 0.250 : 0.00000000"
+            ],
+            "expl_attn_based_MRR": 1.0,
+            "expl_output_based": [
+                "[-] action : mixing cake batter to bake a birthday cake : requires precision : is TRUE : 0.750 : -0.03450486",
+                "[+] action : mixing cake batter to bake a birthday cake : that a user might prefer doing themselves if they enjoy making food : is TRUE : 0.950 : 0.00788500",
+                "[-] action : mixing cake batter to bake a birthday cake : is something one does only if they enjoy doing it : is FALSE : 0.350 : 0.00223419",
+                "[-] action : mixing cake batter to bake a birthday cake : involves discretionary judgement : is TRUE : 0.550 : 0.00222910",
+                "[-] object : mixing bowl : is a fragile object : is TRUE : 0.650 : 0.00222285",
+                "[-] action : mixing cake batter to bake a birthday cake : is fun to do : is TRUE : 0.750 : 0.00147225",
+                "[-] object : cake batter : is a fragile object : is FALSE : 0.250 : 0.00126072",
+                "[-] activity : baking : is a fun activity : is TRUE : 0.650 : 0.00119394",
+                "[-] action : mixing cake batter to bake a birthday cake : is much easier if someone helps one with it : is FALSE : 0.350 : 0.00094426",
+                "[-] action : mixing cake batter to bake a birthday cake : is one which a user might be particular about if they are picky about how their living room looks : is FALSE : 0.250 : 0.00049238"
+            ],
+            "expl_output_based_MRR": 0.5,
+            "expl_gt_based": [
+                "[-] action : mixing cake batter to bake a birthday cake : requires precision : is TRUE : 0.750 : -0.03450486",
+                "[+] action : mixing cake batter to bake a birthday cake : that a user might prefer doing themselves if they enjoy making food : is TRUE : 0.950 : 0.00788500",
+                "[-] action : mixing cake batter to bake a birthday cake : is something one does only if they enjoy doing it : is FALSE : 0.350 : 0.00223419",
+                "[-] action : mixing cake batter to bake a birthday cake : involves discretionary judgement : is TRUE : 0.550 : 0.00222910",
+                "[-] object : mixing bowl : is a fragile object : is TRUE : 0.650 : 0.00222285",
+                "[-] action : mixing cake batter to bake a birthday cake : is fun to do : is TRUE : 0.750 : 0.00147225",
+                "[-] object : cake batter : is a fragile object : is FALSE : 0.250 : 0.00126072",
+                "[-] activity : baking : is a fun activity : is TRUE : 0.650 : 0.00119394",
+                "[-] action : mixing cake batter to bake a birthday cake : is much easier if someone helps one with it : is FALSE : 0.350 : 0.00094426",
+                "[-] action : mixing cake batter to bake a birthday cake : is one which a user might be particular about if they are picky about how their living room looks : is FALSE : 0.250 : 0.00049238"
+            ],
+            "expl_gt_based_MRR": 0.5
+        },
+        "applying_butter_on_toast_for_preparing_breakfast_early_in_the_morning_guests_are_present_user_is_in_a_rush_user_is_nearby_weekend_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "num_precedents": 8,
+            "result": "correct",
+            "confidence": 0.9999594688415527,
+            "explanation": [
+                [
+                    "action",
+                    "applying butter on toast for preparing breakfast",
+                    "that a user might prefer doing themselves if they enjoy making food",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[+] action : applying butter on toast for preparing breakfast : that a user might prefer doing themselves if they enjoy making food : is TRUE : 0.850 : 0.04622661",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00018829",
+                "[-] c : c : weekend : is TRUE : 1.000 : 0.00000002",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00000002",
+                "[-] c : c : guests are present : is TRUE : 1.000 : 0.00000001",
+                "[-] c : c : user is in a rush : is TRUE : 1.000 : 0.00000001",
+                "[-] action : applying butter on toast for preparing breakfast : can be easily fixed if done improperly : is FALSE : 0.450 : 0.00000000",
+                "[-] action : applying butter on toast for preparing breakfast : involves discretionary judgement : is FALSE : 0.450 : 0.00000000",
+                "[-] action : applying butter on toast for preparing breakfast : is fun to do : is TRUE : 0.550 : 0.00000000",
+                "[-] action : applying butter on toast for preparing breakfast : is something one does only if they enjoy doing it : is FALSE : 0.450 : 0.00000000"
+            ],
+            "expl_attn_based_MRR": 1.0,
+            "expl_output_based": [
+                "[+] action : applying butter on toast for preparing breakfast : that a user might prefer doing themselves if they enjoy making food : is TRUE : 0.850 : 0.00105505",
+                "[-] action : applying butter on toast for preparing breakfast : is something one does only if they enjoy doing it : is FALSE : 0.450 : 0.00023927",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00022794",
+                "[-] action : applying butter on toast for preparing breakfast : is fun to do : is TRUE : 0.550 : 0.00018377",
+                "[-] action : applying butter on toast for preparing breakfast : involves discretionary judgement : is FALSE : 0.450 : 0.00016672",
+                "[-] action : applying butter on toast for preparing breakfast : requires precision : is FALSE : 0.250 : 0.00013797",
+                "[-] object : toast : is a fragile object : is FALSE : 0.350 : 0.00012756",
+                "[-] activity : preparing breakfast : is a fun activity : is TRUE : 0.550 : 0.00010928",
+                "[-] object : butter : is a fragile object : is FALSE : 0.250 : 0.00010236",
+                "[-] activity : preparing breakfast : is often done by people as a hobby : is TRUE : 0.550 : 0.00005214"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] action : applying butter on toast for preparing breakfast : that a user might prefer doing themselves if they enjoy making food : is TRUE : 0.850 : 0.00105505",
+                "[-] action : applying butter on toast for preparing breakfast : is something one does only if they enjoy doing it : is FALSE : 0.450 : 0.00023927",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00022794",
+                "[-] action : applying butter on toast for preparing breakfast : is fun to do : is TRUE : 0.550 : 0.00018377",
+                "[-] action : applying butter on toast for preparing breakfast : involves discretionary judgement : is FALSE : 0.450 : 0.00016672",
+                "[-] action : applying butter on toast for preparing breakfast : requires precision : is FALSE : 0.250 : 0.00013797",
+                "[-] object : toast : is a fragile object : is FALSE : 0.350 : 0.00012756",
+                "[-] activity : preparing breakfast : is a fun activity : is TRUE : 0.550 : 0.00010928",
+                "[-] object : butter : is a fragile object : is FALSE : 0.250 : 0.00010236",
+                "[-] activity : preparing breakfast : is often done by people as a hobby : is TRUE : 0.550 : 0.00005214"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "adding_potting_soil_to_indoor_plant_pots_early_in_the_morning_user_is_asleep_user_is_injured_or_disabled_user_is_nearby_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "num_precedents": 4,
+            "result": "correct",
+            "confidence": 0.9999620914459229,
+            "explanation": [
+                [
+                    "action",
+                    "adding potting soil to indoor plant pots",
+                    "that a user might prefer doing themselves if they enjoy taking care of their house plants",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[+] action : adding potting soil to indoor plant pots : that a user might prefer doing themselves if they enjoy taking care of their house plants : is TRUE : 0.950 : 0.02141995",
+                "[-] action : adding potting soil to indoor plant pots : is one which a user might be particular about if they are picky about how their living room looks : is TRUE : 0.950 : 0.02087588",
+                "[-] c : c : user is asleep : is TRUE : 1.000 : 0.00000890",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00000797",
+                "[-] action : adding potting soil to indoor plant pots : requires precision : is FALSE : 0.450 : 0.00000023",
+                "[-] action : adding potting soil to indoor plant pots : is fun to do : is TRUE : 0.650 : 0.00000003",
+                "[-] action : adding potting soil to indoor plant pots : involves handling open containers filled with something which could spill : is TRUE : 0.950 : 0.00000001",
+                "[-] action : adding potting soil to indoor plant pots : can be easily fixed if done improperly : is TRUE : 0.650 : 0.00000000",
+                "[-] action : adding potting soil to indoor plant pots : can cause major damage or harm if done imprecisely : is FALSE : 0.250 : 0.00000000",
+                "[-] action : adding potting soil to indoor plant pots : involves discretionary judgement : is TRUE : 0.650 : 0.00000000"
+            ],
+            "expl_attn_based_MRR": 1.0,
+            "expl_output_based": [
+                "[-] action : adding potting soil to indoor plant pots : is something one does only if they enjoy doing it : is FALSE : 0.450 : -0.04355843",
+                "[-] action : adding potting soil to indoor plant pots : requires precision : is FALSE : 0.450 : -0.03769143",
+                "[-] action : adding potting soil to indoor plant pots : involves discretionary judgement : is TRUE : 0.650 : -0.02953051",
+                "[-] action : adding potting soil to indoor plant pots : is fun to do : is TRUE : 0.650 : -0.02683712",
+                "[-] object : house plants : is a fragile object : is TRUE : 0.650 : -0.02558379",
+                "[-] object : indoor plant pots : is a fragile object : is TRUE : 0.650 : -0.02558379",
+                "[-] object : potting soil bag : is a fragile object : is FALSE : 0.250 : -0.01526179",
+                "[-] action : adding potting soil to indoor plant pots : can cause major damage or harm if done imprecisely : is FALSE : 0.250 : -0.01458472",
+                "[+] action : adding potting soil to indoor plant pots : that a user might prefer doing themselves if they enjoy taking care of their house plants : is TRUE : 0.950 : 0.01230723",
+                "[-] activity : maintaining house plants : is a fun activity : is TRUE : 0.650 : -0.01009370"
+            ],
+            "expl_output_based_MRR": 0.1111111111111111,
+            "expl_gt_based": [
+                "[-] action : adding potting soil to indoor plant pots : is something one does only if they enjoy doing it : is FALSE : 0.450 : -0.04355843",
+                "[-] action : adding potting soil to indoor plant pots : requires precision : is FALSE : 0.450 : -0.03769143",
+                "[-] action : adding potting soil to indoor plant pots : involves discretionary judgement : is TRUE : 0.650 : -0.02953051",
+                "[-] action : adding potting soil to indoor plant pots : is fun to do : is TRUE : 0.650 : -0.02683712",
+                "[-] object : house plants : is a fragile object : is TRUE : 0.650 : -0.02558379",
+                "[-] object : indoor plant pots : is a fragile object : is TRUE : 0.650 : -0.02558379",
+                "[-] object : potting soil bag : is a fragile object : is FALSE : 0.250 : -0.01526179",
+                "[-] action : adding potting soil to indoor plant pots : can cause major damage or harm if done imprecisely : is FALSE : 0.250 : -0.01458472",
+                "[+] action : adding potting soil to indoor plant pots : that a user might prefer doing themselves if they enjoy taking care of their house plants : is TRUE : 0.950 : 0.01230723",
+                "[-] activity : maintaining house plants : is a fun activity : is TRUE : 0.650 : -0.01009370"
+            ],
+            "expl_gt_based_MRR": 0.1111111111111111
+        },
+        "garnishing_food_with_salt_and_spices_adverse_weather_conditions_user_is_asleep_user_is_nearby_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "num_precedents": 8,
+            "result": "correct",
+            "confidence": 0.9999624490737915,
+            "explanation": [
+                [
+                    "action",
+                    "garnishing food with salt and spices",
+                    "that a user might prefer doing themselves if they enjoy making food",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[+] action : garnishing food with salt and spices : that a user might prefer doing themselves if they enjoy making food : is TRUE : 0.850 : 0.04110270",
+                "[-] action : garnishing food with salt and spices : requires precision : is TRUE : 0.750 : 0.00360519",
+                "[-] c : c : user is asleep : is TRUE : 1.000 : 0.00009961",
+                "[-] action : garnishing food with salt and spices : is fun to do : is TRUE : 0.750 : 0.00000986",
+                "[-] action : garnishing food with salt and spices : involves discretionary judgement : is TRUE : 0.850 : 0.00000185",
+                "[-] action : garnishing food with salt and spices : involves handling open containers filled with something which could spill : is TRUE : 0.950 : 0.00000010",
+                "[-] action : garnishing food with salt and spices : can cause major damage or harm if done imprecisely : is FALSE : 0.250 : 0.00000002",
+                "[-] action : garnishing food with salt and spices : is something one does only if they enjoy doing it : is FALSE : 0.450 : 0.00000002",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00000002",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000001"
+            ],
+            "expl_attn_based_MRR": 1.0,
+            "expl_output_based": [
+                "[-] action : garnishing food with salt and spices : requires precision : is TRUE : 0.750 : -0.01996882",
+                "[+] action : garnishing food with salt and spices : that a user might prefer doing themselves if they enjoy making food : is TRUE : 0.850 : 0.00896395",
+                "[-] action : garnishing food with salt and spices : is something one does only if they enjoy doing it : is FALSE : 0.450 : 0.00274595",
+                "[-] object : salt shaker : is a fragile object : is TRUE : 0.650 : 0.00210090",
+                "[-] object : spice shakers : is a fragile object : is TRUE : 0.650 : 0.00210090",
+                "[-] action : garnishing food with salt and spices : is fun to do : is TRUE : 0.750 : 0.00144816",
+                "[-] action : garnishing food with salt and spices : involves discretionary judgement : is TRUE : 0.850 : 0.00130578",
+                "[-] object : cooked food : is a fragile object : is FALSE : 0.250 : 0.00126010",
+                "[-] action : garnishing food with salt and spices : can cause major damage or harm if done imprecisely : is FALSE : 0.250 : 0.00119170",
+                "[-] activity : preparing a meal : is a fun activity : is TRUE : 0.650 : 0.00112745"
+            ],
+            "expl_output_based_MRR": 0.5,
+            "expl_gt_based": [
+                "[-] action : garnishing food with salt and spices : requires precision : is TRUE : 0.750 : -0.01996882",
+                "[+] action : garnishing food with salt and spices : that a user might prefer doing themselves if they enjoy making food : is TRUE : 0.850 : 0.00896395",
+                "[-] action : garnishing food with salt and spices : is something one does only if they enjoy doing it : is FALSE : 0.450 : 0.00274595",
+                "[-] object : salt shaker : is a fragile object : is TRUE : 0.650 : 0.00210090",
+                "[-] object : spice shakers : is a fragile object : is TRUE : 0.650 : 0.00210090",
+                "[-] action : garnishing food with salt and spices : is fun to do : is TRUE : 0.750 : 0.00144816",
+                "[-] action : garnishing food with salt and spices : involves discretionary judgement : is TRUE : 0.850 : 0.00130578",
+                "[-] object : cooked food : is a fragile object : is FALSE : 0.250 : 0.00126010",
+                "[-] action : garnishing food with salt and spices : can cause major damage or harm if done imprecisely : is FALSE : 0.250 : 0.00119170",
+                "[-] activity : preparing a meal : is a fun activity : is TRUE : 0.650 : 0.00112745"
+            ],
+            "expl_gt_based_MRR": 0.5
+        },
+        "serving_a_jug_of_juice_at_the_dining_table_adverse_weather_conditions_guests_are_present_user_is_nearby_": {
+            "ground_truth": "no_action",
+            "prediction": "do_now",
+            "num_precedents": 4,
+            "result": "wrong",
+            "confidence": 0.9988560676574707,
+            "explanation": [
+                [
+                    "action",
+                    "serving a jug of juice at the dining table",
+                    "involves handling open containers with something which takes work to replace if spilled",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] action : serving a jug of juice at the dining table : requires precision : is TRUE : 0.550 : 0.00578372",
+                "[-] action : serving a jug of juice at the dining table : that a user might prefer doing themselves if they enjoy making food : is TRUE : 0.550 : 0.00008408",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00000787",
+                "[-] c : c : guests are present : is TRUE : 1.000 : 0.00000560",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000373",
+                "[-] action : serving a jug of juice at the dining table : can cause major damage or harm if done imprecisely : is FALSE : 0.250 : 0.00000327",
+                "[-] object : jug : is a fragile object : is TRUE : 0.650 : 0.00000128",
+                "[-] action : serving a jug of juice at the dining table : involves handling open containers filled with something which could spill : is TRUE : 0.950 : 0.00000122",
+                "[-] action : serving a jug of juice at the dining table : is fun to do : is FALSE : 0.450 : 0.00000084",
+                "[-] action : serving a jug of juice at the dining table : is something one does only if they enjoy doing it : is FALSE : 0.250 : 0.00000078"
+            ],
+            "expl_attn_based_MRR": 0.05263157894736842,
+            "expl_output_based": [
+                "[-] action : serving a jug of juice at the dining table : requires precision : is TRUE : 0.550 : -0.21829907",
+                "[-] object : jug : is a fragile object : is TRUE : 0.650 : -0.03224224",
+                "[-] action : serving a jug of juice at the dining table : that a user might prefer doing themselves if they enjoy making food : is TRUE : 0.550 : -0.03114661",
+                "[-] action : serving a jug of juice at the dining table : is fun to do : is FALSE : 0.450 : -0.03079198",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : -0.02840035",
+                "[-] action : serving a jug of juice at the dining table : is something one does only if they enjoy doing it : is FALSE : 0.250 : -0.02698685",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : -0.02607912",
+                "[-] activity : serving food : is a fun activity : is TRUE : 0.550 : -0.02419878",
+                "[-] action : serving a jug of juice at the dining table : involves discretionary judgement : is FALSE : 0.250 : -0.02185328",
+                "[-] action : serving a jug of juice at the dining table : can cause major damage or harm if done imprecisely : is FALSE : 0.250 : -0.02048923"
+            ],
+            "expl_output_based_MRR": 0.027777777777777776,
+            "expl_gt_based": [
+                "[-] action : serving a jug of juice at the dining table : requires precision : is TRUE : 0.550 : 0.40740362",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : -0.04081044",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : -0.03297396",
+                "[-] action : serving a jug of juice at the dining table : is something one does only if they enjoy doing it : is FALSE : 0.250 : 0.02218100"
+            ],
+            "expl_gt_based_MRR": 0.0625
+        },
+        "spraying_bug_spray_on_your_arms_adverse_weather_conditions_early_in_the_morning_guests_are_present_user_is_in_a_rush_user_is_nearby_": {
+            "ground_truth": "remind",
+            "prediction": "do_later",
+            "num_precedents": 13,
+            "result": "wrong",
+            "confidence": 0.999762237071991,
+            "explanation": [
+                [
+                    "action",
+                    "spraying bug spray on your arms",
+                    "involves close contact with another human",
+                    true
+                ],
+                [
+                    "action",
+                    "spraying bug spray on your arms",
+                    "one often forgets to do",
+                    true
+                ],
+                [
+                    "user is in a rush",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.04304066",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00000358",
+                "[+] c : c : user is in a rush : is TRUE : 1.000 : 0.00000239",
+                "[-] c : c : guests are present : is TRUE : 1.000 : 0.00000218",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000157",
+                "[-] action : spraying bug spray on your arms : can cause major damage or harm if done imprecisely : is FALSE : 0.250 : 0.00000097",
+                "[-] action : spraying bug spray on your arms : requires precision : is FALSE : 0.250 : 0.00000081",
+                "[-] activity : personal care : is a fun activity : is TRUE : 0.650 : 0.00000019",
+                "[-] action : spraying bug spray on your arms : involves discretionary judgement : is FALSE : 0.450 : 0.00000019",
+                "[-] action : spraying bug spray on your arms : is one which a user might be particular about if they are picky about how their living room looks : is FALSE : 0.250 : 0.00000017"
+            ],
+            "expl_attn_based_MRR": 0.3333333333333333,
+            "expl_output_based": [
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.15911603",
+                "[+] c : c : user is in a rush : is TRUE : 1.000 : 0.06837332",
+                "[+] action : spraying bug spray on your arms : one often forgets to do : is TRUE : 0.650 : 0.04798239",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : -0.02373698",
+                "[-] activity : personal care : is a mundane chore : is FALSE : 0.450 : -0.02054235",
+                "[-] object : bug spray bottle : can damage or break or burn something if used inaccurately : is TRUE : 0.650 : -0.02029470",
+                "[-] object : bug spray bottle : can easily hurt someone without intending to : is TRUE : 0.550 : -0.01954306",
+                "[-] activity : personal care : is often done by people as a hobby : is TRUE : 0.550 : -0.01898154",
+                "[-] action : spraying bug spray on your arms : involves handling open containers filled with something which could spill : is TRUE : 0.650 : -0.01848872",
+                "[-] action : spraying bug spray on your arms : can be easily fixed if done improperly : is FALSE : 0.450 : -0.01834525"
+            ],
+            "expl_output_based_MRR": 0.5,
+            "expl_gt_based": [
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.17951451",
+                "[+] c : c : user is in a rush : is TRUE : 1.000 : 0.06939302",
+                "[+] action : spraying bug spray on your arms : one often forgets to do : is TRUE : 0.650 : 0.05033149",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : -0.03893059",
+                "[-] action : spraying bug spray on your arms : requires precision : is FALSE : 0.250 : 0.02195875",
+                "[-] action : spraying bug spray on your arms : involves discretionary judgement : is FALSE : 0.450 : 0.02058553",
+                "[-] activity : personal care : is a mundane chore : is FALSE : 0.450 : -0.01816422",
+                "[-] object : bug spray bottle : can damage or break or burn something if used inaccurately : is TRUE : 0.650 : -0.01710019",
+                "[-] action : spraying bug spray on your arms : involves handling open containers filled with something which could spill : is TRUE : 0.650 : -0.01622321",
+                "[-] action : spraying bug spray on your arms : can be easily fixed if done improperly : is FALSE : 0.450 : -0.01558233"
+            ],
+            "expl_gt_based_MRR": 0.5
+        },
+        "spraying_bug_spray_on_your_arms_adverse_weather_conditions_user_is_nearby_weekend_": {
+            "ground_truth": "no_action",
+            "prediction": "do_now",
+            "num_precedents": 13,
+            "result": "wrong",
+            "confidence": 0.9988611936569214,
+            "explanation": [
+                [
+                    "action",
+                    "spraying bug spray on your arms",
+                    "involves close contact with another human",
+                    true
+                ],
+                [
+                    "user is in a rush",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] c : c : weekend : is TRUE : 1.000 : 0.00001038",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00000890",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000419",
+                "[-] action : spraying bug spray on your arms : can cause major damage or harm if done imprecisely : is FALSE : 0.250 : 0.00000284",
+                "[-] action : spraying bug spray on your arms : requires precision : is FALSE : 0.250 : 0.00000261",
+                "[-] action : spraying bug spray on your arms : is one which a user might be particular about if they are picky about how their living room looks : is FALSE : 0.250 : 0.00000088",
+                "[-] activity : personal care : is a fun activity : is TRUE : 0.650 : 0.00000087",
+                "[-] action : spraying bug spray on your arms : involves discretionary judgement : is FALSE : 0.450 : 0.00000085",
+                "[-] action : spraying bug spray on your arms : is fun to do : is FALSE : 0.250 : 0.00000074",
+                "[-] action : spraying bug spray on your arms : is much easier if someone helps one with it : is FALSE : 0.450 : 0.00000073"
+            ],
+            "expl_attn_based_MRR": 0,
+            "expl_output_based": [
+                "[-] c : c : user is asleep : is FALSE : 0.000 : -0.06827272",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : -0.06679550",
+                "[-] action : spraying bug spray on your arms : involves discretionary judgement : is FALSE : 0.450 : -0.04241574",
+                "[-] activity : personal care : is a fun activity : is TRUE : 0.650 : -0.03964475",
+                "[-] action : spraying bug spray on your arms : is much easier if someone helps one with it : is FALSE : 0.450 : -0.03817222",
+                "[-] object : bug spray bottle : can easily hurt someone without intending to : is TRUE : 0.550 : -0.03768673",
+                "[-] activity : personal care : is often done by people as a hobby : is TRUE : 0.550 : -0.03560027",
+                "[-] object : bug spray bottle : can damage or break or burn something if used inaccurately : is TRUE : 0.650 : -0.03231247",
+                "[-] object : bug spray bottle : is a fragile object : is FALSE : 0.250 : -0.03062794",
+                "[-] action : spraying bug spray on your arms : requires precision : is FALSE : 0.250 : -0.03057651"
+            ],
+            "expl_output_based_MRR": 0.03225806451612903,
+            "expl_gt_based": [
+                "[-] c : c : user is asleep : is FALSE : 0.000 : -0.09467869",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : -0.07607957",
+                "[-] action : spraying bug spray on your arms : involves discretionary judgement : is FALSE : 0.450 : -0.04344334",
+                "[-] activity : personal care : is a fun activity : is TRUE : 0.650 : -0.04058852",
+                "[-] action : spraying bug spray on your arms : is much easier if someone helps one with it : is FALSE : 0.450 : -0.03917735",
+                "[-] object : bug spray bottle : can easily hurt someone without intending to : is TRUE : 0.550 : -0.03871337",
+                "[-] activity : personal care : is often done by people as a hobby : is TRUE : 0.550 : -0.03660012",
+                "[-] object : bug spray bottle : can damage or break or burn something if used inaccurately : is TRUE : 0.650 : -0.03320257",
+                "[-] object : bug spray bottle : is a fragile object : is FALSE : 0.250 : -0.03142409",
+                "[-] action : spraying bug spray on your arms : requires precision : is FALSE : 0.250 : -0.03132826"
+            ],
+            "expl_gt_based_MRR": 0.03225806451612903
+        },
+        "drilling_holes_in_the_wall_to_put_up_a_coat_hook_adverse_weather_conditions_early_in_the_morning_user_is_injured_or_disabled_user_is_nearby_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "num_precedents": 5,
+            "result": "correct",
+            "confidence": 0.9999624490737915,
+            "explanation": [
+                [
+                    "action",
+                    "drilling holes in the wall to put up a coat hook",
+                    "can cause major damage or harm if done imprecisely",
+                    true
+                ],
+                [
+                    "object",
+                    "electric drill",
+                    "can easily hurt someone without intending to",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] action : drilling holes in the wall to put up a coat hook : requires precision : is TRUE : 0.850 : 0.03443914",
+                "[-] action : drilling holes in the wall to put up a coat hook : makes a lot of noise : is TRUE : 0.850 : 0.00063722",
+                "[+] action : drilling holes in the wall to put up a coat hook : can cause major damage or harm if done imprecisely : is TRUE : 0.550 : 0.00062786",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00023340",
+                "[-] action : drilling holes in the wall to put up a coat hook : is one which a user might be particular about if they are picky about how their living room looks : is TRUE : 0.750 : 0.00000074",
+                "[-] action : drilling holes in the wall to put up a coat hook : requires strength : is TRUE : 0.650 : 0.00000019",
+                "[-] action : drilling holes in the wall to put up a coat hook : involves discretionary judgement : is TRUE : 0.650 : 0.00000004",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00000004",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000002",
+                "[-] c : c : user is injured or disabled : is TRUE : 1.000 : 0.00000002"
+            ],
+            "expl_attn_based_MRR": 0.3333333333333333,
+            "expl_output_based": [
+                "[+] object : electric drill : can easily hurt someone without intending to : is TRUE : 0.850 : 3955.66870541"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] object : electric drill : can easily hurt someone without intending to : is TRUE : 0.850 : 3955.66870541"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "fixing_the_comforter_in_the_morning_user_is_asleep_": {
+            "ground_truth": "do_now",
+            "prediction": "do_later",
+            "num_precedents": 7,
+            "result": "wrong",
+            "confidence": 0.9997414946556091,
+            "explanation": [
+                [
+                    "activity",
+                    "making the bed",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] c : c : user is asleep : is TRUE : 1.000 : 0.06713265",
+                "[-] action : fixing the comforter in the morning : is much easier if someone helps one with it : is TRUE : 0.750 : 0.00000208",
+                "[-] action : fixing the comforter in the morning : requires precision : is FALSE : 0.250 : 0.00000134",
+                "[-] action : fixing the comforter in the morning : is something one does only if they enjoy doing it : is FALSE : 0.350 : 0.00000075",
+                "[-] action : fixing the comforter in the morning : is one which a user might be particular about if they are picky about how their living room looks : is FALSE : 0.450 : 0.00000071",
+                "[-] action : fixing the comforter in the morning : is fun to do : is FALSE : 0.450 : 0.00000062",
+                "[-] action : fixing the comforter in the morning : can be easily fixed if done improperly : is TRUE : 0.950 : 0.00000059",
+                "[-] action : fixing the comforter in the morning : requires strength : is FALSE : 0.350 : 0.00000059",
+                "[-] action : fixing the comforter in the morning : involves discretionary judgement : is FALSE : 0.250 : 0.00000045",
+                "[-] action : fixing the comforter in the morning : one often forgets to do : is TRUE : 0.650 : 0.00000045"
+            ],
+            "expl_attn_based_MRR": 0.08333333333333333,
+            "expl_output_based": [
+                "[-] action : fixing the comforter in the morning : is fun to do : is FALSE : 0.450 : -0.01894292",
+                "[-] action : fixing the comforter in the morning : is something one does only if they enjoy doing it : is FALSE : 0.350 : -0.01766262",
+                "[-] c : c : user is asleep : is TRUE : 1.000 : 0.01611558",
+                "[-] action : fixing the comforter in the morning : requires precision : is FALSE : 0.250 : -0.01416372",
+                "[-] action : fixing the comforter in the morning : is one which a user might be particular about if they are picky about how their living room looks : is FALSE : 0.450 : -0.01390686",
+                "[-] action : fixing the comforter in the morning : is much easier if someone helps one with it : is TRUE : 0.750 : -0.01290742",
+                "[-] action : fixing the comforter in the morning : involves discretionary judgement : is FALSE : 0.250 : -0.01278933",
+                "[-] activity : making the bed : is a fun activity : is FALSE : 0.250 : -0.01172649",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : -0.01085379",
+                "[-] action : fixing the comforter in the morning : one often forgets to do : is TRUE : 0.650 : -0.01041859"
+            ],
+            "expl_output_based_MRR": 0.07692307692307693,
+            "expl_gt_based": [
+                "[-] action : fixing the comforter in the morning : is fun to do : is FALSE : 0.450 : -0.02917216",
+                "[-] action : fixing the comforter in the morning : is something one does only if they enjoy doing it : is FALSE : 0.350 : -0.02896256",
+                "[-] action : fixing the comforter in the morning : requires precision : is FALSE : 0.250 : -0.02240496",
+                "[-] action : fixing the comforter in the morning : is much easier if someone helps one with it : is TRUE : 0.750 : -0.01914942",
+                "[-] action : fixing the comforter in the morning : involves discretionary judgement : is FALSE : 0.250 : -0.01854690",
+                "[-] action : fixing the comforter in the morning : is one which a user might be particular about if they are picky about how their living room looks : is FALSE : 0.450 : -0.01638098",
+                "[-] activity : making the bed : is a fun activity : is FALSE : 0.250 : -0.01526145",
+                "[-] action : fixing the comforter in the morning : one often forgets to do : is TRUE : 0.650 : -0.01076950",
+                "[-] object : bed : is a fragile object : is FALSE : 0.150 : -0.01019358",
+                "[-] action : fixing the comforter in the morning : requires strength : is FALSE : 0.350 : -0.00932566"
+            ],
+            "expl_gt_based_MRR": 0.058823529411764705
+        },
+        "changing_bedsheets_early_in_the_morning_guests_are_present_user_is_in_a_rush_user_is_injured_or_disabled_": {
+            "ground_truth": "do_now",
+            "prediction": "do_later",
+            "num_precedents": 7,
+            "result": "wrong",
+            "confidence": 0.9997556805610657,
+            "explanation": [
+                [
+                    "action",
+                    "changing bedsheets",
+                    "is very tiring",
+                    true
+                ],
+                [
+                    "activity",
+                    "making the bed",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.04936875",
+                "[-] action : changing bedsheets : requires precision : is FALSE : 0.450 : 0.00000374",
+                "[-] c : c : user is in a rush : is TRUE : 1.000 : 0.00000193",
+                "[-] c : c : guests are present : is TRUE : 1.000 : 0.00000184",
+                "[-] c : c : user is injured or disabled : is TRUE : 1.000 : 0.00000096",
+                "[-] action : changing bedsheets : is much easier if someone helps one with it : is TRUE : 0.650 : 0.00000058",
+                "[-] action : changing bedsheets : requires strength : is FALSE : 0.450 : 0.00000038",
+                "[-] action : changing bedsheets : can be easily fixed if done improperly : is TRUE : 0.950 : 0.00000032",
+                "[+] action : changing bedsheets : is very tiring : is TRUE : 0.550 : 0.00000026",
+                "[-] action : changing bedsheets : is fun to do : is FALSE : 0.250 : 0.00000026"
+            ],
+            "expl_attn_based_MRR": 0.1111111111111111,
+            "expl_output_based": [
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.07006770",
+                "[+] action : changing bedsheets : is very tiring : is TRUE : 0.550 : 0.06271531",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : -0.01510438",
+                "[-] action : changing bedsheets : is much easier if someone helps one with it : is TRUE : 0.650 : -0.01335983",
+                "[-] action : changing bedsheets : requires strength : is FALSE : 0.450 : -0.01268104",
+                "[-] action : changing bedsheets : one often forgets to do : is TRUE : 0.650 : -0.01192698",
+                "[-] action : changing bedsheets : requires precision : is FALSE : 0.450 : -0.01071315",
+                "[-] activity : making the bed : is a fun activity : is FALSE : 0.250 : -0.01038296",
+                "[-] action : changing bedsheets : involves discretionary judgement : is FALSE : 0.350 : -0.01026558",
+                "[-] action : changing bedsheets : is fun to do : is FALSE : 0.250 : -0.00877308"
+            ],
+            "expl_output_based_MRR": 0.5,
+            "expl_gt_based": [
+                "[+] action : changing bedsheets : is very tiring : is TRUE : 0.550 : 0.06045260",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.03213982",
+                "[-] action : changing bedsheets : requires precision : is FALSE : 0.450 : -0.02237293",
+                "[-] action : changing bedsheets : is much easier if someone helps one with it : is TRUE : 0.650 : -0.01946431",
+                "[-] action : changing bedsheets : involves discretionary judgement : is FALSE : 0.350 : -0.01723237",
+                "[-] action : changing bedsheets : requires strength : is FALSE : 0.450 : -0.01456402",
+                "[-] activity : making the bed : is a fun activity : is FALSE : 0.250 : -0.01424309",
+                "[-] action : changing bedsheets : is fun to do : is FALSE : 0.250 : -0.01408064",
+                "[-] action : changing bedsheets : one often forgets to do : is TRUE : 0.650 : -0.01377022",
+                "[-] object : bed : is a fragile object : is FALSE : 0.150 : -0.00800355"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "taking_jewellery_out_of_the_lock-box_early_in_the_morning_guests_are_present_user_is_injured_or_disabled_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "num_precedents": 3,
+            "result": "correct",
+            "confidence": 0.9998612403869629,
+            "explanation": [
+                [
+                    "action",
+                    "taking jewellery out of the lock-box",
+                    "involves knowing or accessing private information that one might not want to disclose",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] action : taking jewellery out of the lock-box : requires precision : is TRUE : 0.550 : 0.03108748",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.02372716",
+                "[-] action : taking jewellery out of the lock-box : is fun to do : is TRUE : 0.650 : 0.00004581",
+                "[-] action : taking jewellery out of the lock-box : makes a lot of noise : is FALSE : 0.250 : 0.00003778",
+                "[-] c : c : guests are present : is TRUE : 1.000 : 0.00000268",
+                "[-] object : jewellery : is a fragile object : is TRUE : 0.750 : 0.00000181",
+                "[-] c : c : user is injured or disabled : is TRUE : 1.000 : 0.00000136",
+                "[-] action : taking jewellery out of the lock-box : is something one does only if they enjoy doing it : is FALSE : 0.450 : 0.00000116",
+                "[-] action : taking jewellery out of the lock-box : involves handling open containers with something which takes work to replace if spilled : is TRUE : 0.650 : 0.00000022",
+                "[+] action : taking jewellery out of the lock-box : involves knowing or accessing private information that one might not want to disclose : is TRUE : 0.650 : 0.00000018"
+            ],
+            "expl_attn_based_MRR": 0.1,
+            "expl_output_based": [
+                "[-] action : taking jewellery out of the lock-box : requires precision : is TRUE : 0.550 : -0.82800156"
+            ],
+            "expl_output_based_MRR": 0.5,
+            "expl_gt_based": [
+                "[-] action : taking jewellery out of the lock-box : requires precision : is TRUE : 0.550 : -0.82800156"
+            ],
+            "expl_gt_based_MRR": 0.5
+        },
+        "putting_a_bottle_of_water_by_the_bed_early_in_the_morning_user_is_asleep_weekend_": {
+            "ground_truth": "do_now",
+            "prediction": "do_later",
+            "num_precedents": 7,
+            "result": "wrong",
+            "confidence": 0.9997753500938416,
+            "explanation": [
+                [
+                    "activity",
+                    "preparing to sleep",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] c : c : user is asleep : is TRUE : 1.000 : 0.04069805",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.03399684",
+                "[-] c : c : weekend : is TRUE : 1.000 : 0.00000447",
+                "[-] action : putting a bottle of water by the bed : requires precision : is FALSE : 0.350 : 0.00000240",
+                "[-] action : putting a bottle of water by the bed : is something one does only if they enjoy doing it : is FALSE : 0.450 : 0.00000066",
+                "[-] action : putting a bottle of water by the bed : can be easily fixed if done improperly : is TRUE : 0.950 : 0.00000060",
+                "[-] action : putting a bottle of water by the bed : is fun to do : is FALSE : 0.450 : 0.00000032",
+                "[-] action : putting a bottle of water by the bed : involves discretionary judgement : is FALSE : 0.450 : 0.00000023",
+                "[-] action : putting a bottle of water by the bed : is one which a user might be particular about if they are picky about how their living room looks : is FALSE : 0.250 : 0.00000023",
+                "[-] action : putting a bottle of water by the bed : one often forgets to do : is TRUE : 0.550 : 0.00000015"
+            ],
+            "expl_attn_based_MRR": 0.06666666666666667,
+            "expl_output_based": [
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.02412319",
+                "[-] c : c : user is asleep : is TRUE : 1.000 : 0.01672304",
+                "[-] action : putting a bottle of water by the bed : one often forgets to do : is TRUE : 0.550 : -0.00934969",
+                "[-] action : putting a bottle of water by the bed : involves handling open containers filled with something which could spill : is FALSE : 0.450 : -0.00882120",
+                "[-] object : nightstand : can easily hurt someone without intending to : is FALSE : 0.350 : -0.00861634",
+                "[-] action : putting a bottle of water by the bed : is fun to do : is FALSE : 0.450 : -0.00860221",
+                "[-] action : putting a bottle of water by the bed : involves discretionary judgement : is FALSE : 0.450 : -0.00818957",
+                "[-] object : water bottle : is a fragile object : is FALSE : 0.350 : -0.00790464",
+                "[-] object : nightstand : is a fragile object : is FALSE : 0.350 : -0.00790464",
+                "[-] action : putting a bottle of water by the bed : is something one does only if they enjoy doing it : is FALSE : 0.450 : -0.00740576"
+            ],
+            "expl_output_based_MRR": 0.06666666666666667,
+            "expl_gt_based": [
+                "[-] action : putting a bottle of water by the bed : is something one does only if they enjoy doing it : is FALSE : 0.450 : -0.01443974",
+                "[-] action : putting a bottle of water by the bed : is fun to do : is FALSE : 0.450 : -0.01398813",
+                "[-] action : putting a bottle of water by the bed : involves discretionary judgement : is FALSE : 0.450 : -0.01366606",
+                "[-] object : water bottle : is a fragile object : is FALSE : 0.350 : -0.01259081",
+                "[-] object : nightstand : is a fragile object : is FALSE : 0.350 : -0.01259081",
+                "[-] action : putting a bottle of water by the bed : requires precision : is FALSE : 0.350 : -0.01241013",
+                "[-] action : putting a bottle of water by the bed : one often forgets to do : is TRUE : 0.550 : -0.01086220",
+                "[-] object : nightstand : can easily hurt someone without intending to : is FALSE : 0.350 : -0.01060857",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.01023950",
+                "[-] action : putting a bottle of water by the bed : involves handling open containers filled with something which could spill : is FALSE : 0.450 : -0.01020070"
+            ],
+            "expl_gt_based_MRR": 0.07142857142857142
+        },
+        "picking_a_recipe_to_make_for_dinner_adverse_weather_conditions_guests_are_present_user_is_nearby_weekend_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "num_precedents": 8,
+            "result": "correct",
+            "confidence": 0.9999594688415527,
+            "explanation": [
+                [
+                    "action",
+                    "picking a recipe to make for dinner",
+                    "that a user might prefer doing themselves if they enjoy making food",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[+] action : picking a recipe to make for dinner : that a user might prefer doing themselves if they enjoy making food : is TRUE : 0.950 : 0.04907504",
+                "[-] action : picking a recipe to make for dinner : is something one does only if they enjoy doing it : is TRUE : 0.650 : 0.00016472",
+                "[-] action : picking a recipe to make for dinner : involves discretionary judgement : is TRUE : 0.950 : 0.00004441",
+                "[-] action : picking a recipe to make for dinner : is fun to do : is TRUE : 0.750 : 0.00003602",
+                "[-] action : picking a recipe to make for dinner : is much easier if someone helps one with it : is TRUE : 0.650 : 0.00000004",
+                "[-] c : c : weekend : is TRUE : 1.000 : 0.00000003",
+                "[-] c : c : guests are present : is TRUE : 1.000 : 0.00000002",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00000002",
+                "[-] action : picking a recipe to make for dinner : requires precision : is FALSE : 0.250 : 0.00000001",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000001"
+            ],
+            "expl_attn_based_MRR": 1.0,
+            "expl_output_based": [
+                "[-] action : picking a recipe to make for dinner : is something one does only if they enjoy doing it : is TRUE : 0.650 : -0.00676568",
+                "[-] action : picking a recipe to make for dinner : is fun to do : is TRUE : 0.750 : -0.00121670",
+                "[+] action : picking a recipe to make for dinner : that a user might prefer doing themselves if they enjoy making food : is TRUE : 0.950 : 0.00023911",
+                "[-] action : picking a recipe to make for dinner : requires precision : is FALSE : 0.250 : -0.00019726",
+                "[-] object : recipe book : is a fragile object : is FALSE : 0.250 : -0.00012901",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : -0.00007587",
+                "[-] action : picking a recipe to make for dinner : can cause major damage or harm if done imprecisely : is FALSE : 0.150 : -0.00006942",
+                "[-] activity : preparing a meal : is a fun activity : is TRUE : 0.650 : -0.00006306",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : -0.00006141",
+                "[-] action : picking a recipe to make for dinner : is much easier if someone helps one with it : is TRUE : 0.650 : -0.00005205"
+            ],
+            "expl_output_based_MRR": 0.3333333333333333,
+            "expl_gt_based": [
+                "[-] action : picking a recipe to make for dinner : is something one does only if they enjoy doing it : is TRUE : 0.650 : -0.00676568",
+                "[-] action : picking a recipe to make for dinner : is fun to do : is TRUE : 0.750 : -0.00121670",
+                "[+] action : picking a recipe to make for dinner : that a user might prefer doing themselves if they enjoy making food : is TRUE : 0.950 : 0.00023911",
+                "[-] action : picking a recipe to make for dinner : requires precision : is FALSE : 0.250 : -0.00019726",
+                "[-] object : recipe book : is a fragile object : is FALSE : 0.250 : -0.00012901",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : -0.00007587",
+                "[-] action : picking a recipe to make for dinner : can cause major damage or harm if done imprecisely : is FALSE : 0.150 : -0.00006942",
+                "[-] activity : preparing a meal : is a fun activity : is TRUE : 0.650 : -0.00006306",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : -0.00006141",
+                "[-] action : picking a recipe to make for dinner : is much easier if someone helps one with it : is TRUE : 0.650 : -0.00005205"
+            ],
+            "expl_gt_based_MRR": 0.3333333333333333
+        }
+    }
+}

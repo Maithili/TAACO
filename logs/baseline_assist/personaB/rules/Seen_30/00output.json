@@ -1,0 +1,677 @@
+{
+    "accuracy": 0.5454545454545454,
+    "accuracy_wo_do_now": 0.16666666666666666,
+    "num_episodes": 33,
+    "num_episodes_wo_do_now": 18,
+    "confusion_matrix_obj": {
+        "accuracy": 0.5454545454545454,
+        "precision": {
+            "do_now": 0.5,
+            "do_later": 1.0,
+            "remind": 0.0,
+            "no_action": 0.0
+        },
+        "recall": {
+            "do_now": 1.0,
+            "do_later": 0.6,
+            "remind": 0.0,
+            "no_action": 0.0
+        },
+        "confusion_matrix": {
+            "do_now": {
+                "do_now": 15,
+                "do_later": 0,
+                "remind": 0,
+                "no_action": 0
+            },
+            "do_later": {
+                "do_now": 2,
+                "do_later": 3,
+                "remind": 0,
+                "no_action": 0
+            },
+            "remind": {
+                "do_now": 0,
+                "do_later": 0,
+                "remind": 0,
+                "no_action": 0
+            },
+            "no_action": {
+                "do_now": 13,
+                "do_later": 0,
+                "remind": 0,
+                "no_action": 0
+            }
+        }
+    },
+    "episodes": {
+        "drilling_holes_in_the_wall_to_put_up_a_coat_hook_early_in_the_morning_user_is_in_a_rush_": {
+            "ground_truth": "no_action",
+            "prediction": "do_now",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "action",
+                    "drilling holes in the wall to put up a coat hook",
+                    "can cause major damage or harm if done imprecisely",
+                    true
+                ]
+            ],
+            "explanation_rules": null,
+            "mrr": 0
+        },
+        "weeding_the_backyard_garden_adverse_weather_conditions_guests_are_present_user_is_in_a_rush_user_is_nearby_": {
+            "ground_truth": "do_later",
+            "prediction": "do_later",
+            "result": "correct",
+            "explanation": [
+                [
+                    "action",
+                    "weeding the backyard garden",
+                    "is very tiring",
+                    true
+                ],
+                [
+                    "activity",
+                    "maintaining backyard plants",
+                    "is a mundane chore",
+                    true
+                ],
+                [
+                    "location",
+                    "backyard",
+                    "is a location outside the house",
+                    true
+                ]
+            ],
+            "explanation_rules": [
+                [
+                    [
+                        "location",
+                        "backyard"
+                    ],
+                    [
+                        "adverse weather conditions"
+                    ]
+                ]
+            ],
+            "mrr": 1
+        },
+        "weeding_the_backyard_garden_early_in_the_morning_user_is_asleep_user_is_injured_or_disabled_user_is_nearby_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "result": "correct",
+            "explanation": [
+                [
+                    "action",
+                    "weeding the backyard garden",
+                    "is very tiring",
+                    true
+                ],
+                [
+                    "activity",
+                    "maintaining backyard plants",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "explanation_rules": [
+                [
+                    [
+                        "activity",
+                        "maintaining backyard plants"
+                    ]
+                ]
+            ],
+            "mrr": 1
+        },
+        "putting_fruits_in_the_blender_to_make_a_smoothie_adverse_weather_conditions_user_is_nearby_": {
+            "ground_truth": "no_action",
+            "prediction": "do_now",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "action",
+                    "putting fruits in the blender to make a smoothie",
+                    "is one which a user might be particular about if they are picky about their food",
+                    true
+                ]
+            ],
+            "explanation_rules": null,
+            "mrr": 0
+        },
+        "applying_band_aid_on_your_skin_adverse_weather_conditions_early_in_the_morning_guests_are_present_user_is_injured_or_disabled_user_is_nearby_weekend_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "result": "correct",
+            "explanation": [
+                [
+                    "action",
+                    "applying band aid on your skin",
+                    "involves close contact with another human",
+                    true
+                ]
+            ],
+            "explanation_rules": null,
+            "mrr": 0
+        },
+        "applying_band_aid_on_your_skin_adverse_weather_conditions_user_is_asleep_weekend_": {
+            "ground_truth": "no_action",
+            "prediction": "do_now",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "action",
+                    "applying band aid on your skin",
+                    "involves close contact with another human",
+                    true
+                ]
+            ],
+            "explanation_rules": null,
+            "mrr": 0
+        },
+        "chopping_vegetables_adverse_weather_conditions_user_is_in_a_rush_user_is_injured_or_disabled_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "result": "correct",
+            "explanation": [],
+            "explanation_rules": null,
+            "mrr": 0
+        },
+        "fetching_a_bowl_containing_nuts_out_to_the_living_room_adverse_weather_conditions_early_in_the_morning_user_is_asleep_user_is_injured_or_disabled_user_is_nearby_": {
+            "ground_truth": "no_action",
+            "prediction": "do_now",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "action",
+                    "fetching a bowl containing nuts out to the living room",
+                    "involves handling open containers with something which takes work to replace if spilled",
+                    true
+                ]
+            ],
+            "explanation_rules": null,
+            "mrr": 0
+        },
+        "turning_on_the_stove_early_in_the_morning_guests_are_present_user_is_injured_or_disabled_weekend_": {
+            "ground_truth": "no_action",
+            "prediction": "do_now",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "object",
+                    "stove",
+                    "involves an open flame",
+                    true
+                ],
+                [
+                    "action",
+                    "turning on the stove",
+                    "can cause major damage or harm if done imprecisely",
+                    true
+                ]
+            ],
+            "explanation_rules": null,
+            "mrr": 0
+        },
+        "cleaning_the_floor_carpets_with_a_scrub_brush_adverse_weather_conditions_guests_are_present_user_is_injured_or_disabled_user_is_nearby_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "result": "correct",
+            "explanation": [
+                [
+                    "action",
+                    "cleaning the floor carpets with a scrub brush",
+                    "is very tiring",
+                    true
+                ],
+                [
+                    "activity",
+                    "floor cleaning",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "explanation_rules": null,
+            "mrr": 0
+        },
+        "trimming_plants_in_the_backyard_with_a_knife_and_shear_adverse_weather_conditions_early_in_the_morning_guests_are_present_user_is_in_a_rush_user_is_nearby_weekend_": {
+            "ground_truth": "do_later",
+            "prediction": "do_later",
+            "result": "correct",
+            "explanation": [
+                [
+                    "action",
+                    "trimming plants in the backyard with a knife and shear",
+                    "is very tiring",
+                    true
+                ],
+                [
+                    "activity",
+                    "maintaining backyard plants",
+                    "is a mundane chore",
+                    true
+                ],
+                [
+                    "location",
+                    "backyard",
+                    "is a location outside the house",
+                    true
+                ]
+            ],
+            "explanation_rules": [
+                [
+                    [
+                        "location",
+                        "backyard"
+                    ],
+                    [
+                        "adverse weather conditions"
+                    ]
+                ]
+            ],
+            "mrr": 1
+        },
+        "trimming_plants_in_the_backyard_with_a_knife_and_shear_guests_are_present_user_is_in_a_rush_user_is_nearby_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "result": "correct",
+            "explanation": [
+                [
+                    "action",
+                    "trimming plants in the backyard with a knife and shear",
+                    "is very tiring",
+                    true
+                ],
+                [
+                    "activity",
+                    "maintaining backyard plants",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "explanation_rules": [
+                [
+                    [
+                        "activity",
+                        "maintaining backyard plants"
+                    ]
+                ]
+            ],
+            "mrr": 1
+        },
+        "adding_sugar_to_tea_user_is_asleep_user_is_injured_or_disabled_user_is_nearby_weekend_": {
+            "ground_truth": "no_action",
+            "prediction": "do_now",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "action",
+                    "adding sugar to tea",
+                    "is one which a user might be particular about if they are picky about their food",
+                    true
+                ]
+            ],
+            "explanation_rules": null,
+            "mrr": 0
+        },
+        "fixing_the_comforter_in_the_morning_adverse_weather_conditions_guests_are_present_user_is_in_a_rush_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "result": "correct",
+            "explanation": [
+                [
+                    "activity",
+                    "making the bed",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "explanation_rules": [
+                [
+                    [
+                        "activity",
+                        "making the bed"
+                    ]
+                ]
+            ],
+            "mrr": 1
+        },
+        "bringing_water_in_a_steel_mug_to_take_medication_guests_are_present_user_is_nearby_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "result": "correct",
+            "explanation": [],
+            "explanation_rules": null,
+            "mrr": 0
+        },
+        "stirring_stew_on_the_stovetop_adverse_weather_conditions_early_in_the_morning_user_is_asleep_user_is_injured_or_disabled_weekend_": {
+            "ground_truth": "no_action",
+            "prediction": "do_now",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "object",
+                    "stove",
+                    "involves an open flame",
+                    true
+                ],
+                [
+                    "action",
+                    "stirring stew on the stovetop",
+                    "involves handling open containers with something which takes work to replace if spilled",
+                    true
+                ]
+            ],
+            "explanation_rules": null,
+            "mrr": 0
+        },
+        "frying_an_egg_guests_are_present_user_is_nearby_weekend_": {
+            "ground_truth": "no_action",
+            "prediction": "do_now",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "object",
+                    "stove",
+                    "involves an open flame",
+                    true
+                ],
+                [
+                    "action",
+                    "frying an egg",
+                    "is one which a user might be particular about if they are picky about their food",
+                    true
+                ]
+            ],
+            "explanation_rules": null,
+            "mrr": 0
+        },
+        "taking_out_eggs_from_the_fridge_early_in_the_morning_user_is_in_a_rush_user_is_injured_or_disabled_weekend_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "result": "correct",
+            "explanation": [],
+            "explanation_rules": null,
+            "mrr": 0
+        },
+        "rearranging_vintage_china_in_the_living_room_cabinet_adverse_weather_conditions_user_is_asleep_user_is_injured_or_disabled_user_is_nearby_": {
+            "ground_truth": "no_action",
+            "prediction": "do_now",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "object",
+                    "porcelain plate",
+                    "is a fragile object",
+                    true
+                ],
+                [
+                    "object",
+                    "porcelain plate",
+                    "is expensive",
+                    true
+                ],
+                [
+                    "object",
+                    "porcelain cup",
+                    "is a fragile object",
+                    true
+                ],
+                [
+                    "object",
+                    "porcelain cup",
+                    "is expensive",
+                    true
+                ],
+                [
+                    "action",
+                    "rearranging vintage china in the living room cabinet",
+                    "is one which a user might be particular about if they are picky about how their living room looks",
+                    true
+                ]
+            ],
+            "explanation_rules": null,
+            "mrr": 0
+        },
+        "placing_pajamas_out_on_the_bed_for_you_to_wear_at_night_user_is_injured_or_disabled_user_is_nearby_weekend_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "result": "correct",
+            "explanation": [],
+            "explanation_rules": null,
+            "mrr": 0
+        },
+        "setting_up_wine_glasses_on_the_dining_table_adverse_weather_conditions_user_is_asleep_user_is_nearby_": {
+            "ground_truth": "no_action",
+            "prediction": "do_now",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "object",
+                    "wine glass",
+                    "is a fragile object",
+                    true
+                ],
+                [
+                    "object",
+                    "wine glass",
+                    "is expensive",
+                    true
+                ]
+            ],
+            "explanation_rules": null,
+            "mrr": 0
+        },
+        "vacuum_cleaning_the_living_room_carpets_early_in_the_morning_user_is_asleep_user_is_injured_or_disabled_": {
+            "ground_truth": "do_later",
+            "prediction": "do_now",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "activity",
+                    "floor cleaning",
+                    "is a mundane chore",
+                    true
+                ],
+                [
+                    "action",
+                    "vacuum cleaning the living room carpets",
+                    "makes a lot of noise",
+                    true
+                ]
+            ],
+            "explanation_rules": null,
+            "mrr": 0
+        },
+        "vacuum_cleaning_the_living_room_carpets_early_in_the_morning_guests_are_present_user_is_in_a_rush_user_is_nearby_weekend_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "result": "correct",
+            "explanation": [
+                [
+                    "activity",
+                    "floor cleaning",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "explanation_rules": null,
+            "mrr": 0
+        },
+        "grinding_coffee_beans_in_the_electric_grinder_user_is_asleep_user_is_nearby_": {
+            "ground_truth": "do_later",
+            "prediction": "do_now",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "action",
+                    "grinding coffee beans in the electric grinder",
+                    "makes a lot of noise",
+                    true
+                ]
+            ],
+            "explanation_rules": null,
+            "mrr": 0
+        },
+        "grinding_coffee_beans_in_the_electric_grinder_guests_are_present_user_is_in_a_rush_weekend_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "result": "correct",
+            "explanation": [],
+            "explanation_rules": null,
+            "mrr": 0
+        },
+        "washing_the_car_adverse_weather_conditions_early_in_the_morning_user_is_in_a_rush_user_is_injured_or_disabled_weekend_": {
+            "ground_truth": "do_later",
+            "prediction": "do_later",
+            "result": "correct",
+            "explanation": [
+                [
+                    "action",
+                    "washing the car",
+                    "is very tiring",
+                    true
+                ],
+                [
+                    "activity",
+                    "car maintenance",
+                    "is a mundane chore",
+                    true
+                ],
+                [
+                    "location",
+                    "driveway",
+                    "is a location outside the house",
+                    true
+                ]
+            ],
+            "explanation_rules": [
+                [
+                    [
+                        "location",
+                        "driveway"
+                    ],
+                    [
+                        "adverse weather conditions"
+                    ]
+                ]
+            ],
+            "mrr": 1
+        },
+        "washing_the_car_user_is_in_a_rush_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "result": "correct",
+            "explanation": [
+                [
+                    "action",
+                    "washing the car",
+                    "is very tiring",
+                    true
+                ],
+                [
+                    "activity",
+                    "car maintenance",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "explanation_rules": null,
+            "mrr": 0
+        },
+        "carrying_leftovers_to_the_microwave_user_is_in_a_rush_": {
+            "ground_truth": "no_action",
+            "prediction": "do_now",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "action",
+                    "carrying leftovers to the microwave",
+                    "involves handling open containers with something which takes work to replace if spilled",
+                    true
+                ],
+                [
+                    "action",
+                    "carrying leftovers to the microwave",
+                    "can cause major damage or harm if done imprecisely",
+                    true
+                ]
+            ],
+            "explanation_rules": null,
+            "mrr": 0
+        },
+        "rearranging_the_closet_early_in_the_morning_user_is_in_a_rush_user_is_injured_or_disabled_weekend_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "result": "correct",
+            "explanation": [],
+            "explanation_rules": null,
+            "mrr": 0
+        },
+        "refilling_the_pillbox_early_in_the_morning_user_is_asleep_": {
+            "ground_truth": "no_action",
+            "prediction": "do_now",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "action",
+                    "refilling the pillbox",
+                    "can cause major damage or harm if done imprecisely",
+                    true
+                ]
+            ],
+            "explanation_rules": null,
+            "mrr": 0
+        },
+        "pouring_oil_in_a_pan_to_cook_food_guests_are_present_weekend_": {
+            "ground_truth": "no_action",
+            "prediction": "do_now",
+            "result": "wrong",
+            "explanation": [
+                [
+                    "object",
+                    "stove",
+                    "involves an open flame",
+                    true
+                ],
+                [
+                    "action",
+                    "pouring oil in a pan to cook food",
+                    "is one which a user might be particular about if they are picky about their food",
+                    true
+                ]
+            ],
+            "explanation_rules": null,
+            "mrr": 0
+        },
+        "putting_a_bottle_of_water_by_the_bed_guests_are_present_user_is_injured_or_disabled_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "result": "correct",
+            "explanation": [],
+            "explanation_rules": null,
+            "mrr": 0
+        },
+        "setting_up_silverware_on_the_dining_table_adverse_weather_conditions_early_in_the_morning_user_is_in_a_rush_user_is_nearby_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "result": "correct",
+            "explanation": [],
+            "explanation_rules": null,
+            "mrr": 0
+        }
+    },
+    "MRR": [
+        0.24,
+        25
+    ],
+    "MRR_correct": [
+        0.6,
+        10
+    ],
+    "MRR_wrong": [
+        0.0,
+        15
+    ]
+}

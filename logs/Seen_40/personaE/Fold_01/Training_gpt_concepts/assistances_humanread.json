@@ -1,0 +1,1629 @@
+{
+    "accuracy": 0.75,
+    "accuracy_wo_do_now": 0.7692307692307693,
+    "num_episodes": 28,
+    "num_episodes_wo_do_now": 13,
+    "confusion_matrix_obj": {
+        "accuracy": 0.75,
+        "precision": {
+            "do_now": 0.8461538461538461,
+            "do_later": 0.5,
+            "remind": 0.0,
+            "no_action": 0.6923076923076923
+        },
+        "recall": {
+            "do_now": 0.7333333333333333,
+            "do_later": 0.3333333333333333,
+            "remind": 0.0,
+            "no_action": 0.9
+        },
+        "confusion_matrix": {
+            "do_now": {
+                "do_now": 11,
+                "do_later": 1,
+                "remind": 0,
+                "no_action": 3
+            },
+            "do_later": {
+                "do_now": 1,
+                "do_later": 1,
+                "remind": 0,
+                "no_action": 1
+            },
+            "remind": {
+                "do_now": 0,
+                "do_later": 0,
+                "remind": 0,
+                "no_action": 0
+            },
+            "no_action": {
+                "do_now": 1,
+                "do_later": 0,
+                "remind": 0,
+                "no_action": 9
+            }
+        }
+    },
+    "MRR": {
+        "output_based": [
+            0.42857142857142855,
+            28
+        ],
+        "output_based_correct": [
+            0.47619047619047616,
+            21
+        ],
+        "output_based_wrong": [
+            0.2857142857142857,
+            7
+        ],
+        "gt_based": [
+            0.42857142857142855,
+            28
+        ],
+        "gt_based_correct": [
+            0.47619047619047616,
+            21
+        ],
+        "gt_based_wrong": [
+            0.2857142857142857,
+            7
+        ],
+        "attn_based": [
+            0.4642857142857143,
+            28
+        ],
+        "attn_based_correct": [
+            0.5714285714285714,
+            21
+        ],
+        "attn_based_wrong": [
+            0.14285714285714285,
+            7
+        ]
+    },
+    "episodes": {
+        "cleaning_the_floor_carpets_with_a_scrub_brush_user_is_in_a_rush_user_is_nearby_": {
+            "ground_truth": "do_later",
+            "prediction": "do_now",
+            "num_precedents": 29,
+            "result": "wrong",
+            "confidence": 0.9987859129905701,
+            "explanation": [
+                [
+                    "action",
+                    "cleaning the floor carpets with a scrub brush",
+                    "is very tiring",
+                    true
+                ],
+                [
+                    "activity",
+                    "floor cleaning",
+                    "is a mundane chore",
+                    true
+                ],
+                [
+                    "action",
+                    "cleaning the floor carpets with a scrub brush",
+                    "involves moving around in space",
+                    true
+                ],
+                [
+                    "user is nearby",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] action : cleaning the floor carpets with a scrub brush : is much easier if someone helps one with it : is TRUE : 0.750 : 0.05692511",
+                "[+] activity : floor cleaning : is a mundane chore : is TRUE : 0.950 : 0.00227989",
+                "[+] c : c : user is nearby : is TRUE : 1.000 : 0.00195233",
+                "[+] action : cleaning the floor carpets with a scrub brush : is very tiring : is TRUE : 0.950 : 0.00156595",
+                "[+] action : cleaning the floor carpets with a scrub brush : involves moving around in space : is TRUE : 0.950 : 0.00050798",
+                "[-] action : cleaning the floor carpets with a scrub brush : can cause major damage or harm if done imprecisely : is FALSE : 0.250 : 0.00000095",
+                "[-] object : carpets : is expensive : is TRUE : 0.550 : 0.00000011",
+                "[-] action : cleaning the floor carpets with a scrub brush : can be easily fixed if done improperly : is FALSE : 0.350 : 0.00000003",
+                "[-] action : cleaning the floor carpets with a scrub brush : that a user might prefer doing themselves if they enjoy taking care of their house plants : is FALSE : 0.250 : 0.00000002",
+                "[-] action : cleaning the floor carpets with a scrub brush : involves discretionary judgement : is TRUE : 0.550 : 0.00000001"
+            ],
+            "expl_attn_based_MRR": 0.5,
+            "expl_output_based": [
+                "[-] action : cleaning the floor carpets with a scrub brush : is much easier if someone helps one with it : is TRUE : 0.750 : -0.00407004",
+                "[-] action : cleaning the floor carpets with a scrub brush : involves handling open containers filled with something which could spill : is FALSE : 0.350 : -0.00018336",
+                "[-] action : cleaning the floor carpets with a scrub brush : makes a lot of noise : is FALSE : 0.350 : -0.00018133",
+                "[-] object : carpets : is expensive : is TRUE : 0.550 : -0.00012048",
+                "[-] object : scrub brush : can damage or break or burn something if used inaccurately : is FALSE : 0.250 : -0.00011720",
+                "[-] action : cleaning the floor carpets with a scrub brush : that a user might prefer doing themselves if they enjoy taking care of their house plants : is FALSE : 0.250 : -0.00009608",
+                "[-] action : cleaning the floor carpets with a scrub brush : can cause major damage or harm if done imprecisely : is FALSE : 0.250 : -0.00008769",
+                "[-] action : cleaning the floor carpets with a scrub brush : can be easily fixed if done improperly : is FALSE : 0.350 : -0.00008741",
+                "[-] object : scrub brush : is a fragile object : is FALSE : 0.150 : -0.00007619",
+                "[-] object : carpets : is a fragile object : is FALSE : 0.150 : -0.00007619"
+            ],
+            "expl_output_based_MRR": 0.05263157894736842,
+            "expl_gt_based": [
+                "[-] action : cleaning the floor carpets with a scrub brush : is much easier if someone helps one with it : is TRUE : 0.750 : 3.49652715"
+            ],
+            "expl_gt_based_MRR": 0
+        },
+        "cleaning_the_floor_carpets_with_a_scrub_brush_adverse_weather_conditions_early_in_the_morning_weekend_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "num_precedents": 29,
+            "result": "correct",
+            "confidence": 0.9993222951889038,
+            "explanation": [
+                [
+                    "action",
+                    "cleaning the floor carpets with a scrub brush",
+                    "is very tiring",
+                    true
+                ],
+                [
+                    "activity",
+                    "floor cleaning",
+                    "is a mundane chore",
+                    true
+                ],
+                [
+                    "user is nearby",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] action : cleaning the floor carpets with a scrub brush : is much easier if someone helps one with it : is TRUE : 0.750 : 0.05088858",
+                "[+] activity : floor cleaning : is a mundane chore : is TRUE : 0.950 : 0.00196197",
+                "[+] action : cleaning the floor carpets with a scrub brush : is very tiring : is TRUE : 0.950 : 0.00136388",
+                "[-] action : cleaning the floor carpets with a scrub brush : involves moving around in space : is TRUE : 0.950 : 0.00046926",
+                "[-] action : cleaning the floor carpets with a scrub brush : can cause major damage or harm if done imprecisely : is FALSE : 0.250 : 0.00000052",
+                "[-] object : carpets : is expensive : is TRUE : 0.550 : 0.00000009",
+                "[-] action : cleaning the floor carpets with a scrub brush : can be easily fixed if done improperly : is FALSE : 0.350 : 0.00000002",
+                "[-] action : cleaning the floor carpets with a scrub brush : that a user might prefer doing themselves if they enjoy taking care of their house plants : is FALSE : 0.250 : 0.00000002",
+                "[-] action : cleaning the floor carpets with a scrub brush : involves discretionary judgement : is TRUE : 0.550 : 0.00000001",
+                "[-] action : cleaning the floor carpets with a scrub brush : makes a lot of noise : is FALSE : 0.350 : 0.00000001"
+            ],
+            "expl_attn_based_MRR": 0.5,
+            "expl_output_based": [
+                "[-] action : cleaning the floor carpets with a scrub brush : is much easier if someone helps one with it : is TRUE : 0.750 : -0.00038635",
+                "[-] object : carpets : is expensive : is TRUE : 0.550 : 0.00006913",
+                "[-] action : cleaning the floor carpets with a scrub brush : involves handling open containers filled with something which could spill : is FALSE : 0.350 : 0.00002048",
+                "[-] action : cleaning the floor carpets with a scrub brush : involves discretionary judgement : is TRUE : 0.550 : 0.00001795",
+                "[-] action : cleaning the floor carpets with a scrub brush : requires strength : is TRUE : 0.750 : 0.00001665",
+                "[-] action : cleaning the floor carpets with a scrub brush : makes a lot of noise : is FALSE : 0.350 : 0.00001009",
+                "[-] object : scrub brush : can damage or break or burn something if used inaccurately : is FALSE : 0.250 : 0.00000834",
+                "[+] activity : floor cleaning : is a mundane chore : is TRUE : 0.950 : 0.00000694",
+                "[-] action : cleaning the floor carpets with a scrub brush : that a user might prefer doing themselves if they enjoy taking care of their house plants : is FALSE : 0.250 : 0.00000559",
+                "[+] action : cleaning the floor carpets with a scrub brush : is very tiring : is TRUE : 0.950 : 0.00000534"
+            ],
+            "expl_output_based_MRR": 0.125,
+            "expl_gt_based": [
+                "[-] action : cleaning the floor carpets with a scrub brush : is much easier if someone helps one with it : is TRUE : 0.750 : -0.00038635",
+                "[-] object : carpets : is expensive : is TRUE : 0.550 : 0.00006913",
+                "[-] action : cleaning the floor carpets with a scrub brush : involves handling open containers filled with something which could spill : is FALSE : 0.350 : 0.00002048",
+                "[-] action : cleaning the floor carpets with a scrub brush : involves discretionary judgement : is TRUE : 0.550 : 0.00001795",
+                "[-] action : cleaning the floor carpets with a scrub brush : requires strength : is TRUE : 0.750 : 0.00001665",
+                "[-] action : cleaning the floor carpets with a scrub brush : makes a lot of noise : is FALSE : 0.350 : 0.00001009",
+                "[-] object : scrub brush : can damage or break or burn something if used inaccurately : is FALSE : 0.250 : 0.00000834",
+                "[+] activity : floor cleaning : is a mundane chore : is TRUE : 0.950 : 0.00000694",
+                "[-] action : cleaning the floor carpets with a scrub brush : that a user might prefer doing themselves if they enjoy taking care of their house plants : is FALSE : 0.250 : 0.00000559",
+                "[+] action : cleaning the floor carpets with a scrub brush : is very tiring : is TRUE : 0.950 : 0.00000534"
+            ],
+            "expl_gt_based_MRR": 0.125
+        },
+        "putting_fruits_in_the_blender_to_make_a_smoothie_adverse_weather_conditions_guests_are_present_user_is_in_a_rush_user_is_injured_or_disabled_user_is_nearby_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "num_precedents": 6,
+            "result": "correct",
+            "confidence": 0.9998290538787842,
+            "explanation": [
+                [
+                    "action",
+                    "putting fruits in the blender to make a smoothie",
+                    "is one which a user might be particular about if they are picky about their food",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] object : strawberry : is a fragile object : is TRUE : 0.650 : 0.03186618",
+                "[+] action : putting fruits in the blender to make a smoothie : is one which a user might be particular about if they are picky about their food : is TRUE : 0.750 : 0.00714059",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00068977",
+                "[-] action : putting fruits in the blender to make a smoothie : involves moving around in space : is TRUE : 0.750 : 0.00053342",
+                "[-] location : kitchen : might be a tight space where presence a robot might get in the way of a person : is TRUE : 0.550 : 0.00023490",
+                "[-] object : kitchen counter : is expensive : is TRUE : 0.650 : 0.00022018",
+                "[-] object : blender : can damage or break or burn something if used inaccurately : is TRUE : 0.750 : 0.00001990",
+                "[-] object : blender : is a fragile object : is TRUE : 0.550 : 0.00001537",
+                "[-] object : blender : is expensive : is FALSE : 0.350 : 0.00000135",
+                "[-] activity : making a smoothie : is a mundane chore : is FALSE : 0.450 : 0.00000085"
+            ],
+            "expl_attn_based_MRR": 0.5,
+            "expl_output_based": [
+                "[-] object : strawberry : is a fragile object : is TRUE : 0.650 : 0.00007321",
+                "[+] action : putting fruits in the blender to make a smoothie : is one which a user might be particular about if they are picky about their food : is TRUE : 0.750 : -0.00006998",
+                "[-] activity : making a smoothie : is a fun activity : is TRUE : 0.650 : -0.00000765",
+                "[-] action : putting fruits in the blender to make a smoothie : is fun to do : is TRUE : 0.750 : -0.00000721",
+                "[-] action : putting fruits in the blender to make a smoothie : makes a lot of noise : is TRUE : 0.650 : -0.00000233",
+                "[-] object : blender : is expensive : is FALSE : 0.350 : 0.00000196",
+                "[-] object : banana : is a fragile object : is FALSE : 0.350 : 0.00000193",
+                "[-] action : putting fruits in the blender to make a smoothie : is something one does only if they enjoy doing it : is FALSE : 0.450 : -0.00000190",
+                "[-] action : putting fruits in the blender to make a smoothie : involves discretionary judgement : is TRUE : 0.650 : -0.00000143",
+                "[-] action : putting fruits in the blender to make a smoothie : involves moving around in space : is TRUE : 0.750 : -0.00000132"
+            ],
+            "expl_output_based_MRR": 0.5,
+            "expl_gt_based": [
+                "[-] object : strawberry : is a fragile object : is TRUE : 0.650 : 0.00007321",
+                "[+] action : putting fruits in the blender to make a smoothie : is one which a user might be particular about if they are picky about their food : is TRUE : 0.750 : -0.00006998",
+                "[-] activity : making a smoothie : is a fun activity : is TRUE : 0.650 : -0.00000765",
+                "[-] action : putting fruits in the blender to make a smoothie : is fun to do : is TRUE : 0.750 : -0.00000721",
+                "[-] action : putting fruits in the blender to make a smoothie : makes a lot of noise : is TRUE : 0.650 : -0.00000233",
+                "[-] object : blender : is expensive : is FALSE : 0.350 : 0.00000196",
+                "[-] object : banana : is a fragile object : is FALSE : 0.350 : 0.00000193",
+                "[-] action : putting fruits in the blender to make a smoothie : is something one does only if they enjoy doing it : is FALSE : 0.450 : -0.00000190",
+                "[-] action : putting fruits in the blender to make a smoothie : involves discretionary judgement : is TRUE : 0.650 : -0.00000143",
+                "[-] action : putting fruits in the blender to make a smoothie : involves moving around in space : is TRUE : 0.750 : -0.00000132"
+            ],
+            "expl_gt_based_MRR": 0.5
+        },
+        "organizing_items_on_the_kitchen_counter_adverse_weather_conditions_guests_are_present_user_is_in_a_rush_user_is_nearby_": {
+            "ground_truth": "do_later",
+            "prediction": "no_action",
+            "num_precedents": 29,
+            "result": "wrong",
+            "confidence": 0.9998518228530884,
+            "explanation": [
+                [
+                    "activity",
+                    "organizing the kitchen",
+                    "is a mundane chore",
+                    true
+                ],
+                [
+                    "location",
+                    "kitchen",
+                    "might be a tight space where presence a robot might get in the way of a person",
+                    true
+                ],
+                [
+                    "action",
+                    "organizing items on the kitchen counter",
+                    "involves moving around in space",
+                    true
+                ],
+                [
+                    "user is nearby",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] object : oil bottle : is a fragile object : is TRUE : 0.650 : 0.02062852",
+                "[-] object : coffee maker : is a fragile object : is TRUE : 0.650 : 0.02062852",
+                "[-] object : coffee maker : is expensive : is FALSE : 0.450 : 0.00436110",
+                "[+] activity : organizing the kitchen : is a mundane chore : is TRUE : 0.750 : 0.00122229",
+                "[+] c : c : user is nearby : is TRUE : 1.000 : 0.00039289",
+                "[-] action : organizing items on the kitchen counter : is one which a user might be particular about if they are picky about their food : is TRUE : 0.650 : 0.00031836",
+                "[+] action : organizing items on the kitchen counter : involves moving around in space : is TRUE : 0.950 : 0.00028654",
+                "[+] location : kitchen : might be a tight space where presence a robot might get in the way of a person : is TRUE : 0.550 : 0.00017935",
+                "[-] object : blender : can damage or break or burn something if used inaccurately : is TRUE : 0.750 : 0.00001097",
+                "[-] object : blender : is a fragile object : is TRUE : 0.550 : 0.00000995"
+            ],
+            "expl_attn_based_MRR": 0.25,
+            "expl_output_based": [
+                "[-] object : oil bottle : is a fragile object : is TRUE : 0.650 : 0.00001858",
+                "[-] object : coffee maker : is a fragile object : is TRUE : 0.650 : 0.00001858",
+                "[-] action : organizing items on the kitchen counter : is one which a user might be particular about if they are picky about their food : is TRUE : 0.650 : -0.00000259",
+                "[-] activity : organizing the kitchen : is a fun activity : is TRUE : 0.550 : 0.00000243",
+                "[-] action : organizing items on the kitchen counter : is fun to do : is FALSE : 0.450 : 0.00000119",
+                "[+] location : kitchen : might be a tight space where presence a robot might get in the way of a person : is TRUE : 0.550 : -0.00000095",
+                "[-] object : blender : is a fragile object : is TRUE : 0.550 : -0.00000083",
+                "[-] object : oil bottle : can damage or break or burn something if used inaccurately : is TRUE : 0.650 : -0.00000061",
+                "[-] object : coffee maker : can damage or break or burn something if used inaccurately : is TRUE : 0.650 : -0.00000061",
+                "[-] object : blender : is expensive : is FALSE : 0.350 : -0.00000057"
+            ],
+            "expl_output_based_MRR": 0.16666666666666666,
+            "expl_gt_based": [
+                "[-] object : coffee maker : is expensive : is FALSE : 0.450 : 0.00814730",
+                "[-] object : oil bottle : is a fragile object : is TRUE : 0.650 : 0.00527452",
+                "[-] object : coffee maker : is a fragile object : is TRUE : 0.650 : 0.00527452",
+                "[-] object : blender : is a fragile object : is TRUE : 0.550 : -0.00360294",
+                "[-] object : blender : is expensive : is FALSE : 0.350 : -0.00352747",
+                "[-] action : organizing items on the kitchen counter : is something one does only if they enjoy doing it : is FALSE : 0.350 : -0.00243103",
+                "[-] object : oil bottle : can damage or break or burn something if used inaccurately : is TRUE : 0.650 : -0.00220064",
+                "[-] object : coffee maker : can damage or break or burn something if used inaccurately : is TRUE : 0.650 : -0.00220064",
+                "[+] location : kitchen : might be a tight space where presence a robot might get in the way of a person : is TRUE : 0.550 : -0.00205190",
+                "[-] action : organizing items on the kitchen counter : is one which a user might be particular about if they are picky about their food : is TRUE : 0.650 : -0.00202750"
+            ],
+            "expl_gt_based_MRR": 0.1111111111111111
+        },
+        "organizing_items_on_the_kitchen_counter_adverse_weather_conditions_early_in_the_morning_user_is_asleep_": {
+            "ground_truth": "do_now",
+            "prediction": "no_action",
+            "num_precedents": 29,
+            "result": "wrong",
+            "confidence": 0.9998517036437988,
+            "explanation": [
+                [
+                    "activity",
+                    "organizing the kitchen",
+                    "is a mundane chore",
+                    true
+                ],
+                [
+                    "user is nearby",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] object : oil bottle : is a fragile object : is TRUE : 0.650 : 0.02224857",
+                "[-] object : coffee maker : is a fragile object : is TRUE : 0.650 : 0.02224857",
+                "[-] object : coffee maker : is expensive : is FALSE : 0.450 : 0.00431753",
+                "[+] activity : organizing the kitchen : is a mundane chore : is TRUE : 0.750 : 0.00104682",
+                "[-] action : organizing items on the kitchen counter : is one which a user might be particular about if they are picky about their food : is TRUE : 0.650 : 0.00026781",
+                "[-] action : organizing items on the kitchen counter : involves moving around in space : is TRUE : 0.950 : 0.00024751",
+                "[-] location : kitchen : might be a tight space where presence a robot might get in the way of a person : is TRUE : 0.550 : 0.00017213",
+                "[-] object : blender : is a fragile object : is TRUE : 0.550 : 0.00001634",
+                "[-] object : blender : can damage or break or burn something if used inaccurately : is TRUE : 0.750 : 0.00001251",
+                "[-] object : blender : is expensive : is FALSE : 0.350 : 0.00000792"
+            ],
+            "expl_attn_based_MRR": 0.25,
+            "expl_output_based": [
+                "[-] object : oil bottle : is a fragile object : is TRUE : 0.650 : 0.00001831",
+                "[-] object : coffee maker : is a fragile object : is TRUE : 0.650 : 0.00001831",
+                "[-] activity : organizing the kitchen : is a fun activity : is TRUE : 0.550 : 0.00000295",
+                "[-] action : organizing items on the kitchen counter : is one which a user might be particular about if they are picky about their food : is TRUE : 0.650 : -0.00000161",
+                "[-] action : organizing items on the kitchen counter : is fun to do : is FALSE : 0.450 : 0.00000160",
+                "[-] object : coffee maker : is expensive : is FALSE : 0.450 : -0.00000064",
+                "[-] action : organizing items on the kitchen counter : involves discretionary judgement : is TRUE : 0.650 : 0.00000056",
+                "[-] location : kitchen : might be a tight space where presence a robot might get in the way of a person : is TRUE : 0.550 : -0.00000056",
+                "[-] action : organizing items on the kitchen counter : is something one does only if they enjoy doing it : is FALSE : 0.350 : 0.00000045",
+                "[-] object : blender : is a fragile object : is TRUE : 0.550 : -0.00000042"
+            ],
+            "expl_output_based_MRR": 0.08333333333333333,
+            "expl_gt_based": [
+                "[-] object : oil bottle : is a fragile object : is TRUE : 0.650 : -0.12515743",
+                "[-] object : coffee maker : is a fragile object : is TRUE : 0.650 : -0.12515743",
+                "[-] activity : organizing the kitchen : is a fun activity : is TRUE : 0.550 : -0.02016482",
+                "[-] action : organizing items on the kitchen counter : is one which a user might be particular about if they are picky about their food : is TRUE : 0.650 : 0.01104239",
+                "[-] action : organizing items on the kitchen counter : is fun to do : is FALSE : 0.450 : -0.01092495",
+                "[-] object : coffee maker : is expensive : is FALSE : 0.450 : 0.00435925",
+                "[-] location : kitchen : might be a tight space where presence a robot might get in the way of a person : is TRUE : 0.550 : 0.00383268",
+                "[-] action : organizing items on the kitchen counter : involves discretionary judgement : is TRUE : 0.650 : -0.00382949",
+                "[-] action : organizing items on the kitchen counter : is something one does only if they enjoy doing it : is FALSE : 0.350 : -0.00306280",
+                "[-] object : blender : is a fragile object : is TRUE : 0.550 : 0.00293506"
+            ],
+            "expl_gt_based_MRR": 0.08333333333333333
+        },
+        "weeding_the_backyard_garden_adverse_weather_conditions_user_is_nearby_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "num_precedents": 29,
+            "result": "correct",
+            "confidence": 0.9997442364692688,
+            "explanation": [
+                [
+                    "action",
+                    "weeding the backyard garden",
+                    "is very tiring",
+                    true
+                ],
+                [
+                    "activity",
+                    "maintaining backyard plants",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] activity : maintaining backyard plants : is a fun activity : is TRUE : 0.650 : 0.02900123",
+                "[+] action : weeding the backyard garden : is very tiring : is TRUE : 0.750 : 0.02170908",
+                "[+] activity : maintaining backyard plants : is a mundane chore : is FALSE : 0.450 : 0.01901037",
+                "[-] action : weeding the backyard garden : that a user might prefer doing themselves if they enjoy taking care of their house plants : is TRUE : 0.750 : 0.00250527",
+                "[-] action : weeding the backyard garden : is much easier if someone helps one with it : is TRUE : 0.850 : 0.00079942",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00039923",
+                "[-] action : weeding the backyard garden : involves moving around in space : is TRUE : 0.950 : 0.00018270",
+                "[-] action : weeding the backyard garden : is fun to do : is FALSE : 0.250 : 0.00000016",
+                "[-] action : weeding the backyard garden : involves contact with a pet : is FALSE : 0.350 : 0.00000006",
+                "[-] location : backyard : is a location outside the house : is TRUE : 0.950 : 0.00000003"
+            ],
+            "expl_attn_based_MRR": 0.5,
+            "expl_output_based": [
+                "[-] activity : maintaining backyard plants : is a fun activity : is TRUE : 0.650 : 0.00016507",
+                "[+] activity : maintaining backyard plants : is a mundane chore : is FALSE : 0.450 : 0.00005381",
+                "[-] object : weeding tool : can damage or break or burn something if used inaccurately : is TRUE : 0.550 : 0.00003296",
+                "[-] object : weeding tool : is expensive : is FALSE : 0.250 : 0.00001044",
+                "[-] action : weeding the backyard garden : that a user might prefer doing themselves if they enjoy taking care of their house plants : is TRUE : 0.750 : -0.00001029",
+                "[-] object : weeding tool : is a fragile object : is FALSE : 0.250 : 0.00001018",
+                "[-] action : weeding the backyard garden : involves contact with a pet : is FALSE : 0.350 : 0.00000925",
+                "[+] action : weeding the backyard garden : is very tiring : is TRUE : 0.750 : 0.00000908",
+                "[-] action : weeding the backyard garden : can cause major damage or harm if done imprecisely : is FALSE : 0.350 : 0.00000733",
+                "[-] action : weeding the backyard garden : is fun to do : is FALSE : 0.250 : 0.00000538"
+            ],
+            "expl_output_based_MRR": 0.5,
+            "expl_gt_based": [
+                "[-] activity : maintaining backyard plants : is a fun activity : is TRUE : 0.650 : 0.00016507",
+                "[+] activity : maintaining backyard plants : is a mundane chore : is FALSE : 0.450 : 0.00005381",
+                "[-] object : weeding tool : can damage or break or burn something if used inaccurately : is TRUE : 0.550 : 0.00003296",
+                "[-] object : weeding tool : is expensive : is FALSE : 0.250 : 0.00001044",
+                "[-] action : weeding the backyard garden : that a user might prefer doing themselves if they enjoy taking care of their house plants : is TRUE : 0.750 : -0.00001029",
+                "[-] object : weeding tool : is a fragile object : is FALSE : 0.250 : 0.00001018",
+                "[-] action : weeding the backyard garden : involves contact with a pet : is FALSE : 0.350 : 0.00000925",
+                "[+] action : weeding the backyard garden : is very tiring : is TRUE : 0.750 : 0.00000908",
+                "[-] action : weeding the backyard garden : can cause major damage or harm if done imprecisely : is FALSE : 0.350 : 0.00000733",
+                "[-] action : weeding the backyard garden : is fun to do : is FALSE : 0.250 : 0.00000538"
+            ],
+            "expl_gt_based_MRR": 0.5
+        },
+        "adding_potting_soil_to_indoor_plant_pots_adverse_weather_conditions_guests_are_present_user_is_in_a_rush_weekend_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "num_precedents": 5,
+            "result": "correct",
+            "confidence": 0.9999096393585205,
+            "explanation": [
+                [
+                    "action",
+                    "adding potting soil to indoor plant pots",
+                    "that a user might prefer doing themselves if they enjoy taking care of their house plants",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[+] action : adding potting soil to indoor plant pots : that a user might prefer doing themselves if they enjoy taking care of their house plants : is TRUE : 0.950 : 0.04010072",
+                "[-] object : house plants : is a fragile object : is TRUE : 0.650 : 0.00004571",
+                "[-] object : indoor plant pots : is a fragile object : is TRUE : 0.650 : 0.00004571",
+                "[-] activity : maintaining house plants : is a mundane chore : is TRUE : 0.550 : 0.00000042",
+                "[-] action : adding potting soil to indoor plant pots : involves moving around in space : is TRUE : 0.950 : 0.00000014",
+                "[-] object : house plants : is expensive : is FALSE : 0.350 : 0.00000007",
+                "[-] action : adding potting soil to indoor plant pots : can be easily fixed if done improperly : is TRUE : 0.650 : 0.00000000",
+                "[-] action : adding potting soil to indoor plant pots : can cause major damage or harm if done imprecisely : is FALSE : 0.250 : 0.00000000",
+                "[-] action : adding potting soil to indoor plant pots : involves discretionary judgement : is TRUE : 0.650 : 0.00000000",
+                "[-] action : adding potting soil to indoor plant pots : involves handling open containers filled with something which could spill : is TRUE : 0.950 : 0.00000000"
+            ],
+            "expl_attn_based_MRR": 1.0,
+            "expl_output_based": [
+                "[+] action : adding potting soil to indoor plant pots : that a user might prefer doing themselves if they enjoy taking care of their house plants : is TRUE : 0.950 : 0.00000101",
+                "[-] action : adding potting soil to indoor plant pots : is fun to do : is TRUE : 0.650 : 0.00000083",
+                "[-] activity : maintaining house plants : is a fun activity : is TRUE : 0.650 : 0.00000074",
+                "[-] object : house plants : is expensive : is FALSE : 0.350 : -0.00000038",
+                "[-] activity : maintaining house plants : is a mundane chore : is TRUE : 0.550 : -0.00000029",
+                "[-] action : adding potting soil to indoor plant pots : is much easier if someone helps one with it : is TRUE : 0.550 : -0.00000026",
+                "[-] action : adding potting soil to indoor plant pots : can be easily fixed if done improperly : is TRUE : 0.650 : -0.00000022",
+                "[-] action : adding potting soil to indoor plant pots : involves handling open containers filled with something which could spill : is TRUE : 0.950 : 0.00000021",
+                "[-] object : indoor plant pots : is expensive : is FALSE : 0.250 : -0.00000016",
+                "[-] object : potting soil bag : can damage or break or burn something if used inaccurately : is FALSE : 0.250 : -0.00000014"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] action : adding potting soil to indoor plant pots : that a user might prefer doing themselves if they enjoy taking care of their house plants : is TRUE : 0.950 : 0.00000101",
+                "[-] action : adding potting soil to indoor plant pots : is fun to do : is TRUE : 0.650 : 0.00000083",
+                "[-] activity : maintaining house plants : is a fun activity : is TRUE : 0.650 : 0.00000074",
+                "[-] object : house plants : is expensive : is FALSE : 0.350 : -0.00000038",
+                "[-] activity : maintaining house plants : is a mundane chore : is TRUE : 0.550 : -0.00000029",
+                "[-] action : adding potting soil to indoor plant pots : is much easier if someone helps one with it : is TRUE : 0.550 : -0.00000026",
+                "[-] action : adding potting soil to indoor plant pots : can be easily fixed if done improperly : is TRUE : 0.650 : -0.00000022",
+                "[-] action : adding potting soil to indoor plant pots : involves handling open containers filled with something which could spill : is TRUE : 0.950 : 0.00000021",
+                "[-] object : indoor plant pots : is expensive : is FALSE : 0.250 : -0.00000016",
+                "[-] object : potting soil bag : can damage or break or burn something if used inaccurately : is FALSE : 0.250 : -0.00000014"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "painting_a_tree_on_a_canvas_using_acrylic_paint_user_is_injured_or_disabled_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "num_precedents": 3,
+            "result": "correct",
+            "confidence": 0.99986732006073,
+            "explanation": [
+                [
+                    "activity",
+                    "painting",
+                    "is a fun activity",
+                    true
+                ],
+                [
+                    "action",
+                    "painting a tree on a canvas using acrylic paint",
+                    "is something one does only if they enjoy doing it",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] object : paint : is expensive : is FALSE : 0.450 : 0.02893937",
+                "[-] object : easel : is expensive : is FALSE : 0.450 : 0.02893937",
+                "[-] action : painting a tree on a canvas using acrylic paint : involves moving around in space : is FALSE : 0.450 : 0.00362326",
+                "[-] action : painting a tree on a canvas using acrylic paint : is very tiring : is FALSE : 0.450 : 0.00003302",
+                "[-] object : paint palette : is expensive : is FALSE : 0.250 : 0.00002107",
+                "[-] object : canvas : is expensive : is FALSE : 0.250 : 0.00002107",
+                "[-] object : easel : is a fragile object : is FALSE : 0.450 : 0.00000522",
+                "[-] action : painting a tree on a canvas using acrylic paint : is much easier if someone helps one with it : is TRUE : 0.750 : 0.00000142",
+                "[-] object : paint palette : is a fragile object : is FALSE : 0.350 : 0.00000134",
+                "[-] object : canvas : is a fragile object : is FALSE : 0.350 : 0.00000134"
+            ],
+            "expl_attn_based_MRR": 0.07142857142857142,
+            "expl_output_based": [
+                "[-] object : paint : is expensive : is FALSE : 0.450 : 0.00006329",
+                "[-] object : easel : is expensive : is FALSE : 0.450 : 0.00006329",
+                "[+] activity : painting : is a fun activity : is TRUE : 0.750 : 0.00004897",
+                "[-] action : painting a tree on a canvas using acrylic paint : is fun to do : is TRUE : 0.850 : 0.00003445",
+                "[+] action : painting a tree on a canvas using acrylic paint : is something one does only if they enjoy doing it : is TRUE : 0.850 : 0.00002759",
+                "[-] action : painting a tree on a canvas using acrylic paint : involves handling open containers filled with something which could spill : is TRUE : 0.950 : 0.00001553",
+                "[-] action : painting a tree on a canvas using acrylic paint : is very tiring : is FALSE : 0.450 : 0.00001174",
+                "[-] c : c : user is nearby : is FALSE : 0.000 : -0.00001050",
+                "[-] object : easel : is a fragile object : is FALSE : 0.450 : 0.00000905",
+                "[-] action : painting a tree on a canvas using acrylic paint : involves moving around in space : is FALSE : 0.450 : 0.00000879"
+            ],
+            "expl_output_based_MRR": 0.3333333333333333,
+            "expl_gt_based": [
+                "[-] object : paint : is expensive : is FALSE : 0.450 : 0.00006329",
+                "[-] object : easel : is expensive : is FALSE : 0.450 : 0.00006329",
+                "[+] activity : painting : is a fun activity : is TRUE : 0.750 : 0.00004897",
+                "[-] action : painting a tree on a canvas using acrylic paint : is fun to do : is TRUE : 0.850 : 0.00003445",
+                "[+] action : painting a tree on a canvas using acrylic paint : is something one does only if they enjoy doing it : is TRUE : 0.850 : 0.00002759",
+                "[-] action : painting a tree on a canvas using acrylic paint : involves handling open containers filled with something which could spill : is TRUE : 0.950 : 0.00001553",
+                "[-] action : painting a tree on a canvas using acrylic paint : is very tiring : is FALSE : 0.450 : 0.00001174",
+                "[-] c : c : user is nearby : is FALSE : 0.000 : -0.00001050",
+                "[-] object : easel : is a fragile object : is FALSE : 0.450 : 0.00000905",
+                "[-] action : painting a tree on a canvas using acrylic paint : involves moving around in space : is FALSE : 0.450 : 0.00000879"
+            ],
+            "expl_gt_based_MRR": 0.3333333333333333
+        },
+        "arranging_books_on_the_bookshelf_adverse_weather_conditions_early_in_the_morning_user_is_asleep_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "num_precedents": 29,
+            "result": "correct",
+            "confidence": 0.9996564388275146,
+            "explanation": [
+                [
+                    "activity",
+                    "home organization",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[+] activity : home organization : is a mundane chore : is TRUE : 0.650 : 0.03275225",
+                "[-] action : arranging books on the bookshelf : involves moving around in space : is TRUE : 0.950 : 0.00339247",
+                "[-] action : arranging books on the bookshelf : is very tiring : is FALSE : 0.350 : 0.00045854",
+                "[-] action : arranging books on the bookshelf : is much easier if someone helps one with it : is FALSE : 0.250 : 0.00017723",
+                "[-] object : bookshelf : is expensive : is FALSE : 0.450 : 0.00001573",
+                "[-] object : books : is expensive : is FALSE : 0.350 : 0.00000715",
+                "[-] action : arranging books on the bookshelf : that a user might prefer doing themselves if they enjoy taking care of their house plants : is FALSE : 0.450 : 0.00000200",
+                "[-] action : arranging books on the bookshelf : is something one does only if they enjoy doing it : is FALSE : 0.450 : 0.00000033",
+                "[-] activity : home organization : is a fun activity : is FALSE : 0.450 : 0.00000017",
+                "[-] action : arranging books on the bookshelf : involves discretionary judgement : is TRUE : 0.650 : 0.00000014"
+            ],
+            "expl_attn_based_MRR": 1.0,
+            "expl_output_based": [
+                "[+] activity : home organization : is a mundane chore : is TRUE : 0.650 : 0.00026601",
+                "[-] object : books : is expensive : is FALSE : 0.350 : 0.00002801",
+                "[-] object : bookshelf : is expensive : is FALSE : 0.450 : 0.00002356",
+                "[-] object : books : is a fragile object : is FALSE : 0.250 : 0.00001185",
+                "[-] object : bookshelf : is a fragile object : is FALSE : 0.250 : 0.00001185",
+                "[-] action : arranging books on the bookshelf : requires strength : is FALSE : 0.350 : 0.00001101",
+                "[-] object : books : can damage or break or burn something if used inaccurately : is FALSE : 0.250 : 0.00001045",
+                "[-] object : bookshelf : can damage or break or burn something if used inaccurately : is FALSE : 0.250 : 0.00001045",
+                "[-] action : arranging books on the bookshelf : makes a lot of noise : is FALSE : 0.250 : 0.00000647",
+                "[-] action : arranging books on the bookshelf : is very tiring : is FALSE : 0.350 : -0.00000621"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] activity : home organization : is a mundane chore : is TRUE : 0.650 : 0.00026601",
+                "[-] object : books : is expensive : is FALSE : 0.350 : 0.00002801",
+                "[-] object : bookshelf : is expensive : is FALSE : 0.450 : 0.00002356",
+                "[-] object : books : is a fragile object : is FALSE : 0.250 : 0.00001185",
+                "[-] object : bookshelf : is a fragile object : is FALSE : 0.250 : 0.00001185",
+                "[-] action : arranging books on the bookshelf : requires strength : is FALSE : 0.350 : 0.00001101",
+                "[-] object : books : can damage or break or burn something if used inaccurately : is FALSE : 0.250 : 0.00001045",
+                "[-] object : bookshelf : can damage or break or burn something if used inaccurately : is FALSE : 0.250 : 0.00001045",
+                "[-] action : arranging books on the bookshelf : makes a lot of noise : is FALSE : 0.250 : 0.00000647",
+                "[-] action : arranging books on the bookshelf : is very tiring : is FALSE : 0.350 : -0.00000621"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "spraying_bug_spray_on_your_arms_adverse_weather_conditions_user_is_asleep_weekend_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "num_precedents": 4,
+            "result": "correct",
+            "confidence": 0.9997571110725403,
+            "explanation": [
+                [
+                    "action",
+                    "spraying bug spray on your arms",
+                    "is much easier if someone helps one with it",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] activity : personal care : is a mundane chore : is FALSE : 0.450 : 0.05130175",
+                "[-] activity : personal care : is a fun activity : is TRUE : 0.650 : 0.01614742",
+                "[-] location : dressing room : might be a tight space where presence a robot might get in the way of a person : is TRUE : 0.850 : 0.00106801",
+                "[+] action : spraying bug spray on your arms : is much easier if someone helps one with it : is FALSE : 0.450 : 0.00043322",
+                "[-] action : spraying bug spray on your arms : involves moving around in space : is FALSE : 0.250 : 0.00000798",
+                "[-] action : spraying bug spray on your arms : involves handling open containers filled with something which could spill : is TRUE : 0.650 : 0.00000107",
+                "[-] action : spraying bug spray on your arms : is fun to do : is FALSE : 0.250 : 0.00000084",
+                "[-] c : c : weekend : is TRUE : 1.000 : 0.00000061",
+                "[-] action : spraying bug spray on your arms : can cause major damage or harm if done imprecisely : is FALSE : 0.250 : 0.00000020",
+                "[-] object : bug spray bottle : can damage or break or burn something if used inaccurately : is TRUE : 0.650 : 0.00000012"
+            ],
+            "expl_attn_based_MRR": 0.25,
+            "expl_output_based": [
+                "[-] activity : personal care : is a fun activity : is TRUE : 0.650 : -0.00021744",
+                "[-] activity : personal care : is a mundane chore : is FALSE : 0.450 : -0.00003529",
+                "[-] object : bug spray bottle : can damage or break or burn something if used inaccurately : is TRUE : 0.650 : 0.00002218",
+                "[-] action : spraying bug spray on your arms : involves handling open containers filled with something which could spill : is TRUE : 0.650 : -0.00000501",
+                "[-] object : bug spray bottle : is a fragile object : is FALSE : 0.250 : 0.00000473",
+                "[-] action : spraying bug spray on your arms : is fun to do : is FALSE : 0.250 : 0.00000284",
+                "[-] action : spraying bug spray on your arms : can cause major damage or harm if done imprecisely : is FALSE : 0.250 : 0.00000122",
+                "[-] action : spraying bug spray on your arms : involves moving around in space : is FALSE : 0.250 : 0.00000083",
+                "[-] action : spraying bug spray on your arms : involves discretionary judgement : is FALSE : 0.450 : 0.00000020",
+                "[-] action : spraying bug spray on your arms : can be easily fixed if done improperly : is FALSE : 0.450 : 0.00000008"
+            ],
+            "expl_output_based_MRR": 0.09090909090909091,
+            "expl_gt_based": [
+                "[-] activity : personal care : is a fun activity : is TRUE : 0.650 : -0.00021744",
+                "[-] activity : personal care : is a mundane chore : is FALSE : 0.450 : -0.00003529",
+                "[-] object : bug spray bottle : can damage or break or burn something if used inaccurately : is TRUE : 0.650 : 0.00002218",
+                "[-] action : spraying bug spray on your arms : involves handling open containers filled with something which could spill : is TRUE : 0.650 : -0.00000501",
+                "[-] object : bug spray bottle : is a fragile object : is FALSE : 0.250 : 0.00000473",
+                "[-] action : spraying bug spray on your arms : is fun to do : is FALSE : 0.250 : 0.00000284",
+                "[-] action : spraying bug spray on your arms : can cause major damage or harm if done imprecisely : is FALSE : 0.250 : 0.00000122",
+                "[-] action : spraying bug spray on your arms : involves moving around in space : is FALSE : 0.250 : 0.00000083",
+                "[-] action : spraying bug spray on your arms : involves discretionary judgement : is FALSE : 0.450 : 0.00000020",
+                "[-] action : spraying bug spray on your arms : can be easily fixed if done improperly : is FALSE : 0.450 : 0.00000008"
+            ],
+            "expl_gt_based_MRR": 0.09090909090909091
+        },
+        "pouring_oil_in_a_pan_to_cook_food_adverse_weather_conditions_user_is_injured_or_disabled_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "num_precedents": 6,
+            "result": "correct",
+            "confidence": 0.9998739957809448,
+            "explanation": [
+                [
+                    "action",
+                    "pouring oil in a pan to cook food",
+                    "is one which a user might be particular about if they are picky about their food",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[+] action : pouring oil in a pan to cook food : is one which a user might be particular about if they are picky about their food : is TRUE : 0.750 : 0.03090569",
+                "[-] object : stove : involves an open flame : is TRUE : 0.950 : 0.01470777",
+                "[-] object : pan : involves an open flame : is TRUE : 0.650 : 0.00387106",
+                "[-] object : oil bottle : is a fragile object : is TRUE : 0.650 : 0.00244401",
+                "[-] object : stove : is expensive : is TRUE : 0.650 : 0.00005411",
+                "[-] object : stove : can damage or break or burn something if used inaccurately : is TRUE : 0.950 : 0.00001326",
+                "[-] action : pouring oil in a pan to cook food : involves moving around in space : is TRUE : 0.550 : 0.00001283",
+                "[-] location : kitchen : might be a tight space where presence a robot might get in the way of a person : is TRUE : 0.550 : 0.00001004",
+                "[-] object : oil bottle : can damage or break or burn something if used inaccurately : is TRUE : 0.650 : 0.00000006",
+                "[-] object : pan : can damage or break or burn something if used inaccurately : is TRUE : 0.650 : 0.00000006"
+            ],
+            "expl_attn_based_MRR": 1.0,
+            "expl_output_based": [
+                "[+] action : pouring oil in a pan to cook food : is one which a user might be particular about if they are picky about their food : is TRUE : 0.750 : -0.00005559",
+                "[-] object : pan : involves an open flame : is TRUE : 0.650 : 0.00001435",
+                "[-] activity : preparing a meal : is a fun activity : is TRUE : 0.650 : -0.00000298",
+                "[-] object : oil bottle : is a fragile object : is TRUE : 0.650 : 0.00000292",
+                "[-] object : stove : is expensive : is TRUE : 0.650 : 0.00000191",
+                "[-] object : oil bottle : can damage or break or burn something if used inaccurately : is TRUE : 0.650 : 0.00000165",
+                "[-] object : pan : can damage or break or burn something if used inaccurately : is TRUE : 0.650 : 0.00000165",
+                "[-] action : pouring oil in a pan to cook food : can cause major damage or harm if done imprecisely : is FALSE : 0.350 : 0.00000120",
+                "[-] action : pouring oil in a pan to cook food : can be easily fixed if done improperly : is FALSE : 0.350 : 0.00000114",
+                "[-] activity : preparing a meal : is a mundane chore : is FALSE : 0.450 : 0.00000102"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] action : pouring oil in a pan to cook food : is one which a user might be particular about if they are picky about their food : is TRUE : 0.750 : -0.00005559",
+                "[-] object : pan : involves an open flame : is TRUE : 0.650 : 0.00001435",
+                "[-] activity : preparing a meal : is a fun activity : is TRUE : 0.650 : -0.00000298",
+                "[-] object : oil bottle : is a fragile object : is TRUE : 0.650 : 0.00000292",
+                "[-] object : stove : is expensive : is TRUE : 0.650 : 0.00000191",
+                "[-] object : oil bottle : can damage or break or burn something if used inaccurately : is TRUE : 0.650 : 0.00000165",
+                "[-] object : pan : can damage or break or burn something if used inaccurately : is TRUE : 0.650 : 0.00000165",
+                "[-] action : pouring oil in a pan to cook food : can cause major damage or harm if done imprecisely : is FALSE : 0.350 : 0.00000120",
+                "[-] action : pouring oil in a pan to cook food : can be easily fixed if done improperly : is FALSE : 0.350 : 0.00000114",
+                "[-] activity : preparing a meal : is a mundane chore : is FALSE : 0.450 : 0.00000102"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "shoveling_snow_from_the_driveway_adverse_weather_conditions_user_is_in_a_rush_user_is_injured_or_disabled_user_is_nearby_weekend_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "num_precedents": 29,
+            "result": "correct",
+            "confidence": 0.9984373450279236,
+            "explanation": [
+                [
+                    "action",
+                    "shoveling snow from the driveway",
+                    "is very tiring",
+                    true
+                ],
+                [
+                    "activity",
+                    "outdoor maintenance",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[+] activity : outdoor maintenance : is a mundane chore : is TRUE : 0.650 : 0.02928404",
+                "[+] action : shoveling snow from the driveway : is very tiring : is TRUE : 0.850 : 0.02433465",
+                "[-] action : shoveling snow from the driveway : is much easier if someone helps one with it : is TRUE : 0.850 : 0.00335123",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00054733",
+                "[-] action : shoveling snow from the driveway : involves moving around in space : is TRUE : 0.950 : 0.00032285",
+                "[-] action : shoveling snow from the driveway : is something one does only if they enjoy doing it : is FALSE : 0.250 : 0.00000468",
+                "[-] activity : outdoor maintenance : is a fun activity : is FALSE : 0.450 : 0.00000075",
+                "[-] action : shoveling snow from the driveway : is fun to do : is FALSE : 0.350 : 0.00000038",
+                "[-] action : shoveling snow from the driveway : makes a lot of noise : is FALSE : 0.250 : 0.00000022",
+                "[-] c : c : weekend : is TRUE : 1.000 : 0.00000012"
+            ],
+            "expl_attn_based_MRR": 1.0,
+            "expl_output_based": [
+                "[+] activity : outdoor maintenance : is a mundane chore : is TRUE : 0.650 : -0.00121307",
+                "[-] object : snow shovel : can damage or break or burn something if used inaccurately : is TRUE : 0.550 : 0.00034970",
+                "[-] activity : outdoor maintenance : is a fun activity : is FALSE : 0.450 : 0.00023793",
+                "[-] action : shoveling snow from the driveway : is fun to do : is FALSE : 0.350 : 0.00023258",
+                "[-] action : shoveling snow from the driveway : is much easier if someone helps one with it : is TRUE : 0.850 : 0.00011367",
+                "[-] action : shoveling snow from the driveway : involves discretionary judgement : is FALSE : 0.350 : 0.00011202",
+                "[-] action : shoveling snow from the driveway : can be easily fixed if done improperly : is TRUE : 0.650 : 0.00010304",
+                "[-] action : shoveling snow from the driveway : is something one does only if they enjoy doing it : is FALSE : 0.250 : 0.00008989",
+                "[-] action : shoveling snow from the driveway : requires strength : is TRUE : 0.850 : 0.00007554",
+                "[-] action : shoveling snow from the driveway : makes a lot of noise : is FALSE : 0.250 : 0.00007210"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] activity : outdoor maintenance : is a mundane chore : is TRUE : 0.650 : -0.00121307",
+                "[-] object : snow shovel : can damage or break or burn something if used inaccurately : is TRUE : 0.550 : 0.00034970",
+                "[-] activity : outdoor maintenance : is a fun activity : is FALSE : 0.450 : 0.00023793",
+                "[-] action : shoveling snow from the driveway : is fun to do : is FALSE : 0.350 : 0.00023258",
+                "[-] action : shoveling snow from the driveway : is much easier if someone helps one with it : is TRUE : 0.850 : 0.00011367",
+                "[-] action : shoveling snow from the driveway : involves discretionary judgement : is FALSE : 0.350 : 0.00011202",
+                "[-] action : shoveling snow from the driveway : can be easily fixed if done improperly : is TRUE : 0.650 : 0.00010304",
+                "[-] action : shoveling snow from the driveway : is something one does only if they enjoy doing it : is FALSE : 0.250 : 0.00008989",
+                "[-] action : shoveling snow from the driveway : requires strength : is TRUE : 0.850 : 0.00007554",
+                "[-] action : shoveling snow from the driveway : makes a lot of noise : is FALSE : 0.250 : 0.00007210"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "mixing_yoghurt_with_granola_and_fruits_early_in_the_morning_user_is_in_a_rush_weekend_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "num_precedents": 6,
+            "result": "correct",
+            "confidence": 0.9939075112342834,
+            "explanation": [
+                [
+                    "action",
+                    "mixing yoghurt with granola and fruits",
+                    "is one which a user might be particular about if they are picky about their food",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] object : bowl : is a fragile object : is TRUE : 0.650 : 0.02569147",
+                "[+] action : mixing yoghurt with granola and fruits : is one which a user might be particular about if they are picky about their food : is TRUE : 0.850 : 0.01638907",
+                "[-] action : mixing yoghurt with granola and fruits : involves moving around in space : is FALSE : 0.450 : 0.00828072",
+                "[-] location : kitchen : might be a tight space where presence a robot might get in the way of a person : is TRUE : 0.550 : 0.00358910",
+                "[-] activity : preparing breakfast : is a mundane chore : is FALSE : 0.450 : 0.00033071",
+                "[-] object : nuts : is expensive : is FALSE : 0.450 : 0.00000822",
+                "[-] object : fruits : is a fragile object : is TRUE : 0.550 : 0.00000736",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00000029",
+                "[-] c : c : user is in a rush : is TRUE : 1.000 : 0.00000017",
+                "[-] c : c : weekend : is TRUE : 1.000 : 0.00000011"
+            ],
+            "expl_attn_based_MRR": 0.5,
+            "expl_output_based": [
+                "[-] object : bowl : is a fragile object : is TRUE : 0.650 : 0.05584663",
+                "[-] action : mixing yoghurt with granola and fruits : is fun to do : is TRUE : 0.650 : 0.00649833",
+                "[-] activity : preparing breakfast : is a fun activity : is TRUE : 0.550 : 0.00522360",
+                "[-] action : mixing yoghurt with granola and fruits : is something one does only if they enjoy doing it : is TRUE : 0.750 : 0.00390255",
+                "[-] action : mixing yoghurt with granola and fruits : involves handling open containers filled with something which could spill : is TRUE : 0.850 : 0.00213570",
+                "[-] object : fruits : is a fragile object : is TRUE : 0.550 : 0.00194768",
+                "[-] action : mixing yoghurt with granola and fruits : involves moving around in space : is FALSE : 0.450 : -0.00145017",
+                "[-] action : mixing yoghurt with granola and fruits : involves discretionary judgement : is TRUE : 0.750 : 0.00122178",
+                "[-] location : kitchen : might be a tight space where presence a robot might get in the way of a person : is TRUE : 0.550 : 0.00105902",
+                "[-] object : nuts : is expensive : is FALSE : 0.450 : 0.00076227"
+            ],
+            "expl_output_based_MRR": 0,
+            "expl_gt_based": [
+                "[-] object : bowl : is a fragile object : is TRUE : 0.650 : 0.05584663",
+                "[-] action : mixing yoghurt with granola and fruits : is fun to do : is TRUE : 0.650 : 0.00649833",
+                "[-] activity : preparing breakfast : is a fun activity : is TRUE : 0.550 : 0.00522360",
+                "[-] action : mixing yoghurt with granola and fruits : is something one does only if they enjoy doing it : is TRUE : 0.750 : 0.00390255",
+                "[-] action : mixing yoghurt with granola and fruits : involves handling open containers filled with something which could spill : is TRUE : 0.850 : 0.00213570",
+                "[-] object : fruits : is a fragile object : is TRUE : 0.550 : 0.00194768",
+                "[-] action : mixing yoghurt with granola and fruits : involves moving around in space : is FALSE : 0.450 : -0.00145017",
+                "[-] action : mixing yoghurt with granola and fruits : involves discretionary judgement : is TRUE : 0.750 : 0.00122178",
+                "[-] location : kitchen : might be a tight space where presence a robot might get in the way of a person : is TRUE : 0.550 : 0.00105902",
+                "[-] object : nuts : is expensive : is FALSE : 0.450 : 0.00076227"
+            ],
+            "expl_gt_based_MRR": 0
+        },
+        "applying_butter_on_toast_for_preparing_breakfast_early_in_the_morning_user_is_injured_or_disabled_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "num_precedents": 6,
+            "result": "correct",
+            "confidence": 0.669929027557373,
+            "explanation": [
+                [
+                    "action",
+                    "applying butter on toast for preparing breakfast",
+                    "is one which a user might be particular about if they are picky about their food",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] activity : preparing breakfast : is a mundane chore : is FALSE : 0.450 : 0.04500285",
+                "[+] action : applying butter on toast for preparing breakfast : is one which a user might be particular about if they are picky about their food : is TRUE : 0.950 : 0.03362267",
+                "[-] location : kitchen : might be a tight space where presence a robot might get in the way of a person : is TRUE : 0.550 : 0.00019106",
+                "[-] action : applying butter on toast for preparing breakfast : involves moving around in space : is FALSE : 0.250 : 0.00002408",
+                "[-] action : applying butter on toast for preparing breakfast : can be easily fixed if done improperly : is FALSE : 0.450 : 0.00000001",
+                "[-] object : toast : involves an open flame : is FALSE : 0.350 : 0.00000001",
+                "[-] object : toast : is a fragile object : is FALSE : 0.350 : 0.00000001",
+                "[-] action : applying butter on toast for preparing breakfast : involves discretionary judgement : is FALSE : 0.450 : 0.00000000",
+                "[-] action : applying butter on toast for preparing breakfast : is fun to do : is TRUE : 0.550 : 0.00000000",
+                "[-] action : applying butter on toast for preparing breakfast : is something one does only if they enjoy doing it : is FALSE : 0.450 : 0.00000000"
+            ],
+            "expl_attn_based_MRR": 0.5,
+            "expl_output_based": [
+                "[-] activity : preparing breakfast : is a mundane chore : is FALSE : 0.450 : -5.08579698"
+            ],
+            "expl_output_based_MRR": 0.14285714285714285,
+            "expl_gt_based": [
+                "[-] activity : preparing breakfast : is a mundane chore : is FALSE : 0.450 : -5.08579698"
+            ],
+            "expl_gt_based_MRR": 0.14285714285714285
+        },
+        "helping_you_put_on_a_bracelet_or_watch_on_your_wrist_guests_are_present_user_is_in_a_rush_user_is_nearby_weekend_": {
+            "ground_truth": "do_now",
+            "prediction": "do_later",
+            "num_precedents": 4,
+            "result": "wrong",
+            "confidence": 0.968075692653656,
+            "explanation": [
+                [
+                    "action",
+                    "helping you put on a bracelet or watch on your wrist",
+                    "is much easier if someone helps one with it",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] activity : getting ready to leave : is a mundane chore : is TRUE : 0.650 : 0.02553156",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.01314137",
+                "[-] object : watch : is a fragile object : is TRUE : 0.650 : 0.01281458",
+                "[-] action : helping you put on a bracelet or watch on your wrist : involves moving around in space : is TRUE : 0.550 : 0.00899642",
+                "[-] location : dressing room : might be a tight space where presence a robot might get in the way of a person : is TRUE : 0.850 : 0.00703822",
+                "[+] action : helping you put on a bracelet or watch on your wrist : is much easier if someone helps one with it : is TRUE : 0.850 : 0.00029215",
+                "[-] object : bracelet : is expensive : is TRUE : 0.650 : 0.00018835",
+                "[-] object : watch : is expensive : is TRUE : 0.650 : 0.00018835",
+                "[-] object : bracelet : is a fragile object : is FALSE : 0.450 : 0.00000232",
+                "[-] activity : getting ready to leave : is a fun activity : is FALSE : 0.350 : 0.00000053"
+            ],
+            "expl_attn_based_MRR": 0.16666666666666666,
+            "expl_output_based": [
+                "[-] object : watch : is a fragile object : is TRUE : 0.650 : -0.61506662"
+            ],
+            "expl_output_based_MRR": 0.058823529411764705,
+            "expl_gt_based": [
+                "[-] object : watch : is a fragile object : is TRUE : 0.650 : 18.79414332"
+            ],
+            "expl_gt_based_MRR": 0
+        },
+        "arranging_cut_fruits_in_a_fruit_bowl_adverse_weather_conditions_user_is_injured_or_disabled_": {
+            "ground_truth": "do_now",
+            "prediction": "no_action",
+            "num_precedents": 29,
+            "result": "wrong",
+            "confidence": 0.9984036087989807,
+            "explanation": [
+                [
+                    "activity",
+                    "preparing a meal",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] action : arranging cut fruits in a fruit bowl : is one which a user might be particular about if they are picky about their food : is TRUE : 0.750 : 0.03163421",
+                "[+] activity : preparing a meal : is a mundane chore : is FALSE : 0.450 : 0.02666086",
+                "[-] object : serving bowl : is a fragile object : is TRUE : 0.750 : 0.01643007",
+                "[-] location : kitchen : might be a tight space where presence a robot might get in the way of a person : is TRUE : 0.550 : 0.00104224",
+                "[-] object : serving bowl : is expensive : is FALSE : 0.350 : 0.00029991",
+                "[-] action : arranging cut fruits in a fruit bowl : involves moving around in space : is FALSE : 0.350 : 0.00002023",
+                "[-] action : arranging cut fruits in a fruit bowl : is something one does only if they enjoy doing it : is TRUE : 0.550 : 0.00000183",
+                "[-] activity : preparing a meal : is a fun activity : is TRUE : 0.650 : 0.00000052",
+                "[-] action : arranging cut fruits in a fruit bowl : is very tiring : is FALSE : 0.250 : 0.00000041",
+                "[-] action : arranging cut fruits in a fruit bowl : is fun to do : is TRUE : 0.650 : 0.00000039"
+            ],
+            "expl_attn_based_MRR": 0.5,
+            "expl_output_based": [
+                "[+] activity : preparing a meal : is a mundane chore : is FALSE : 0.450 : -0.02190372",
+                "[-] action : arranging cut fruits in a fruit bowl : is one which a user might be particular about if they are picky about their food : is TRUE : 0.750 : 0.01335811",
+                "[-] object : serving bowl : is a fragile object : is TRUE : 0.750 : 0.01103223",
+                "[-] object : fruit slices : is a fragile object : is FALSE : 0.450 : 0.00488642",
+                "[-] object : serving bowl : is expensive : is FALSE : 0.350 : 0.00337328",
+                "[-] action : arranging cut fruits in a fruit bowl : is very tiring : is FALSE : 0.250 : 0.00069221",
+                "[-] activity : preparing a meal : is a fun activity : is TRUE : 0.650 : -0.00056308",
+                "[-] action : arranging cut fruits in a fruit bowl : is something one does only if they enjoy doing it : is TRUE : 0.550 : 0.00048662",
+                "[-] action : arranging cut fruits in a fruit bowl : involves moving around in space : is FALSE : 0.350 : 0.00041694",
+                "[-] action : arranging cut fruits in a fruit bowl : involves handling open containers filled with something which could spill : is TRUE : 0.650 : -0.00040069"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] activity : preparing a meal : is a mundane chore : is FALSE : 0.450 : 13.71857110"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "starting_fire_in_a_fireplace_adverse_weather_conditions_guests_are_present_user_is_nearby_weekend_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "num_precedents": 4,
+            "result": "correct",
+            "confidence": 0.9999021291732788,
+            "explanation": [
+                [
+                    "object",
+                    "fireplace",
+                    "involves an open flame",
+                    true
+                ],
+                [
+                    "action",
+                    "starting fire in a fireplace",
+                    "can cause major damage or harm if done imprecisely",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[+] object : fireplace : involves an open flame : is TRUE : 0.950 : 0.01980523",
+                "[-] object : kindling : involves an open flame : is TRUE : 0.750 : 0.01847366",
+                "[+] action : starting fire in a fireplace : can cause major damage or harm if done imprecisely : is TRUE : 0.650 : 0.01189045",
+                "[-] object : fireplace : is expensive : is TRUE : 0.650 : 0.00019726",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00004262",
+                "[-] action : starting fire in a fireplace : is very tiring : is TRUE : 0.550 : 0.00001515",
+                "[-] object : fireplace : can damage or break or burn something if used inaccurately : is TRUE : 0.950 : 0.00001310",
+                "[-] object : match box : can damage or break or burn something if used inaccurately : is TRUE : 0.750 : 0.00000197",
+                "[-] object : kindling : can damage or break or burn something if used inaccurately : is TRUE : 0.750 : 0.00000197",
+                "[-] action : starting fire in a fireplace : involves moving around in space : is FALSE : 0.450 : 0.00000070"
+            ],
+            "expl_attn_based_MRR": 1.0,
+            "expl_output_based": [
+                "[+] action : starting fire in a fireplace : can cause major damage or harm if done imprecisely : is TRUE : 0.650 : -0.00000907",
+                "[-] object : kindling : involves an open flame : is TRUE : 0.750 : 0.00000174",
+                "[-] activity : starting a fireplace : is a fun activity : is TRUE : 0.650 : -0.00000052",
+                "[-] action : starting fire in a fireplace : is something one does only if they enjoy doing it : is TRUE : 0.550 : -0.00000046",
+                "[-] action : starting fire in a fireplace : is fun to do : is TRUE : 0.750 : -0.00000044",
+                "[-] action : starting fire in a fireplace : is very tiring : is TRUE : 0.550 : -0.00000035",
+                "[-] action : starting fire in a fireplace : is much easier if someone helps one with it : is TRUE : 0.550 : -0.00000028",
+                "[-] action : starting fire in a fireplace : involves discretionary judgement : is TRUE : 0.550 : -0.00000027",
+                "[-] action : starting fire in a fireplace : involves moving around in space : is FALSE : 0.450 : -0.00000022",
+                "[-] object : fireplace : is expensive : is TRUE : 0.650 : -0.00000019"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] action : starting fire in a fireplace : can cause major damage or harm if done imprecisely : is TRUE : 0.650 : -0.00000907",
+                "[-] object : kindling : involves an open flame : is TRUE : 0.750 : 0.00000174",
+                "[-] activity : starting a fireplace : is a fun activity : is TRUE : 0.650 : -0.00000052",
+                "[-] action : starting fire in a fireplace : is something one does only if they enjoy doing it : is TRUE : 0.550 : -0.00000046",
+                "[-] action : starting fire in a fireplace : is fun to do : is TRUE : 0.750 : -0.00000044",
+                "[-] action : starting fire in a fireplace : is very tiring : is TRUE : 0.550 : -0.00000035",
+                "[-] action : starting fire in a fireplace : is much easier if someone helps one with it : is TRUE : 0.550 : -0.00000028",
+                "[-] action : starting fire in a fireplace : involves discretionary judgement : is TRUE : 0.550 : -0.00000027",
+                "[-] action : starting fire in a fireplace : involves moving around in space : is FALSE : 0.450 : -0.00000022",
+                "[-] object : fireplace : is expensive : is TRUE : 0.650 : -0.00000019"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "putting_on_a_scarf_when_leaving_the_home_early_in_the_morning_user_is_in_a_rush_user_is_injured_or_disabled_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "num_precedents": 4,
+            "result": "correct",
+            "confidence": 0.9997318387031555,
+            "explanation": [
+                [
+                    "action",
+                    "putting on a scarf when leaving the home",
+                    "is much easier if someone helps one with it",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] activity : getting ready to leave : is a mundane chore : is TRUE : 0.650 : 0.00020409",
+                "[-] action : putting on a scarf when leaving the home : is something one does only if they enjoy doing it : is FALSE : 0.450 : 0.00000179",
+                "[-] action : putting on a scarf when leaving the home : involves moving around in space : is TRUE : 0.550 : 0.00000021",
+                "[-] action : putting on a scarf when leaving the home : can be easily fixed if done improperly : is TRUE : 0.950 : 0.00000000",
+                "[-] action : putting on a scarf when leaving the home : involves discretionary judgement : is TRUE : 0.650 : 0.00000000",
+                "[-] action : putting on a scarf when leaving the home : is fun to do : is TRUE : 0.550 : 0.00000000",
+                "[-] activity : getting ready to leave : is a fun activity : is FALSE : 0.350 : 0.00000000",
+                "[-] object : scarf : is expensive : is FALSE : 0.250 : 0.00000000",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : user is in a rush : is TRUE : 1.000 : 0.00000000"
+            ],
+            "expl_attn_based_MRR": 0,
+            "expl_output_based": [
+                "[-] action : putting on a scarf when leaving the home : is fun to do : is TRUE : 0.550 : -0.00001783",
+                "[-] action : putting on a scarf when leaving the home : is something one does only if they enjoy doing it : is FALSE : 0.450 : -0.00000963",
+                "[-] activity : getting ready to leave : is a fun activity : is FALSE : 0.350 : -0.00000892",
+                "[+] action : putting on a scarf when leaving the home : is much easier if someone helps one with it : is FALSE : 0.150 : -0.00000443",
+                "[-] action : putting on a scarf when leaving the home : involves discretionary judgement : is TRUE : 0.650 : -0.00000399",
+                "[-] action : putting on a scarf when leaving the home : involves moving around in space : is TRUE : 0.550 : -0.00000306",
+                "[-] object : scarf : is expensive : is FALSE : 0.250 : -0.00000285",
+                "[-] object : scarf : is a fragile object : is FALSE : 0.150 : -0.00000189",
+                "[-] action : putting on a scarf when leaving the home : involves handling open containers filled with something which could spill : is FALSE : 0.050 : -0.00000097",
+                "[-] object : scarf : involves an open flame : is FALSE : 0.050 : -0.00000083"
+            ],
+            "expl_output_based_MRR": 0.25,
+            "expl_gt_based": [
+                "[-] action : putting on a scarf when leaving the home : is fun to do : is TRUE : 0.550 : -0.00001783",
+                "[-] action : putting on a scarf when leaving the home : is something one does only if they enjoy doing it : is FALSE : 0.450 : -0.00000963",
+                "[-] activity : getting ready to leave : is a fun activity : is FALSE : 0.350 : -0.00000892",
+                "[+] action : putting on a scarf when leaving the home : is much easier if someone helps one with it : is FALSE : 0.150 : -0.00000443",
+                "[-] action : putting on a scarf when leaving the home : involves discretionary judgement : is TRUE : 0.650 : -0.00000399",
+                "[-] action : putting on a scarf when leaving the home : involves moving around in space : is TRUE : 0.550 : -0.00000306",
+                "[-] object : scarf : is expensive : is FALSE : 0.250 : -0.00000285",
+                "[-] object : scarf : is a fragile object : is FALSE : 0.150 : -0.00000189",
+                "[-] action : putting on a scarf when leaving the home : involves handling open containers filled with something which could spill : is FALSE : 0.050 : -0.00000097",
+                "[-] object : scarf : involves an open flame : is FALSE : 0.050 : -0.00000083"
+            ],
+            "expl_gt_based_MRR": 0.25
+        },
+        "mopping_the_kitchen_and_living_room_floors_user_is_injured_or_disabled_user_is_nearby_weekend_": {
+            "ground_truth": "do_later",
+            "prediction": "do_later",
+            "num_precedents": 29,
+            "result": "correct",
+            "confidence": 0.9956668615341187,
+            "explanation": [
+                [
+                    "action",
+                    "mopping the kitchen and living room floors",
+                    "is very tiring",
+                    true
+                ],
+                [
+                    "activity",
+                    "floor cleaning",
+                    "is a mundane chore",
+                    true
+                ],
+                [
+                    "location",
+                    "kitchen",
+                    "might be a tight space where presence a robot might get in the way of a person",
+                    true
+                ],
+                [
+                    "action",
+                    "mopping the kitchen and living room floors",
+                    "involves moving around in space",
+                    true
+                ],
+                [
+                    "user is nearby",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[+] c : c : user is nearby : is TRUE : 1.000 : 0.01943609",
+                "[+] activity : floor cleaning : is a mundane chore : is TRUE : 0.950 : 0.01854601",
+                "[+] location : kitchen : might be a tight space where presence a robot might get in the way of a person : is TRUE : 0.550 : 0.01159569",
+                "[-] action : mopping the kitchen and living room floors : is much easier if someone helps one with it : is TRUE : 0.950 : 0.01018978",
+                "[+] action : mopping the kitchen and living room floors : involves moving around in space : is TRUE : 0.950 : 0.00593640",
+                "[+] action : mopping the kitchen and living room floors : is very tiring : is TRUE : 0.650 : 0.00558594",
+                "[-] action : mopping the kitchen and living room floors : involves handling open containers filled with something which could spill : is TRUE : 0.950 : 0.00001504",
+                "[-] object : wet pads : is expensive : is FALSE : 0.450 : 0.00001410",
+                "[-] action : mopping the kitchen and living room floors : requires strength : is TRUE : 0.550 : 0.00000060",
+                "[-] action : mopping the kitchen and living room floors : involves contact with a pet : is FALSE : 0.250 : 0.00000041"
+            ],
+            "expl_attn_based_MRR": 1.0,
+            "expl_output_based": [
+                "[+] location : kitchen : might be a tight space where presence a robot might get in the way of a person : is TRUE : 0.550 : 0.00203123",
+                "[-] action : mopping the kitchen and living room floors : is much easier if someone helps one with it : is TRUE : 0.950 : 0.00091444",
+                "[+] action : mopping the kitchen and living room floors : is very tiring : is TRUE : 0.650 : 0.00074325",
+                "[-] object : wet pads : can damage or break or burn something if used inaccurately : is FALSE : 0.350 : 0.00062546",
+                "[-] object : wet pads : is expensive : is FALSE : 0.450 : 0.00058400",
+                "[-] action : mopping the kitchen and living room floors : requires strength : is TRUE : 0.550 : 0.00042843",
+                "[-] object : wet pads : is a fragile object : is FALSE : 0.250 : 0.00036525",
+                "[-] object : mop : can damage or break or burn something if used inaccurately : is FALSE : 0.250 : 0.00029275",
+                "[-] action : mopping the kitchen and living room floors : involves discretionary judgement : is FALSE : 0.350 : 0.00029111",
+                "[-] action : mopping the kitchen and living room floors : involves contact with a pet : is FALSE : 0.250 : 0.00027010"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] location : kitchen : might be a tight space where presence a robot might get in the way of a person : is TRUE : 0.550 : 0.00203123",
+                "[-] action : mopping the kitchen and living room floors : is much easier if someone helps one with it : is TRUE : 0.950 : 0.00091444",
+                "[+] action : mopping the kitchen and living room floors : is very tiring : is TRUE : 0.650 : 0.00074325",
+                "[-] object : wet pads : can damage or break or burn something if used inaccurately : is FALSE : 0.350 : 0.00062546",
+                "[-] object : wet pads : is expensive : is FALSE : 0.450 : 0.00058400",
+                "[-] action : mopping the kitchen and living room floors : requires strength : is TRUE : 0.550 : 0.00042843",
+                "[-] object : wet pads : is a fragile object : is FALSE : 0.250 : 0.00036525",
+                "[-] object : mop : can damage or break or burn something if used inaccurately : is FALSE : 0.250 : 0.00029275",
+                "[-] action : mopping the kitchen and living room floors : involves discretionary judgement : is FALSE : 0.350 : 0.00029111",
+                "[-] action : mopping the kitchen and living room floors : involves contact with a pet : is FALSE : 0.250 : 0.00027010"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "mopping_the_kitchen_and_living_room_floors_user_is_injured_or_disabled_weekend_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "num_precedents": 29,
+            "result": "correct",
+            "confidence": 0.9996961355209351,
+            "explanation": [
+                [
+                    "action",
+                    "mopping the kitchen and living room floors",
+                    "is very tiring",
+                    true
+                ],
+                [
+                    "activity",
+                    "floor cleaning",
+                    "is a mundane chore",
+                    true
+                ],
+                [
+                    "user is nearby",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[+] activity : floor cleaning : is a mundane chore : is TRUE : 0.950 : 0.01680437",
+                "[-] action : mopping the kitchen and living room floors : is much easier if someone helps one with it : is TRUE : 0.950 : 0.01150993",
+                "[-] location : kitchen : might be a tight space where presence a robot might get in the way of a person : is TRUE : 0.550 : 0.00739190",
+                "[-] action : mopping the kitchen and living room floors : involves moving around in space : is TRUE : 0.950 : 0.00381496",
+                "[+] action : mopping the kitchen and living room floors : is very tiring : is TRUE : 0.650 : 0.00251058",
+                "[-] action : mopping the kitchen and living room floors : involves handling open containers filled with something which could spill : is TRUE : 0.950 : 0.00001269",
+                "[-] object : wet pads : is expensive : is FALSE : 0.450 : 0.00000710",
+                "[-] action : mopping the kitchen and living room floors : requires strength : is TRUE : 0.550 : 0.00000037",
+                "[-] action : mopping the kitchen and living room floors : involves contact with a pet : is FALSE : 0.250 : 0.00000030",
+                "[-] action : mopping the kitchen and living room floors : makes a lot of noise : is FALSE : 0.250 : 0.00000014"
+            ],
+            "expl_attn_based_MRR": 1.0,
+            "expl_output_based": [
+                "[-] action : mopping the kitchen and living room floors : is much easier if someone helps one with it : is TRUE : 0.950 : 0.00002994",
+                "[+] action : mopping the kitchen and living room floors : is very tiring : is TRUE : 0.650 : -0.00002720",
+                "[-] location : kitchen : might be a tight space where presence a robot might get in the way of a person : is TRUE : 0.550 : -0.00002442",
+                "[+] activity : floor cleaning : is a mundane chore : is TRUE : 0.950 : 0.00001164",
+                "[-] object : wet pads : can damage or break or burn something if used inaccurately : is FALSE : 0.350 : 0.00001123",
+                "[-] object : wet pads : is expensive : is FALSE : 0.450 : 0.00000975",
+                "[-] object : wet pads : is a fragile object : is FALSE : 0.250 : 0.00000639",
+                "[-] object : mop : can damage or break or burn something if used inaccurately : is FALSE : 0.250 : 0.00000542",
+                "[-] action : mopping the kitchen and living room floors : involves discretionary judgement : is FALSE : 0.350 : 0.00000487",
+                "[-] action : mopping the kitchen and living room floors : involves contact with a pet : is FALSE : 0.250 : 0.00000457"
+            ],
+            "expl_output_based_MRR": 0.5,
+            "expl_gt_based": [
+                "[-] action : mopping the kitchen and living room floors : is much easier if someone helps one with it : is TRUE : 0.950 : 0.00002994",
+                "[+] action : mopping the kitchen and living room floors : is very tiring : is TRUE : 0.650 : -0.00002720",
+                "[-] location : kitchen : might be a tight space where presence a robot might get in the way of a person : is TRUE : 0.550 : -0.00002442",
+                "[+] activity : floor cleaning : is a mundane chore : is TRUE : 0.950 : 0.00001164",
+                "[-] object : wet pads : can damage or break or burn something if used inaccurately : is FALSE : 0.350 : 0.00001123",
+                "[-] object : wet pads : is expensive : is FALSE : 0.450 : 0.00000975",
+                "[-] object : wet pads : is a fragile object : is FALSE : 0.250 : 0.00000639",
+                "[-] object : mop : can damage or break or burn something if used inaccurately : is FALSE : 0.250 : 0.00000542",
+                "[-] action : mopping the kitchen and living room floors : involves discretionary judgement : is FALSE : 0.350 : 0.00000487",
+                "[-] action : mopping the kitchen and living room floors : involves contact with a pet : is FALSE : 0.250 : 0.00000457"
+            ],
+            "expl_gt_based_MRR": 0.5
+        },
+        "fetching_a_bowl_containing_nuts_out_to_the_living_room_early_in_the_morning_user_is_asleep_user_is_injured_or_disabled_user_is_nearby_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "num_precedents": 29,
+            "result": "correct",
+            "confidence": 0.9995543360710144,
+            "explanation": [
+                [
+                    "activity",
+                    "serving food",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[+] activity : serving food : is a mundane chore : is FALSE : 0.450 : 0.04558958",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00039284",
+                "[-] location : kitchen : might be a tight space where presence a robot might get in the way of a person : is TRUE : 0.550 : 0.00037170",
+                "[-] action : fetching a bowl containing nuts out to the living room : involves moving around in space : is TRUE : 0.950 : 0.00014223",
+                "[-] object : bowl : is a fragile object : is TRUE : 0.650 : 0.00007492",
+                "[-] object : nuts : is expensive : is FALSE : 0.450 : 0.00003210",
+                "[-] action : fetching a bowl containing nuts out to the living room : involves contact with a pet : is FALSE : 0.450 : 0.00000128",
+                "[-] action : fetching a bowl containing nuts out to the living room : is one which a user might be particular about if they are picky about their food : is TRUE : 0.550 : 0.00000063",
+                "[-] object : bowl : is expensive : is FALSE : 0.250 : 0.00000049",
+                "[-] action : fetching a bowl containing nuts out to the living room : involves handling open containers filled with something which could spill : is TRUE : 0.950 : 0.00000034"
+            ],
+            "expl_attn_based_MRR": 1.0,
+            "expl_output_based": [
+                "[+] activity : serving food : is a mundane chore : is FALSE : 0.450 : 0.00018859",
+                "[-] object : bowl : is a fragile object : is TRUE : 0.650 : -0.00004615",
+                "[-] object : nuts : is expensive : is FALSE : 0.450 : -0.00001744",
+                "[-] object : bowl : is expensive : is FALSE : 0.250 : -0.00000465",
+                "[-] activity : serving food : is a fun activity : is TRUE : 0.550 : 0.00000463",
+                "[-] object : bowl : can damage or break or burn something if used inaccurately : is FALSE : 0.250 : -0.00000430",
+                "[-] action : fetching a bowl containing nuts out to the living room : is one which a user might be particular about if they are picky about their food : is TRUE : 0.550 : 0.00000387",
+                "[-] location : kitchen : might be a tight space where presence a robot might get in the way of a person : is TRUE : 0.550 : 0.00000289",
+                "[-] action : fetching a bowl containing nuts out to the living room : is something one does only if they enjoy doing it : is FALSE : 0.450 : 0.00000266",
+                "[-] action : fetching a bowl containing nuts out to the living room : is fun to do : is FALSE : 0.450 : 0.00000248"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] activity : serving food : is a mundane chore : is FALSE : 0.450 : 0.00018859",
+                "[-] object : bowl : is a fragile object : is TRUE : 0.650 : -0.00004615",
+                "[-] object : nuts : is expensive : is FALSE : 0.450 : -0.00001744",
+                "[-] object : bowl : is expensive : is FALSE : 0.250 : -0.00000465",
+                "[-] activity : serving food : is a fun activity : is TRUE : 0.550 : 0.00000463",
+                "[-] object : bowl : can damage or break or burn something if used inaccurately : is FALSE : 0.250 : -0.00000430",
+                "[-] action : fetching a bowl containing nuts out to the living room : is one which a user might be particular about if they are picky about their food : is TRUE : 0.550 : 0.00000387",
+                "[-] location : kitchen : might be a tight space where presence a robot might get in the way of a person : is TRUE : 0.550 : 0.00000289",
+                "[-] action : fetching a bowl containing nuts out to the living room : is something one does only if they enjoy doing it : is FALSE : 0.450 : 0.00000266",
+                "[-] action : fetching a bowl containing nuts out to the living room : is fun to do : is FALSE : 0.450 : 0.00000248"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "using_a_trimmer_to_groom_facial_hair_early_in_the_morning_guests_are_present_user_is_in_a_rush_user_is_nearby_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "num_precedents": 4,
+            "result": "correct",
+            "confidence": 0.9997729659080505,
+            "explanation": [
+                [
+                    "action",
+                    "using a trimmer to groom facial hair",
+                    "is much easier if someone helps one with it",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] activity : personal care : is a mundane chore : is FALSE : 0.450 : 0.04582818",
+                "[+] action : using a trimmer to groom facial hair : is much easier if someone helps one with it : is TRUE : 0.650 : 0.01778158",
+                "[-] activity : personal care : is a fun activity : is TRUE : 0.650 : 0.00199185",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00034797",
+                "[-] location : bathroom : might be a tight space where presence a robot might get in the way of a person : is TRUE : 0.750 : 0.00012057",
+                "[-] action : using a trimmer to groom facial hair : is something one does only if they enjoy doing it : is FALSE : 0.350 : 0.00000026",
+                "[-] object : trimmer : can damage or break or burn something if used inaccurately : is TRUE : 0.750 : 0.00000006",
+                "[-] action : using a trimmer to groom facial hair : can cause major damage or harm if done imprecisely : is FALSE : 0.350 : 0.00000003",
+                "[-] action : using a trimmer to groom facial hair : is fun to do : is FALSE : 0.450 : 0.00000003",
+                "[-] action : using a trimmer to groom facial hair : involves discretionary judgement : is TRUE : 0.750 : 0.00000001"
+            ],
+            "expl_attn_based_MRR": 0.5,
+            "expl_output_based": [
+                "[+] action : using a trimmer to groom facial hair : is much easier if someone helps one with it : is TRUE : 0.650 : -0.00001274",
+                "[-] object : trimmer : is a fragile object : is FALSE : 0.350 : 0.00001056",
+                "[-] activity : personal care : is a mundane chore : is FALSE : 0.450 : -0.00001010",
+                "[-] object : trimmer : is expensive : is FALSE : 0.350 : 0.00001000",
+                "[-] object : trimmer : can damage or break or burn something if used inaccurately : is TRUE : 0.750 : 0.00000766",
+                "[-] action : using a trimmer to groom facial hair : is fun to do : is FALSE : 0.450 : 0.00000656",
+                "[-] action : using a trimmer to groom facial hair : is something one does only if they enjoy doing it : is FALSE : 0.350 : 0.00000637",
+                "[-] action : using a trimmer to groom facial hair : makes a lot of noise : is FALSE : 0.450 : 0.00000402",
+                "[-] action : using a trimmer to groom facial hair : can cause major damage or harm if done imprecisely : is FALSE : 0.350 : 0.00000386",
+                "[-] action : using a trimmer to groom facial hair : requires strength : is FALSE : 0.250 : 0.00000241"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] action : using a trimmer to groom facial hair : is much easier if someone helps one with it : is TRUE : 0.650 : -0.00001274",
+                "[-] object : trimmer : is a fragile object : is FALSE : 0.350 : 0.00001056",
+                "[-] activity : personal care : is a mundane chore : is FALSE : 0.450 : -0.00001010",
+                "[-] object : trimmer : is expensive : is FALSE : 0.350 : 0.00001000",
+                "[-] object : trimmer : can damage or break or burn something if used inaccurately : is TRUE : 0.750 : 0.00000766",
+                "[-] action : using a trimmer to groom facial hair : is fun to do : is FALSE : 0.450 : 0.00000656",
+                "[-] action : using a trimmer to groom facial hair : is something one does only if they enjoy doing it : is FALSE : 0.350 : 0.00000637",
+                "[-] action : using a trimmer to groom facial hair : makes a lot of noise : is FALSE : 0.450 : 0.00000402",
+                "[-] action : using a trimmer to groom facial hair : can cause major damage or harm if done imprecisely : is FALSE : 0.350 : 0.00000386",
+                "[-] action : using a trimmer to groom facial hair : requires strength : is FALSE : 0.250 : 0.00000241"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "mowing_the_lawn_adverse_weather_conditions_user_is_asleep_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "num_precedents": 29,
+            "result": "correct",
+            "confidence": 0.9990265369415283,
+            "explanation": [
+                [
+                    "action",
+                    "mowing the lawn",
+                    "is very tiring",
+                    true
+                ],
+                [
+                    "activity",
+                    "outdoor maintenance",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[+] activity : outdoor maintenance : is a mundane chore : is TRUE : 0.650 : 0.03920329",
+                "[+] action : mowing the lawn : is very tiring : is TRUE : 0.750 : 0.02397387",
+                "[-] action : mowing the lawn : is much easier if someone helps one with it : is TRUE : 0.650 : 0.00023296",
+                "[-] action : mowing the lawn : involves moving around in space : is TRUE : 0.950 : 0.00018663",
+                "[-] action : mowing the lawn : can cause major damage or harm if done imprecisely : is TRUE : 0.550 : 0.00000081",
+                "[-] object : lawnmower : can damage or break or burn something if used inaccurately : is TRUE : 0.850 : 0.00000053",
+                "[-] activity : outdoor maintenance : is a fun activity : is FALSE : 0.450 : 0.00000018",
+                "[-] action : mowing the lawn : is something one does only if they enjoy doing it : is FALSE : 0.250 : 0.00000014",
+                "[-] location : backyard : is a location outside the house : is TRUE : 0.950 : 0.00000004",
+                "[-] action : mowing the lawn : is fun to do : is FALSE : 0.450 : 0.00000003"
+            ],
+            "expl_attn_based_MRR": 1.0,
+            "expl_output_based": [
+                "[+] activity : outdoor maintenance : is a mundane chore : is TRUE : 0.650 : -0.00126407",
+                "[+] action : mowing the lawn : is very tiring : is TRUE : 0.750 : 0.00021002",
+                "[-] action : mowing the lawn : requires strength : is TRUE : 0.650 : 0.00018701",
+                "[-] object : lawnmower : is expensive : is TRUE : 0.550 : 0.00018367",
+                "[-] action : mowing the lawn : is fun to do : is FALSE : 0.450 : 0.00015433",
+                "[-] action : mowing the lawn : can cause major damage or harm if done imprecisely : is TRUE : 0.550 : 0.00014060",
+                "[-] activity : outdoor maintenance : is a fun activity : is FALSE : 0.450 : 0.00013280",
+                "[-] action : mowing the lawn : is much easier if someone helps one with it : is TRUE : 0.650 : 0.00010953",
+                "[-] action : mowing the lawn : that a user might prefer doing themselves if they enjoy taking care of their house plants : is FALSE : 0.450 : 0.00010509",
+                "[-] action : mowing the lawn : makes a lot of noise : is TRUE : 0.850 : 0.00005509"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] activity : outdoor maintenance : is a mundane chore : is TRUE : 0.650 : -0.00126407",
+                "[+] action : mowing the lawn : is very tiring : is TRUE : 0.750 : 0.00021002",
+                "[-] action : mowing the lawn : requires strength : is TRUE : 0.650 : 0.00018701",
+                "[-] object : lawnmower : is expensive : is TRUE : 0.550 : 0.00018367",
+                "[-] action : mowing the lawn : is fun to do : is FALSE : 0.450 : 0.00015433",
+                "[-] action : mowing the lawn : can cause major damage or harm if done imprecisely : is TRUE : 0.550 : 0.00014060",
+                "[-] activity : outdoor maintenance : is a fun activity : is FALSE : 0.450 : 0.00013280",
+                "[-] action : mowing the lawn : is much easier if someone helps one with it : is TRUE : 0.650 : 0.00010953",
+                "[-] action : mowing the lawn : that a user might prefer doing themselves if they enjoy taking care of their house plants : is FALSE : 0.450 : 0.00010509",
+                "[-] action : mowing the lawn : makes a lot of noise : is TRUE : 0.850 : 0.00005509"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "setting_up_wine_glasses_on_the_dining_table_adverse_weather_conditions_early_in_the_morning_user_is_asleep_user_is_nearby_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "num_precedents": 3,
+            "result": "correct",
+            "confidence": 0.9983579516410828,
+            "explanation": [
+                [
+                    "object",
+                    "wine glass",
+                    "is a fragile object",
+                    true
+                ],
+                [
+                    "object",
+                    "wine glass",
+                    "is expensive",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[+] object : wine glass : is a fragile object : is TRUE : 0.950 : 0.02749652",
+                "[-] activity : preparing for dinner : is a mundane chore : is TRUE : 0.550 : 0.02700431",
+                "[-] action : setting up wine glasses on the dining table : is one which a user might be particular about if they are picky about their food : is TRUE : 0.750 : 0.00364210",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00089976",
+                "[-] action : setting up wine glasses on the dining table : involves moving around in space : is TRUE : 0.950 : 0.00038333",
+                "[+] object : wine glass : is expensive : is FALSE : 0.350 : 0.00004954",
+                "[-] object : dining table : is expensive : is TRUE : 0.550 : 0.00001136",
+                "[-] action : setting up wine glasses on the dining table : is much easier if someone helps one with it : is FALSE : 0.450 : 0.00000012",
+                "[-] action : setting up wine glasses on the dining table : involves discretionary judgement : is TRUE : 0.650 : 0.00000009",
+                "[-] action : setting up wine glasses on the dining table : makes a lot of noise : is FALSE : 0.350 : 0.00000006"
+            ],
+            "expl_attn_based_MRR": 1.0,
+            "expl_output_based": [
+                "[-] activity : preparing for dinner : is a mundane chore : is TRUE : 0.550 : 0.02117414",
+                "[-] object : dining table : is expensive : is TRUE : 0.550 : 0.00263484",
+                "[+] object : wine glass : is expensive : is FALSE : 0.350 : 0.00186066",
+                "[+] object : wine glass : is a fragile object : is TRUE : 0.950 : 0.00151570",
+                "[-] action : setting up wine glasses on the dining table : is something one does only if they enjoy doing it : is FALSE : 0.350 : 0.00124565",
+                "[-] action : setting up wine glasses on the dining table : is one which a user might be particular about if they are picky about their food : is TRUE : 0.750 : 0.00109999",
+                "[-] object : dining table : is a fragile object : is FALSE : 0.250 : 0.00099923",
+                "[-] action : setting up wine glasses on the dining table : is fun to do : is FALSE : 0.450 : 0.00080531",
+                "[-] object : dining table : can damage or break or burn something if used inaccurately : is FALSE : 0.250 : 0.00075025",
+                "[-] action : setting up wine glasses on the dining table : makes a lot of noise : is FALSE : 0.350 : 0.00065459"
+            ],
+            "expl_output_based_MRR": 0.3333333333333333,
+            "expl_gt_based": [
+                "[-] activity : preparing for dinner : is a mundane chore : is TRUE : 0.550 : 0.02117414",
+                "[-] object : dining table : is expensive : is TRUE : 0.550 : 0.00263484",
+                "[+] object : wine glass : is expensive : is FALSE : 0.350 : 0.00186066",
+                "[+] object : wine glass : is a fragile object : is TRUE : 0.950 : 0.00151570",
+                "[-] action : setting up wine glasses on the dining table : is something one does only if they enjoy doing it : is FALSE : 0.350 : 0.00124565",
+                "[-] action : setting up wine glasses on the dining table : is one which a user might be particular about if they are picky about their food : is TRUE : 0.750 : 0.00109999",
+                "[-] object : dining table : is a fragile object : is FALSE : 0.250 : 0.00099923",
+                "[-] action : setting up wine glasses on the dining table : is fun to do : is FALSE : 0.450 : 0.00080531",
+                "[-] object : dining table : can damage or break or burn something if used inaccurately : is FALSE : 0.250 : 0.00075025",
+                "[-] action : setting up wine glasses on the dining table : makes a lot of noise : is FALSE : 0.350 : 0.00065459"
+            ],
+            "expl_gt_based_MRR": 0.3333333333333333
+        },
+        "refilling_the_pillbox_adverse_weather_conditions_early_in_the_morning_user_is_in_a_rush_weekend_": {
+            "ground_truth": "no_action",
+            "prediction": "do_now",
+            "num_precedents": 4,
+            "result": "wrong",
+            "confidence": 0.9471824765205383,
+            "explanation": [
+                [
+                    "action",
+                    "refilling the pillbox",
+                    "can cause major damage or harm if done imprecisely",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] action : refilling the pillbox : involves knowing or accessing private information that one might not want to disclose : is TRUE : 0.750 : 0.02768315",
+                "[-] activity : taking medication : is a mundane chore : is TRUE : 0.550 : 0.02148649",
+                "[+] action : refilling the pillbox : can cause major damage or harm if done imprecisely : is TRUE : 0.750 : 0.01370791",
+                "[-] location : kitchen : might be a tight space where presence a robot might get in the way of a person : is TRUE : 0.550 : 0.00016857",
+                "[-] action : refilling the pillbox : involves moving around in space : is FALSE : 0.450 : 0.00006581",
+                "[-] object : medecine strips : is expensive : is FALSE : 0.450 : 0.00000377",
+                "[-] action : refilling the pillbox : involves handling open containers filled with something which could spill : is TRUE : 0.950 : 0.00000006",
+                "[-] object : pillbox : is expensive : is FALSE : 0.250 : 0.00000003",
+                "[-] action : refilling the pillbox : is much easier if someone helps one with it : is FALSE : 0.450 : 0.00000002",
+                "[-] action : refilling the pillbox : involves discretionary judgement : is TRUE : 0.650 : 0.00000001"
+            ],
+            "expl_attn_based_MRR": 0.3333333333333333,
+            "expl_output_based": [
+                "[-] activity : taking medication : is a mundane chore : is TRUE : 0.550 : -0.74157715"
+            ],
+            "expl_output_based_MRR": 0.05,
+            "expl_gt_based": [
+                "[-] activity : taking medication : is a mundane chore : is TRUE : 0.550 : 13.32929733"
+            ],
+            "expl_gt_based_MRR": 0.07692307692307693
+        },
+        "bring_plates_with_pastries_to_the_table_early_in_the_morning_user_is_in_a_rush_user_is_nearby_weekend_": {
+            "ground_truth": "do_now",
+            "prediction": "no_action",
+            "num_precedents": 29,
+            "result": "wrong",
+            "confidence": 0.5329878926277161,
+            "explanation": [
+                [
+                    "activity",
+                    "serving food",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[+] activity : serving food : is a mundane chore : is FALSE : 0.450 : 0.03320154",
+                "[-] action : bring plates with pastries to the table : is one which a user might be particular about if they are picky about their food : is TRUE : 0.750 : 0.01311940",
+                "[-] object : plate : is a fragile object : is TRUE : 0.750 : 0.01244187",
+                "[-] location : kitchen : might be a tight space where presence a robot might get in the way of a person : is TRUE : 0.550 : 0.00094700",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00091829",
+                "[-] action : bring plates with pastries to the table : involves moving around in space : is TRUE : 0.950 : 0.00036501",
+                "[-] object : pastries : is expensive : is FALSE : 0.250 : 0.00000444",
+                "[-] object : pastries : is a fragile object : is TRUE : 0.550 : 0.00000244",
+                "[-] action : bring plates with pastries to the table : is fun to do : is TRUE : 0.750 : 0.00000042",
+                "[-] action : bring plates with pastries to the table : is very tiring : is FALSE : 0.250 : 0.00000038"
+            ],
+            "expl_attn_based_MRR": 1.0,
+            "expl_output_based": [
+                "[+] activity : serving food : is a mundane chore : is FALSE : 0.450 : -6.13144885"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] activity : serving food : is a mundane chore : is FALSE : 0.450 : 6.99868922"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "putting_porcelain_teacups_in_the_kitchen_cabinet_adverse_weather_conditions_early_in_the_morning_guests_are_present_user_is_nearby_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "num_precedents": 3,
+            "result": "correct",
+            "confidence": 0.9998950958251953,
+            "explanation": [
+                [
+                    "object",
+                    "porcelain teacup",
+                    "is a fragile object",
+                    true
+                ],
+                [
+                    "object",
+                    "porcelain teacup",
+                    "is expensive",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[+] object : porcelain teacup : is a fragile object : is TRUE : 0.950 : 0.03262976",
+                "[+] object : porcelain teacup : is expensive : is FALSE : 0.450 : 0.00859211",
+                "[-] action : putting porcelain teacups in the kitchen cabinet : can cause major damage or harm if done imprecisely : is FALSE : 0.450 : 0.00787709",
+                "[-] activity : organizing the kitchen : is a mundane chore : is TRUE : 0.750 : 0.00083194",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00060318",
+                "[-] location : kitchen : might be a tight space where presence a robot might get in the way of a person : is TRUE : 0.550 : 0.00034229",
+                "[-] action : putting porcelain teacups in the kitchen cabinet : involves moving around in space : is TRUE : 0.950 : 0.00031403",
+                "[-] object : kitchen cabinet : is expensive : is TRUE : 0.550 : 0.00016332",
+                "[-] object : kitchen drawer : is expensive : is FALSE : 0.250 : 0.00000048",
+                "[-] action : putting porcelain teacups in the kitchen cabinet : is one which a user might be particular about if they are picky about their food : is FALSE : 0.350 : 0.00000007"
+            ],
+            "expl_attn_based_MRR": 1.0,
+            "expl_output_based": [
+                "[+] object : porcelain teacup : is expensive : is FALSE : 0.450 : 0.00000299",
+                "[-] activity : organizing the kitchen : is a fun activity : is TRUE : 0.550 : 0.00000173",
+                "[+] object : porcelain teacup : is a fragile object : is TRUE : 0.950 : 0.00000150",
+                "[-] action : putting porcelain teacups in the kitchen cabinet : is fun to do : is FALSE : 0.450 : 0.00000112",
+                "[-] action : putting porcelain teacups in the kitchen cabinet : is something one does only if they enjoy doing it : is FALSE : 0.450 : 0.00000091",
+                "[-] object : kitchen drawer : is a fragile object : is FALSE : 0.350 : 0.00000042",
+                "[-] action : putting porcelain teacups in the kitchen cabinet : involves discretionary judgement : is TRUE : 0.650 : 0.00000034",
+                "[-] action : putting porcelain teacups in the kitchen cabinet : makes a lot of noise : is FALSE : 0.350 : 0.00000034",
+                "[-] action : putting porcelain teacups in the kitchen cabinet : can cause major damage or harm if done imprecisely : is FALSE : 0.450 : 0.00000028",
+                "[-] object : kitchen cabinet : is expensive : is TRUE : 0.550 : 0.00000025"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] object : porcelain teacup : is expensive : is FALSE : 0.450 : 0.00000299",
+                "[-] activity : organizing the kitchen : is a fun activity : is TRUE : 0.550 : 0.00000173",
+                "[+] object : porcelain teacup : is a fragile object : is TRUE : 0.950 : 0.00000150",
+                "[-] action : putting porcelain teacups in the kitchen cabinet : is fun to do : is FALSE : 0.450 : 0.00000112",
+                "[-] action : putting porcelain teacups in the kitchen cabinet : is something one does only if they enjoy doing it : is FALSE : 0.450 : 0.00000091",
+                "[-] object : kitchen drawer : is a fragile object : is FALSE : 0.350 : 0.00000042",
+                "[-] action : putting porcelain teacups in the kitchen cabinet : involves discretionary judgement : is TRUE : 0.650 : 0.00000034",
+                "[-] action : putting porcelain teacups in the kitchen cabinet : makes a lot of noise : is FALSE : 0.350 : 0.00000034",
+                "[-] action : putting porcelain teacups in the kitchen cabinet : can cause major damage or harm if done imprecisely : is FALSE : 0.450 : 0.00000028",
+                "[-] object : kitchen cabinet : is expensive : is TRUE : 0.550 : 0.00000025"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "carrying_clothes_left_on_the_bed_to_a_laundry_hamper_adverse_weather_conditions_early_in_the_morning_guests_are_present_user_is_in_a_rush_user_is_nearby_weekend_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "num_precedents": 29,
+            "result": "correct",
+            "confidence": 0.9993017911911011,
+            "explanation": [
+                [
+                    "activity",
+                    "laundry and ironing",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[+] activity : laundry and ironing : is a mundane chore : is TRUE : 0.950 : 0.02275251",
+                "[-] location : bedroom : might be a tight space where presence a robot might get in the way of a person : is FALSE : 0.450 : 0.01554815",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.01090651",
+                "[-] action : carrying clothes left on the bed to a laundry hamper : involves moving around in space : is TRUE : 0.950 : 0.00704055",
+                "[-] object : dresses : is expensive : is FALSE : 0.450 : 0.00000053",
+                "[-] c : c : user is in a rush : is TRUE : 1.000 : 0.00000041",
+                "[-] c : c : weekend : is TRUE : 1.000 : 0.00000038",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00000035",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000031",
+                "[-] object : jackets : is expensive : is TRUE : 0.550 : 0.00000024"
+            ],
+            "expl_attn_based_MRR": 1.0,
+            "expl_output_based": [
+                "[-] location : bedroom : might be a tight space where presence a robot might get in the way of a person : is FALSE : 0.450 : 0.00082756",
+                "[+] activity : laundry and ironing : is a mundane chore : is TRUE : 0.950 : 0.00002449",
+                "[-] action : carrying clothes left on the bed to a laundry hamper : involves contact with a pet : is FALSE : 0.350 : 0.00002014",
+                "[-] object : pants : is expensive : is FALSE : 0.350 : 0.00002001",
+                "[-] object : jackets : is expensive : is TRUE : 0.550 : 0.00001745",
+                "[-] object : bed : is expensive : is TRUE : 0.550 : 0.00001745",
+                "[-] object : dresses : is expensive : is FALSE : 0.450 : 0.00001446",
+                "[-] action : carrying clothes left on the bed to a laundry hamper : is fun to do : is FALSE : 0.250 : 0.00001338",
+                "[-] action : carrying clothes left on the bed to a laundry hamper : is something one does only if they enjoy doing it : is FALSE : 0.250 : 0.00001248",
+                "[-] object : laundry hamper : is a fragile object : is FALSE : 0.250 : 0.00001126"
+            ],
+            "expl_output_based_MRR": 0.5,
+            "expl_gt_based": [
+                "[-] location : bedroom : might be a tight space where presence a robot might get in the way of a person : is FALSE : 0.450 : 0.00082756",
+                "[+] activity : laundry and ironing : is a mundane chore : is TRUE : 0.950 : 0.00002449",
+                "[-] action : carrying clothes left on the bed to a laundry hamper : involves contact with a pet : is FALSE : 0.350 : 0.00002014",
+                "[-] object : pants : is expensive : is FALSE : 0.350 : 0.00002001",
+                "[-] object : jackets : is expensive : is TRUE : 0.550 : 0.00001745",
+                "[-] object : bed : is expensive : is TRUE : 0.550 : 0.00001745",
+                "[-] object : dresses : is expensive : is FALSE : 0.450 : 0.00001446",
+                "[-] action : carrying clothes left on the bed to a laundry hamper : is fun to do : is FALSE : 0.250 : 0.00001338",
+                "[-] action : carrying clothes left on the bed to a laundry hamper : is something one does only if they enjoy doing it : is FALSE : 0.250 : 0.00001248",
+                "[-] object : laundry hamper : is a fragile object : is FALSE : 0.250 : 0.00001126"
+            ],
+            "expl_gt_based_MRR": 0.5
+        }
+    }
+}

@@ -1,0 +1,1680 @@
+{
+    "accuracy": 0.75,
+    "accuracy_wo_do_now": 0.6153846153846154,
+    "num_episodes": 28,
+    "num_episodes_wo_do_now": 13,
+    "confusion_matrix_obj": {
+        "accuracy": 0.75,
+        "precision": {
+            "do_now": 0.7222222222222222,
+            "do_later": 0.0,
+            "remind": 0.0,
+            "no_action": 0.8
+        },
+        "recall": {
+            "do_now": 0.8666666666666667,
+            "do_later": 0.0,
+            "remind": 0.0,
+            "no_action": 0.8
+        },
+        "confusion_matrix": {
+            "do_now": {
+                "do_now": 13,
+                "do_later": 0,
+                "remind": 0,
+                "no_action": 2
+            },
+            "do_later": {
+                "do_now": 3,
+                "do_later": 0,
+                "remind": 0,
+                "no_action": 0
+            },
+            "remind": {
+                "do_now": 0,
+                "do_later": 0,
+                "remind": 0,
+                "no_action": 0
+            },
+            "no_action": {
+                "do_now": 2,
+                "do_later": 0,
+                "remind": 0,
+                "no_action": 8
+            }
+        }
+    },
+    "MRR": {
+        "output_based": [
+            0.7142857142857143,
+            28
+        ],
+        "output_based_correct": [
+            0.7142857142857143,
+            21
+        ],
+        "output_based_wrong": [
+            0.7142857142857143,
+            7
+        ],
+        "gt_based": [
+            0.7142857142857143,
+            28
+        ],
+        "gt_based_correct": [
+            0.7142857142857143,
+            21
+        ],
+        "gt_based_wrong": [
+            0.7142857142857143,
+            7
+        ],
+        "attn_based": [
+            0.2857142857142857,
+            28
+        ],
+        "attn_based_correct": [
+            0.23809523809523808,
+            21
+        ],
+        "attn_based_wrong": [
+            0.42857142857142855,
+            7
+        ]
+    },
+    "episodes": {
+        "cleaning_the_floor_carpets_with_a_scrub_brush_user_is_in_a_rush_user_is_nearby_": {
+            "ground_truth": "do_later",
+            "prediction": "do_now",
+            "num_precedents": 29,
+            "result": "wrong",
+            "confidence": 1,
+            "explanation": [
+                [
+                    "action",
+                    "cleaning the floor carpets with a scrub brush",
+                    "is very tiring",
+                    true
+                ],
+                [
+                    "activity",
+                    "floor cleaning",
+                    "is a mundane chore",
+                    true
+                ],
+                [
+                    "action",
+                    "cleaning the floor carpets with a scrub brush",
+                    "involves moving around in space",
+                    true
+                ],
+                [
+                    "user is nearby",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[+] activity : floor cleaning : Concept : is TRUE : 1.000 : 0.08927555",
+                "[+] action : cleaning the floor carpets with a scrub brush : Concept : is TRUE : 1.000 : 0.00108258",
+                "[-] object : carpets : Concept : is TRUE : 1.000 : 0.00107361",
+                "[-] object : scrub brush : Concept : is TRUE : 1.000 : 0.00015654",
+                "[+] c : c : user is nearby : is TRUE : 1.000 : 0.00002497",
+                "[-] c : c : user is in a rush : is TRUE : 1.000 : 0.00002058",
+                "[-] location : living room : Concept : is TRUE : 1.000 : 0.00001591"
+            ],
+            "expl_attn_based_MRR": 1.0,
+            "expl_output_based": [
+                "[+] action : cleaning the floor carpets with a scrub brush : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : floor cleaning : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : scrub brush : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : carpets : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : living room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is in a rush : is TRUE : 1.000 : 0.00000000"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] action : cleaning the floor carpets with a scrub brush : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : floor cleaning : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : scrub brush : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : carpets : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : living room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is in a rush : is TRUE : 1.000 : 0.00000000"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "cleaning_the_floor_carpets_with_a_scrub_brush_adverse_weather_conditions_early_in_the_morning_weekend_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "num_precedents": 29,
+            "result": "correct",
+            "confidence": 1,
+            "explanation": [
+                [
+                    "action",
+                    "cleaning the floor carpets with a scrub brush",
+                    "is very tiring",
+                    true
+                ],
+                [
+                    "activity",
+                    "floor cleaning",
+                    "is a mundane chore",
+                    true
+                ],
+                [
+                    "user is nearby",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[+] activity : floor cleaning : Concept : is TRUE : 1.000 : 0.07800974",
+                "[+] action : cleaning the floor carpets with a scrub brush : Concept : is TRUE : 1.000 : 0.00108095",
+                "[-] object : carpets : Concept : is TRUE : 1.000 : 0.00105346",
+                "[-] object : scrub brush : Concept : is TRUE : 1.000 : 0.00015084",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00001985",
+                "[-] c : c : weekend : is TRUE : 1.000 : 0.00001887",
+                "[-] location : living room : Concept : is TRUE : 1.000 : 0.00001625",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00001413"
+            ],
+            "expl_attn_based_MRR": 1.0,
+            "expl_output_based": [
+                "[+] action : cleaning the floor carpets with a scrub brush : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : floor cleaning : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : scrub brush : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : carpets : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : living room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is in a rush : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] action : cleaning the floor carpets with a scrub brush : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : floor cleaning : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : scrub brush : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : carpets : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : living room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is in a rush : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "putting_fruits_in_the_blender_to_make_a_smoothie_adverse_weather_conditions_guests_are_present_user_is_in_a_rush_user_is_injured_or_disabled_user_is_nearby_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "num_precedents": 6,
+            "result": "correct",
+            "confidence": 1,
+            "explanation": [
+                [
+                    "action",
+                    "putting fruits in the blender to make a smoothie",
+                    "is one which a user might be particular about if they are picky about their food",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] object : strawberry : Concept : is TRUE : 1.000 : 0.02129066",
+                "[-] activity : making a smoothie : Concept : is TRUE : 1.000 : 0.01838621",
+                "[+] action : putting fruits in the blender to make a smoothie : Concept : is TRUE : 1.000 : 0.00393603",
+                "[-] object : banana : Concept : is TRUE : 1.000 : 0.00301194",
+                "[-] object : apple : Concept : is TRUE : 1.000 : 0.00259248",
+                "[-] object : blender : Concept : is TRUE : 1.000 : 0.00213545",
+                "[-] object : kitchen counter : Concept : is TRUE : 1.000 : 0.00175688",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00143071",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00128742",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00128298"
+            ],
+            "expl_attn_based_MRR": 0.3333333333333333,
+            "expl_output_based": [
+                "[+] action : putting fruits in the blender to make a smoothie : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] activity : making a smoothie : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : blender : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : kitchen counter : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : apple : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : banana : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : strawberry : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] action : putting fruits in the blender to make a smoothie : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] activity : making a smoothie : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : blender : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : kitchen counter : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : apple : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : banana : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : strawberry : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "organizing_items_on_the_kitchen_counter_adverse_weather_conditions_guests_are_present_user_is_in_a_rush_user_is_nearby_": {
+            "ground_truth": "do_later",
+            "prediction": "do_now",
+            "num_precedents": 29,
+            "result": "wrong",
+            "confidence": 1,
+            "explanation": [
+                [
+                    "activity",
+                    "organizing the kitchen",
+                    "is a mundane chore",
+                    true
+                ],
+                [
+                    "location",
+                    "kitchen",
+                    "might be a tight space where presence a robot might get in the way of a person",
+                    true
+                ],
+                [
+                    "action",
+                    "organizing items on the kitchen counter",
+                    "involves moving around in space",
+                    true
+                ],
+                [
+                    "user is nearby",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[+] activity : organizing the kitchen : Concept : is TRUE : 1.000 : 0.01389672",
+                "[+] action : organizing items on the kitchen counter : Concept : is TRUE : 1.000 : 0.01108974",
+                "[-] object : coffee maker : Concept : is TRUE : 1.000 : 0.00750780",
+                "[+] c : c : user is nearby : is TRUE : 1.000 : 0.00206082",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00187455",
+                "[-] object : oil bottle : Concept : is TRUE : 1.000 : 0.00176901",
+                "[-] object : blender : Concept : is TRUE : 1.000 : 0.00164287",
+                "[-] c : c : user is in a rush : is TRUE : 1.000 : 0.00152172",
+                "[+] location : kitchen : Concept : is TRUE : 1.000 : 0.00135902",
+                "[-] c : c : guests are present : is TRUE : 1.000 : 0.00120611"
+            ],
+            "expl_attn_based_MRR": 1.0,
+            "expl_output_based": [
+                "[+] action : organizing items on the kitchen counter : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : organizing the kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : oil bottle : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : coffee maker : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : blender : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] location : kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : guests are present : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] action : organizing items on the kitchen counter : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : organizing the kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : oil bottle : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : coffee maker : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : blender : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] location : kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : guests are present : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "organizing_items_on_the_kitchen_counter_adverse_weather_conditions_early_in_the_morning_user_is_asleep_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "num_precedents": 29,
+            "result": "correct",
+            "confidence": 1,
+            "explanation": [
+                [
+                    "activity",
+                    "organizing the kitchen",
+                    "is a mundane chore",
+                    true
+                ],
+                [
+                    "user is nearby",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[+] activity : organizing the kitchen : Concept : is TRUE : 1.000 : 0.01389713",
+                "[-] action : organizing items on the kitchen counter : Concept : is TRUE : 1.000 : 0.01043924",
+                "[-] object : coffee maker : Concept : is TRUE : 1.000 : 0.00845601",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00208934",
+                "[-] object : oil bottle : Concept : is TRUE : 1.000 : 0.00202280",
+                "[-] object : blender : Concept : is TRUE : 1.000 : 0.00186868",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00148345",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00138542",
+                "[-] c : c : user is asleep : is TRUE : 1.000 : 0.00117741"
+            ],
+            "expl_attn_based_MRR": 1.0,
+            "expl_output_based": [
+                "[-] action : organizing items on the kitchen counter : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : organizing the kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : oil bottle : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : coffee maker : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : blender : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is TRUE : 1.000 : 0.00000000"
+            ],
+            "expl_output_based_MRR": 0.5,
+            "expl_gt_based": [
+                "[-] action : organizing items on the kitchen counter : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : organizing the kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : oil bottle : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : coffee maker : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : blender : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is TRUE : 1.000 : 0.00000000"
+            ],
+            "expl_gt_based_MRR": 0.5
+        },
+        "weeding_the_backyard_garden_adverse_weather_conditions_user_is_nearby_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "num_precedents": 29,
+            "result": "correct",
+            "confidence": 1,
+            "explanation": [
+                [
+                    "action",
+                    "weeding the backyard garden",
+                    "is very tiring",
+                    true
+                ],
+                [
+                    "activity",
+                    "maintaining backyard plants",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] object : weeding tool : Concept : is TRUE : 1.000 : 0.10530808",
+                "[+] activity : maintaining backyard plants : Concept : is TRUE : 1.000 : 0.00001755",
+                "[+] action : weeding the backyard garden : Concept : is TRUE : 1.000 : 0.00001193",
+                "[-] location : backyard : Concept : is TRUE : 1.000 : 0.00001018",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00000853",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000849"
+            ],
+            "expl_attn_based_MRR": 0.5,
+            "expl_output_based": [
+                "[+] action : weeding the backyard garden : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : maintaining backyard plants : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : weeding tool : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : backyard : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is in a rush : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is injured or disabled : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] action : weeding the backyard garden : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : maintaining backyard plants : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : weeding tool : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : backyard : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is in a rush : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is injured or disabled : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "adding_potting_soil_to_indoor_plant_pots_adverse_weather_conditions_guests_are_present_user_is_in_a_rush_weekend_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "num_precedents": 5,
+            "result": "correct",
+            "confidence": 1,
+            "explanation": [
+                [
+                    "action",
+                    "adding potting soil to indoor plant pots",
+                    "that a user might prefer doing themselves if they enjoy taking care of their house plants",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] activity : maintaining house plants : Concept : is TRUE : 1.000 : 0.00999438",
+                "[-] object : house plants : Concept : is TRUE : 1.000 : 0.00949547",
+                "[+] action : adding potting soil to indoor plant pots : Concept : is TRUE : 1.000 : 0.00712317",
+                "[-] object : indoor plant pots : Concept : is TRUE : 1.000 : 0.00711308",
+                "[-] object : potting soil : Concept : is TRUE : 1.000 : 0.00637584",
+                "[-] location : living room : Concept : is TRUE : 1.000 : 0.00601768",
+                "[-] object : potting soil bag : Concept : is TRUE : 1.000 : 0.00530322",
+                "[-] c : c : weekend : is TRUE : 1.000 : 0.00413738",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00408435",
+                "[-] c : c : user is in a rush : is TRUE : 1.000 : 0.00375417"
+            ],
+            "expl_attn_based_MRR": 0.3333333333333333,
+            "expl_output_based": [
+                "[+] action : adding potting soil to indoor plant pots : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] activity : maintaining house plants : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : potting soil bag : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : potting soil : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : house plants : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : indoor plant pots : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : living room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : guests are present : is TRUE : 1.000 : 0.00000000"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] action : adding potting soil to indoor plant pots : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] activity : maintaining house plants : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : potting soil bag : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : potting soil : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : house plants : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : indoor plant pots : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : living room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : guests are present : is TRUE : 1.000 : 0.00000000"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "painting_a_tree_on_a_canvas_using_acrylic_paint_user_is_injured_or_disabled_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "num_precedents": 3,
+            "result": "correct",
+            "confidence": 1,
+            "explanation": [
+                [
+                    "activity",
+                    "painting",
+                    "is a fun activity",
+                    true
+                ],
+                [
+                    "action",
+                    "painting a tree on a canvas using acrylic paint",
+                    "is something one does only if they enjoy doing it",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] object : brush : Concept : is TRUE : 1.000 : 0.02893632",
+                "[-] object : easel : Concept : is TRUE : 1.000 : 0.02624142",
+                "[-] object : canvas : Concept : is TRUE : 1.000 : 0.02065836",
+                "[-] object : paint palette : Concept : is TRUE : 1.000 : 0.00259285",
+                "[-] object : paint : Concept : is TRUE : 1.000 : 0.00220529",
+                "[+] activity : painting : Concept : is TRUE : 1.000 : 0.00218580",
+                "[+] action : painting a tree on a canvas using acrylic paint : Concept : is TRUE : 1.000 : 0.00191965",
+                "[-] location : living room : Concept : is TRUE : 1.000 : 0.00142397",
+                "[-] c : c : user is injured or disabled : is TRUE : 1.000 : 0.00117973"
+            ],
+            "expl_attn_based_MRR": 0.16666666666666666,
+            "expl_output_based": [
+                "[+] action : painting a tree on a canvas using acrylic paint : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : painting : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : paint : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : paint palette : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : brush : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : canvas : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : easel : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : living room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] action : painting a tree on a canvas using acrylic paint : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : painting : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : paint : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : paint palette : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : brush : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : canvas : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : easel : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : living room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "arranging_books_on_the_bookshelf_adverse_weather_conditions_early_in_the_morning_user_is_asleep_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "num_precedents": 29,
+            "result": "correct",
+            "confidence": 1,
+            "explanation": [
+                [
+                    "activity",
+                    "home organization",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[+] activity : home organization : Concept : is TRUE : 1.000 : 0.05303723",
+                "[-] object : books : Concept : is TRUE : 1.000 : 0.03339074",
+                "[-] object : bookshelf : Concept : is TRUE : 1.000 : 0.00272761",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00089603",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00066020",
+                "[-] action : arranging books on the bookshelf : Concept : is TRUE : 1.000 : 0.00062644",
+                "[-] c : c : user is asleep : is TRUE : 1.000 : 0.00058111",
+                "[-] location : living room : Concept : is TRUE : 1.000 : 0.00050201"
+            ],
+            "expl_attn_based_MRR": 1.0,
+            "expl_output_based": [
+                "[-] action : arranging books on the bookshelf : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : home organization : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : books : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : bookshelf : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : living room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : user is in a rush : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_output_based_MRR": 0.5,
+            "expl_gt_based": [
+                "[-] action : arranging books on the bookshelf : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : home organization : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : books : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : bookshelf : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : living room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : user is in a rush : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_gt_based_MRR": 0.5
+        },
+        "spraying_bug_spray_on_your_arms_adverse_weather_conditions_user_is_asleep_weekend_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "num_precedents": 4,
+            "result": "correct",
+            "confidence": 1,
+            "explanation": [
+                [
+                    "action",
+                    "spraying bug spray on your arms",
+                    "is much easier if someone helps one with it",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] activity : personal care : Concept : is TRUE : 1.000 : 0.09002308",
+                "[+] action : spraying bug spray on your arms : Concept : is TRUE : 1.000 : 0.00007774",
+                "[-] object : bug spray bottle : Concept : is TRUE : 1.000 : 0.00006908",
+                "[-] location : dressing room : Concept : is TRUE : 1.000 : 0.00005853",
+                "[-] c : c : weekend : is TRUE : 1.000 : 0.00004085",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00004036",
+                "[-] c : c : user is asleep : is TRUE : 1.000 : 0.00003459"
+            ],
+            "expl_attn_based_MRR": 0.5,
+            "expl_output_based": [
+                "[+] action : spraying bug spray on your arms : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] activity : personal care : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : bug spray bottle : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : dressing room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : user is in a rush : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is injured or disabled : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] action : spraying bug spray on your arms : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] activity : personal care : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : bug spray bottle : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : dressing room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : user is in a rush : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is injured or disabled : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "pouring_oil_in_a_pan_to_cook_food_adverse_weather_conditions_user_is_injured_or_disabled_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "num_precedents": 6,
+            "result": "correct",
+            "confidence": 1,
+            "explanation": [
+                [
+                    "action",
+                    "pouring oil in a pan to cook food",
+                    "is one which a user might be particular about if they are picky about their food",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] object : pan : Concept : is TRUE : 1.000 : 0.05779387",
+                "[-] activity : preparing a meal : Concept : is TRUE : 1.000 : 0.00645276",
+                "[-] object : stove : Concept : is TRUE : 1.000 : 0.00511193",
+                "[+] action : pouring oil in a pan to cook food : Concept : is TRUE : 1.000 : 0.00434445",
+                "[-] object : oil bottle : Concept : is TRUE : 1.000 : 0.00401414",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00286619",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00211938",
+                "[-] c : c : user is injured or disabled : is TRUE : 1.000 : 0.00203284"
+            ],
+            "expl_attn_based_MRR": 0.25,
+            "expl_output_based": [
+                "[+] action : pouring oil in a pan to cook food : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] activity : preparing a meal : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : oil bottle : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : pan : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : stove : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] action : pouring oil in a pan to cook food : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] activity : preparing a meal : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : oil bottle : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : pan : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : stove : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "shoveling_snow_from_the_driveway_adverse_weather_conditions_user_is_in_a_rush_user_is_injured_or_disabled_user_is_nearby_weekend_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "num_precedents": 29,
+            "result": "correct",
+            "confidence": 1,
+            "explanation": [
+                [
+                    "action",
+                    "shoveling snow from the driveway",
+                    "is very tiring",
+                    true
+                ],
+                [
+                    "activity",
+                    "outdoor maintenance",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] object : snow shovel : Concept : is TRUE : 1.000 : 0.02915654",
+                "[+] action : shoveling snow from the driveway : Concept : is TRUE : 1.000 : 0.02642510",
+                "[+] activity : outdoor maintenance : Concept : is TRUE : 1.000 : 0.01997584",
+                "[-] location : driveway : Concept : is TRUE : 1.000 : 0.01310788",
+                "[-] c : c : weekend : is TRUE : 1.000 : 0.00143046",
+                "[-] c : c : user is in a rush : is TRUE : 1.000 : 0.00133286",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00111294",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00082846",
+                "[-] c : c : user is injured or disabled : is TRUE : 1.000 : 0.00077252"
+            ],
+            "expl_attn_based_MRR": 0.5,
+            "expl_output_based": [
+                "[+] action : shoveling snow from the driveway : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : outdoor maintenance : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : snow shovel : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : driveway : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is in a rush : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : user is injured or disabled : is TRUE : 1.000 : 0.00000000"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] action : shoveling snow from the driveway : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : outdoor maintenance : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : snow shovel : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : driveway : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is in a rush : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : user is injured or disabled : is TRUE : 1.000 : 0.00000000"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "mixing_yoghurt_with_granola_and_fruits_early_in_the_morning_user_is_in_a_rush_weekend_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "num_precedents": 6,
+            "result": "correct",
+            "confidence": 1,
+            "explanation": [
+                [
+                    "action",
+                    "mixing yoghurt with granola and fruits",
+                    "is one which a user might be particular about if they are picky about their food",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] object : spoon : Concept : is TRUE : 1.000 : 0.02891299",
+                "[-] object : fruits : Concept : is TRUE : 1.000 : 0.01012467",
+                "[-] activity : preparing breakfast : Concept : is TRUE : 1.000 : 0.00649148",
+                "[-] object : bowl : Concept : is TRUE : 1.000 : 0.00596933",
+                "[-] object : granola : Concept : is TRUE : 1.000 : 0.00477521",
+                "[-] object : yoghurt : Concept : is TRUE : 1.000 : 0.00389944",
+                "[+] action : mixing yoghurt with granola and fruits : Concept : is TRUE : 1.000 : 0.00331469",
+                "[-] object : nuts : Concept : is TRUE : 1.000 : 0.00288475",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00088133",
+                "[-] c : c : weekend : is TRUE : 1.000 : 0.00074014"
+            ],
+            "expl_attn_based_MRR": 0.14285714285714285,
+            "expl_output_based": [
+                "[+] action : mixing yoghurt with granola and fruits : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] activity : preparing breakfast : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : yoghurt : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : granola : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : nuts : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : fruits : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : bowl : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : spoon : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] action : mixing yoghurt with granola and fruits : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] activity : preparing breakfast : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : yoghurt : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : granola : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : nuts : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : fruits : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : bowl : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : spoon : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "applying_butter_on_toast_for_preparing_breakfast_early_in_the_morning_user_is_injured_or_disabled_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "num_precedents": 6,
+            "result": "correct",
+            "confidence": 1,
+            "explanation": [
+                [
+                    "action",
+                    "applying butter on toast for preparing breakfast",
+                    "is one which a user might be particular about if they are picky about their food",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] activity : preparing breakfast : Concept : is TRUE : 1.000 : 0.01471683",
+                "[-] object : butter : Concept : is TRUE : 1.000 : 0.01265486",
+                "[-] object : butter knife : Concept : is TRUE : 1.000 : 0.01261050",
+                "[+] action : applying butter on toast for preparing breakfast : Concept : is TRUE : 1.000 : 0.01253106",
+                "[-] object : toast : Concept : is TRUE : 1.000 : 0.01243688",
+                "[-] c : c : user is injured or disabled : is TRUE : 1.000 : 0.00494869",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00474928",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00468843"
+            ],
+            "expl_attn_based_MRR": 0.25,
+            "expl_output_based": [
+                "[+] action : applying butter on toast for preparing breakfast : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] activity : preparing breakfast : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : toast : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : butter : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : butter knife : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] action : applying butter on toast for preparing breakfast : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] activity : preparing breakfast : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : toast : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : butter : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : butter knife : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "helping_you_put_on_a_bracelet_or_watch_on_your_wrist_guests_are_present_user_is_in_a_rush_user_is_nearby_weekend_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "num_precedents": 4,
+            "result": "correct",
+            "confidence": 1,
+            "explanation": [
+                [
+                    "action",
+                    "helping you put on a bracelet or watch on your wrist",
+                    "is much easier if someone helps one with it",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] activity : getting ready to leave : Concept : is TRUE : 1.000 : 0.05015581",
+                "[-] object : bracelet : Concept : is TRUE : 1.000 : 0.03121395",
+                "[-] object : watch : Concept : is TRUE : 1.000 : 0.00743072",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00000223",
+                "[-] c : c : weekend : is TRUE : 1.000 : 0.00000181",
+                "[-] c : c : user is in a rush : is TRUE : 1.000 : 0.00000176",
+                "[-] c : c : guests are present : is TRUE : 1.000 : 0.00000123",
+                "[+] action : helping you put on a bracelet or watch on your wrist : Concept : is TRUE : 1.000 : 0.00000089",
+                "[-] location : dressing room : Concept : is TRUE : 1.000 : 0.00000055"
+            ],
+            "expl_attn_based_MRR": 0.125,
+            "expl_output_based": [
+                "[+] action : helping you put on a bracelet or watch on your wrist : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] activity : getting ready to leave : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : bracelet : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : watch : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : dressing room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : guests are present : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is in a rush : is TRUE : 1.000 : 0.00000000"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] action : helping you put on a bracelet or watch on your wrist : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] activity : getting ready to leave : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : bracelet : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : watch : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : dressing room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : guests are present : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is in a rush : is TRUE : 1.000 : 0.00000000"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "arranging_cut_fruits_in_a_fruit_bowl_adverse_weather_conditions_user_is_injured_or_disabled_": {
+            "ground_truth": "do_now",
+            "prediction": "no_action",
+            "num_precedents": 29,
+            "result": "wrong",
+            "confidence": 1,
+            "explanation": [
+                [
+                    "activity",
+                    "preparing a meal",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] object : fruit slices : Concept : is TRUE : 1.000 : 0.03075173",
+                "[-] action : arranging cut fruits in a fruit bowl : Concept : is TRUE : 1.000 : 0.02075097",
+                "[+] activity : preparing a meal : Concept : is TRUE : 1.000 : 0.01249917",
+                "[-] object : serving bowl : Concept : is TRUE : 1.000 : 0.00978965",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00635014",
+                "[-] c : c : user is injured or disabled : is TRUE : 1.000 : 0.00543758",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00484289"
+            ],
+            "expl_attn_based_MRR": 0.3333333333333333,
+            "expl_output_based": [
+                "[-] action : arranging cut fruits in a fruit bowl : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : preparing a meal : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : fruit slices : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : serving bowl : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is in a rush : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_output_based_MRR": 0.5,
+            "expl_gt_based": [
+                "[-] action : arranging cut fruits in a fruit bowl : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : preparing a meal : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : fruit slices : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : serving bowl : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is in a rush : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_gt_based_MRR": 0.5
+        },
+        "starting_fire_in_a_fireplace_adverse_weather_conditions_guests_are_present_user_is_nearby_weekend_": {
+            "ground_truth": "no_action",
+            "prediction": "do_now",
+            "num_precedents": 4,
+            "result": "wrong",
+            "confidence": 1,
+            "explanation": [
+                [
+                    "object",
+                    "fireplace",
+                    "involves an open flame",
+                    true
+                ],
+                [
+                    "action",
+                    "starting fire in a fireplace",
+                    "can cause major damage or harm if done imprecisely",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] object : match box : Concept : is TRUE : 1.000 : 0.06274809",
+                "[+] object : fireplace : Concept : is TRUE : 1.000 : 0.00054000",
+                "[-] activity : starting a fireplace : Concept : is TRUE : 1.000 : 0.00014546",
+                "[+] action : starting fire in a fireplace : Concept : is TRUE : 1.000 : 0.00013946",
+                "[-] object : kindling : Concept : is TRUE : 1.000 : 0.00007113",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00003771",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00003573",
+                "[-] c : c : weekend : is TRUE : 1.000 : 0.00003123",
+                "[-] location : living room : Concept : is TRUE : 1.000 : 0.00002728",
+                "[-] c : c : guests are present : is TRUE : 1.000 : 0.00002037"
+            ],
+            "expl_attn_based_MRR": 0.5,
+            "expl_output_based": [
+                "[+] action : starting fire in a fireplace : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] activity : starting a fireplace : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : match box : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : kindling : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] object : fireplace : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : living room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : guests are present : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] action : starting fire in a fireplace : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] activity : starting a fireplace : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : match box : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : kindling : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] object : fireplace : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : living room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : guests are present : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "putting_on_a_scarf_when_leaving_the_home_early_in_the_morning_user_is_in_a_rush_user_is_injured_or_disabled_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "num_precedents": 4,
+            "result": "correct",
+            "confidence": 1,
+            "explanation": [
+                [
+                    "action",
+                    "putting on a scarf when leaving the home",
+                    "is much easier if someone helps one with it",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] activity : getting ready to leave : Concept : is TRUE : 1.000 : 0.09020933",
+                "[-] object : scarf : Concept : is TRUE : 1.000 : 0.00023293",
+                "[+] action : putting on a scarf when leaving the home : Concept : is TRUE : 1.000 : 0.00000129",
+                "[-] location : living room : Concept : is TRUE : 1.000 : 0.00000049",
+                "[-] c : c : user is in a rush : is TRUE : 1.000 : 0.00000035",
+                "[-] c : c : user is injured or disabled : is TRUE : 1.000 : 0.00000029",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00000026"
+            ],
+            "expl_attn_based_MRR": 0.3333333333333333,
+            "expl_output_based": [
+                "[+] action : putting on a scarf when leaving the home : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] activity : getting ready to leave : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : scarf : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : living room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is in a rush : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : user is injured or disabled : is TRUE : 1.000 : 0.00000000"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] action : putting on a scarf when leaving the home : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] activity : getting ready to leave : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : scarf : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : living room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is in a rush : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : user is injured or disabled : is TRUE : 1.000 : 0.00000000"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "mopping_the_kitchen_and_living_room_floors_user_is_injured_or_disabled_user_is_nearby_weekend_": {
+            "ground_truth": "do_later",
+            "prediction": "do_now",
+            "num_precedents": 29,
+            "result": "wrong",
+            "confidence": 1,
+            "explanation": [
+                [
+                    "action",
+                    "mopping the kitchen and living room floors",
+                    "is very tiring",
+                    true
+                ],
+                [
+                    "activity",
+                    "floor cleaning",
+                    "is a mundane chore",
+                    true
+                ],
+                [
+                    "location",
+                    "kitchen",
+                    "might be a tight space where presence a robot might get in the way of a person",
+                    true
+                ],
+                [
+                    "action",
+                    "mopping the kitchen and living room floors",
+                    "involves moving around in space",
+                    true
+                ],
+                [
+                    "user is nearby",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[+] activity : floor cleaning : Concept : is TRUE : 1.000 : 0.04659934",
+                "[-] object : mop : Concept : is TRUE : 1.000 : 0.03918143",
+                "[-] location : dining room : Concept : is TRUE : 1.000 : 0.00038738",
+                "[-] object : wet pads : Concept : is TRUE : 1.000 : 0.00022660",
+                "[+] action : mopping the kitchen and living room floors : Concept : is TRUE : 1.000 : 0.00014287",
+                "[-] c : c : weekend : is TRUE : 1.000 : 0.00010592",
+                "[+] location : kitchen : Concept : is TRUE : 1.000 : 0.00010495",
+                "[+] c : c : user is nearby : is TRUE : 1.000 : 0.00007842",
+                "[-] c : c : user is injured or disabled : is TRUE : 1.000 : 0.00007110"
+            ],
+            "expl_attn_based_MRR": 1.0,
+            "expl_output_based": [
+                "[+] action : mopping the kitchen and living room floors : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : floor cleaning : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : mop : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : wet pads : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] location : kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : dining room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] action : mopping the kitchen and living room floors : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : floor cleaning : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : mop : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : wet pads : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] location : kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : dining room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "mopping_the_kitchen_and_living_room_floors_user_is_injured_or_disabled_weekend_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "num_precedents": 29,
+            "result": "correct",
+            "confidence": 1,
+            "explanation": [
+                [
+                    "action",
+                    "mopping the kitchen and living room floors",
+                    "is very tiring",
+                    true
+                ],
+                [
+                    "activity",
+                    "floor cleaning",
+                    "is a mundane chore",
+                    true
+                ],
+                [
+                    "user is nearby",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[+] activity : floor cleaning : Concept : is TRUE : 1.000 : 0.05285041",
+                "[-] object : mop : Concept : is TRUE : 1.000 : 0.04353745",
+                "[-] location : dining room : Concept : is TRUE : 1.000 : 0.00043511",
+                "[-] object : wet pads : Concept : is TRUE : 1.000 : 0.00026103",
+                "[+] action : mopping the kitchen and living room floors : Concept : is TRUE : 1.000 : 0.00016545",
+                "[-] c : c : weekend : is TRUE : 1.000 : 0.00012407",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00011773",
+                "[-] c : c : user is injured or disabled : is TRUE : 1.000 : 0.00008252"
+            ],
+            "expl_attn_based_MRR": 1.0,
+            "expl_output_based": [
+                "[+] action : mopping the kitchen and living room floors : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : floor cleaning : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : mop : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : wet pads : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : dining room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] action : mopping the kitchen and living room floors : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : floor cleaning : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : mop : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : wet pads : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : dining room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "fetching_a_bowl_containing_nuts_out_to_the_living_room_early_in_the_morning_user_is_asleep_user_is_injured_or_disabled_user_is_nearby_": {
+            "ground_truth": "do_now",
+            "prediction": "no_action",
+            "num_precedents": 29,
+            "result": "wrong",
+            "confidence": 1,
+            "explanation": [
+                [
+                    "activity",
+                    "serving food",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] object : bowl : Concept : is TRUE : 1.000 : 0.02566785",
+                "[-] object : nuts : Concept : is TRUE : 1.000 : 0.00923424",
+                "[-] action : fetching a bowl containing nuts out to the living room : Concept : is TRUE : 1.000 : 0.00888404",
+                "[+] activity : serving food : Concept : is TRUE : 1.000 : 0.00723648",
+                "[-] location : living room : Concept : is TRUE : 1.000 : 0.00666814",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00400299",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00319202",
+                "[-] c : c : user is injured or disabled : is TRUE : 1.000 : 0.00277685",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00274945",
+                "[-] c : c : user is asleep : is TRUE : 1.000 : 0.00250781"
+            ],
+            "expl_attn_based_MRR": 0.25,
+            "expl_output_based": [
+                "[-] action : fetching a bowl containing nuts out to the living room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : serving food : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : bowl : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : nuts : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : living room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is TRUE : 1.000 : 0.00000000"
+            ],
+            "expl_output_based_MRR": 0.5,
+            "expl_gt_based": [
+                "[-] action : fetching a bowl containing nuts out to the living room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : serving food : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : bowl : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : nuts : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : living room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is TRUE : 1.000 : 0.00000000"
+            ],
+            "expl_gt_based_MRR": 0.5
+        },
+        "using_a_trimmer_to_groom_facial_hair_early_in_the_morning_guests_are_present_user_is_in_a_rush_user_is_nearby_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "num_precedents": 4,
+            "result": "correct",
+            "confidence": 1,
+            "explanation": [
+                [
+                    "action",
+                    "using a trimmer to groom facial hair",
+                    "is much easier if someone helps one with it",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] activity : personal care : Concept : is TRUE : 1.000 : 0.07746260",
+                "[+] action : using a trimmer to groom facial hair : Concept : is TRUE : 1.000 : 0.00349038",
+                "[-] object : trimmer : Concept : is TRUE : 1.000 : 0.00060184",
+                "[-] location : bathroom : Concept : is TRUE : 1.000 : 0.00000049",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00000040",
+                "[-] c : c : guests are present : is TRUE : 1.000 : 0.00000033",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00000030",
+                "[-] c : c : user is in a rush : is TRUE : 1.000 : 0.00000025"
+            ],
+            "expl_attn_based_MRR": 0.5,
+            "expl_output_based": [
+                "[+] action : using a trimmer to groom facial hair : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] activity : personal care : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : trimmer : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : bathroom : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : guests are present : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is in a rush : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : user is injured or disabled : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] action : using a trimmer to groom facial hair : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] activity : personal care : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : trimmer : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : bathroom : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : guests are present : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is in a rush : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : user is injured or disabled : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "mowing_the_lawn_adverse_weather_conditions_user_is_asleep_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "num_precedents": 29,
+            "result": "correct",
+            "confidence": 1,
+            "explanation": [
+                [
+                    "action",
+                    "mowing the lawn",
+                    "is very tiring",
+                    true
+                ],
+                [
+                    "activity",
+                    "outdoor maintenance",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[+] activity : outdoor maintenance : Concept : is TRUE : 1.000 : 0.09795943",
+                "[+] action : mowing the lawn : Concept : is TRUE : 1.000 : 0.01564024",
+                "[-] object : lawnmower : Concept : is TRUE : 1.000 : 0.00031373",
+                "[-] location : backyard : Concept : is TRUE : 1.000 : 0.00023509",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00013664",
+                "[-] c : c : user is asleep : is TRUE : 1.000 : 0.00010644"
+            ],
+            "expl_attn_based_MRR": 1.0,
+            "expl_output_based": [
+                "[+] action : mowing the lawn : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : outdoor maintenance : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : lawnmower : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : backyard : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : user is in a rush : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is injured or disabled : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] action : mowing the lawn : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : outdoor maintenance : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : lawnmower : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : backyard : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : user is in a rush : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is injured or disabled : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "setting_up_wine_glasses_on_the_dining_table_adverse_weather_conditions_early_in_the_morning_user_is_asleep_user_is_nearby_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "num_precedents": 3,
+            "result": "correct",
+            "confidence": 1,
+            "explanation": [
+                [
+                    "object",
+                    "wine glass",
+                    "is a fragile object",
+                    true
+                ],
+                [
+                    "object",
+                    "wine glass",
+                    "is expensive",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] object : dining table : Concept : is TRUE : 1.000 : 0.03997403",
+                "[-] activity : preparing for dinner : Concept : is TRUE : 1.000 : 0.01089872",
+                "[-] action : setting up wine glasses on the dining table : Concept : is TRUE : 1.000 : 0.00729514",
+                "[-] location : dining room : Concept : is TRUE : 1.000 : 0.00566516",
+                "[+] object : wine glass : Concept : is TRUE : 1.000 : 0.00392688",
+                "[-] c : c : user is asleep : is TRUE : 1.000 : 0.00241761",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00231361",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00219835",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00207869"
+            ],
+            "expl_attn_based_MRR": 0.2,
+            "expl_output_based": [
+                "[-] action : setting up wine glasses on the dining table : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] activity : preparing for dinner : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] object : wine glass : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : dining table : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : dining room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : user is in a rush : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_output_based_MRR": 0.3333333333333333,
+            "expl_gt_based": [
+                "[-] action : setting up wine glasses on the dining table : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] activity : preparing for dinner : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] object : wine glass : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : dining table : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : dining room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : user is in a rush : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_gt_based_MRR": 0.3333333333333333
+        },
+        "refilling_the_pillbox_adverse_weather_conditions_early_in_the_morning_user_is_in_a_rush_weekend_": {
+            "ground_truth": "no_action",
+            "prediction": "do_now",
+            "num_precedents": 4,
+            "result": "wrong",
+            "confidence": 1,
+            "explanation": [
+                [
+                    "action",
+                    "refilling the pillbox",
+                    "can cause major damage or harm if done imprecisely",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] object : medecine strips : Concept : is TRUE : 1.000 : 0.04189756",
+                "[-] object : pillbox : Concept : is TRUE : 1.000 : 0.02791219",
+                "[-] activity : taking medication : Concept : is TRUE : 1.000 : 0.01795240",
+                "[+] action : refilling the pillbox : Concept : is TRUE : 1.000 : 0.00457862",
+                "[-] c : c : weekend : is TRUE : 1.000 : 0.00017687",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00016293",
+                "[-] c : c : user is in a rush : is TRUE : 1.000 : 0.00016261",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00011668",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00010497"
+            ],
+            "expl_attn_based_MRR": 0.25,
+            "expl_output_based": [
+                "[+] action : refilling the pillbox : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] activity : taking medication : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : pillbox : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : medecine strips : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is in a rush : is TRUE : 1.000 : 0.00000000"
+            ],
+            "expl_output_based_MRR": 1.0,
+            "expl_gt_based": [
+                "[+] action : refilling the pillbox : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] activity : taking medication : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : pillbox : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : medecine strips : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is in a rush : is TRUE : 1.000 : 0.00000000"
+            ],
+            "expl_gt_based_MRR": 1.0
+        },
+        "bring_plates_with_pastries_to_the_table_early_in_the_morning_user_is_in_a_rush_user_is_nearby_weekend_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "num_precedents": 29,
+            "result": "correct",
+            "confidence": 1,
+            "explanation": [
+                [
+                    "activity",
+                    "serving food",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] object : plate : Concept : is TRUE : 1.000 : 0.06112131",
+                "[-] action : bring plates with pastries to the table : Concept : is TRUE : 1.000 : 0.00145614",
+                "[+] activity : serving food : Concept : is TRUE : 1.000 : 0.00071582",
+                "[-] object : pastries : Concept : is TRUE : 1.000 : 0.00067936",
+                "[-] location : dining room : Concept : is TRUE : 1.000 : 0.00051428",
+                "[-] c : c : weekend : is TRUE : 1.000 : 0.00016733",
+                "[-] c : c : user is in a rush : is TRUE : 1.000 : 0.00016589",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00014567",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00013234",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00012195"
+            ],
+            "expl_attn_based_MRR": 0.3333333333333333,
+            "expl_output_based": [
+                "[-] action : bring plates with pastries to the table : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : serving food : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : plate : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : pastries : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : dining room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_output_based_MRR": 0.5,
+            "expl_gt_based": [
+                "[-] action : bring plates with pastries to the table : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : serving food : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : plate : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : pastries : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : dining room : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : guests are present : is FALSE : 0.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_gt_based_MRR": 0.5
+        },
+        "putting_porcelain_teacups_in_the_kitchen_cabinet_adverse_weather_conditions_early_in_the_morning_guests_are_present_user_is_nearby_": {
+            "ground_truth": "no_action",
+            "prediction": "no_action",
+            "num_precedents": 3,
+            "result": "correct",
+            "confidence": 1,
+            "explanation": [
+                [
+                    "object",
+                    "porcelain teacup",
+                    "is a fragile object",
+                    true
+                ],
+                [
+                    "object",
+                    "porcelain teacup",
+                    "is expensive",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] activity : organizing the kitchen : Concept : is TRUE : 1.000 : 0.01938803",
+                "[+] object : porcelain teacup : Concept : is TRUE : 1.000 : 0.01506368",
+                "[-] action : putting porcelain teacups in the kitchen cabinet : Concept : is TRUE : 1.000 : 0.00846936",
+                "[-] object : kitchen drawer : Concept : is TRUE : 1.000 : 0.00554767",
+                "[-] object : kitchen cabinet : Concept : is TRUE : 1.000 : 0.00543299",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00482486",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00424961",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00407721",
+                "[-] c : c : guests are present : is TRUE : 1.000 : 0.00330570",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00317069"
+            ],
+            "expl_attn_based_MRR": 0.5,
+            "expl_output_based": [
+                "[-] action : putting porcelain teacups in the kitchen cabinet : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] activity : organizing the kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] object : porcelain teacup : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : kitchen cabinet : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : kitchen drawer : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : guests are present : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_output_based_MRR": 0.3333333333333333,
+            "expl_gt_based": [
+                "[-] action : putting porcelain teacups in the kitchen cabinet : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] activity : organizing the kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] object : porcelain teacup : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : kitchen cabinet : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : kitchen drawer : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : kitchen : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : early in the morning : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : guests are present : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : user is asleep : is FALSE : 0.000 : 0.00000000"
+            ],
+            "expl_gt_based_MRR": 0.3333333333333333
+        },
+        "carrying_clothes_left_on_the_bed_to_a_laundry_hamper_adverse_weather_conditions_early_in_the_morning_guests_are_present_user_is_in_a_rush_user_is_nearby_weekend_": {
+            "ground_truth": "do_now",
+            "prediction": "do_now",
+            "num_precedents": 29,
+            "result": "correct",
+            "confidence": 1,
+            "explanation": [
+                [
+                    "activity",
+                    "laundry and ironing",
+                    "is a mundane chore",
+                    true
+                ]
+            ],
+            "expl_attn_based": [
+                "[-] object : jackets : Concept : is TRUE : 1.000 : 0.02991178",
+                "[-] object : pants : Concept : is TRUE : 1.000 : 0.01200343",
+                "[-] object : shirt : Concept : is TRUE : 1.000 : 0.00796669",
+                "[-] object : bed : Concept : is TRUE : 1.000 : 0.00502146",
+                "[+] activity : laundry and ironing : Concept : is TRUE : 1.000 : 0.00000447",
+                "[-] location : bedroom : Concept : is TRUE : 1.000 : 0.00000326",
+                "[-] action : carrying clothes left on the bed to a laundry hamper : Concept : is TRUE : 1.000 : 0.00000217",
+                "[-] object : laundry hamper : Concept : is TRUE : 1.000 : 0.00000097",
+                "[-] c : c : user is nearby : is TRUE : 1.000 : 0.00000089",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000081"
+            ],
+            "expl_attn_based_MRR": 0.2,
+            "expl_output_based": [
+                "[-] action : carrying clothes left on the bed to a laundry hamper : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : laundry and ironing : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : pants : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : shirt : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : jackets : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : dresses : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : bed : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : laundry hamper : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : bedroom : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000"
+            ],
+            "expl_output_based_MRR": 0.5,
+            "expl_gt_based": [
+                "[-] action : carrying clothes left on the bed to a laundry hamper : Concept : is TRUE : 1.000 : 0.00000000",
+                "[+] activity : laundry and ironing : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : pants : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : shirt : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : jackets : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : dresses : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : bed : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] object : laundry hamper : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] location : bedroom : Concept : is TRUE : 1.000 : 0.00000000",
+                "[-] c : c : adverse weather conditions : is TRUE : 1.000 : 0.00000000"
+            ],
+            "expl_gt_based_MRR": 0.5
+        }
+    }
+}
